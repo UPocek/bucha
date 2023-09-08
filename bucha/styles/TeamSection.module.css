@@ -1,0 +1,32 @@
+.section {
+    max-width: 1440px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 4rem auto;
+}
+
+.container {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 3.25rem;
+}
+
+.container p {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

@@ -19,7 +19,12 @@
     color: var(--BG);
 }
 
-.btnWhite>span {
+.btnBlackOut>span {
+    border: 1px solid var(--Accent);
+    color: var(--Accent);
+}
+
+.btnWhiteOut>span {
     background-color: none;
     border: 1px solid var(--BG);
     color: var(--BG);
@@ -30,6 +35,7 @@
     color: var(--Accent);
 }
 
-.btnWhite>span:hover {
+.btnWhite,
+.btnBlackOut>span:hover {
     background-color: rgba(0, 0, 0, .2);
 }

@@ -15,21 +15,21 @@ export default function Navbar() {
                     </Link>
                     <ul>
                         <li>
-                            <Link href='why_poolplanner'>SETOVI</Link>
+                            <Link href='#'>SETOVI</Link>
                         </li>
                         <li>
-                            <Link href='pricing'>KOMBUHA</Link>
+                            <Link href='#'>KOMBUHA</Link>
                         </li>
                         <li>
-                            <Link href='resources'>UPUTSTVO</Link>
+                            <Link href='#'>UPUTSTVO</Link>
                         </li>
                         <li>
-                            <Link href='contactus'>MREŽE</Link>
+                            <Link href='#'>MREŽE</Link>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <MainButton buttonText='Ponovite se kombuhu' link='#' color={'black'} />
+                    <MainButton buttonText='Ponovite se kombuhom' link='#' color={'black'} />
                 </div>
             </div>
         </div>

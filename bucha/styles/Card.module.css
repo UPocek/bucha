@@ -25,6 +25,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+}
+
+.left>img {
+    border-radius: 8px;
 }
 
 .right {
@@ -45,6 +50,13 @@
 .right p {
     font-size: 24px;
     font-weight: 400;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 @media (max-width:1400px) {

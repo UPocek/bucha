@@ -3,7 +3,7 @@ import Image from 'next/image'
 import MainButton from './MainButton'
 import { useEffect, useState } from 'react';
 
-export default function Card({ title, text, btnText, btnUrl, bgColor, lightBgColor, order, imgUrl, imgAlt }) {
+export default function Card({ title, text, buttons, bgColor, lightBgColor, order, imgUrl, imgAlt }) {
     const [screenWidth, setScreenWidth] = useState(1920);
 
     useEffect(() => {
@@ -20,7 +20,10 @@ export default function Card({ title, text, btnText, btnUrl, bgColor, lightBgCol
                     <div>
                         <h1>{title}</h1>
                         <p>{text}</p>
-                        <MainButton buttonText={btnText} link={btnUrl} color={'white'} />
+                        <div className={styles.buttons}>
+                            {buttons.map(button => <MainButton key={button['btnText']} buttonText={button['btnText']} link={button['btnUrl']} color={'whiteOut'} />)}
+                        </div>
+
                     </div>
                 </div>
             </div>
