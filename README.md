@@ -23,7 +23,7 @@
 - Izrada web sajta
 
 
--Izrada promotinog sadržaja
+- Izrada promotinog sadržaja
 
 <img src="https://github.com/UPocek/bucha/blob/master/docs/kombuha3_5.jpg" width="49%"></img>
 <img src="https://github.com/UPocek/bucha/blob/master/docs/kombuha3_2.jpg" width="49%"></img>
