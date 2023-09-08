@@ -4,6 +4,7 @@ import { Arimo } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Card from '@/components/Card'
 
 const arimo = Arimo({ subsets: ['latin'] })
 
@@ -18,7 +19,45 @@ export default function Home() {
       </Head>
       <Navbar />
       <main className={`${styles.main} ${arimo.className}`}>
+        <div>
+          <Card title={'Setovi za pravljenje Kombuhe 🏁'}
+            text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
+            btnText={'Poručite sada'}
+            btnUrl={'#'}
+            bgColor={'#036141'}
+            lightBgColor={'#bbf2d1'}
+            order={1}
+            imgUrl={'/images/kombuha_set.png'}
+            imgAlt={'kombuha set'} />
 
+          <Card title={'Nazdravite sa nama 🤩'}
+            text={'Isprobajte naše ukuse. Pa nam javite koji je vaš omiljeni.'}
+            btnText={'Poručite sada'}
+            btnUrl={'#'}
+            bgColor={'#B04A59'}
+            lightBgColor={'#B04A59'}
+            order={2}
+            imgUrl={'/images/kombuha2_2.jpg'}
+            imgAlt={'kombuha flasa'} />
+          <Card title={'Uputstvo za pripremu 🎓'}
+            text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
+            btnText={'Poručite sada'}
+            btnUrl={'#'}
+            bgColor={'#036141'}
+            lightBgColor={'#bbf2d1'}
+            order={1}
+            imgUrl={'/images/kombuha_set.png'}
+            imgAlt={'kombuha set'} />
+          <Card title={'Setovi za pravljenje Kombuhe 🏁'}
+            text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
+            btnText={'Poručite sada'}
+            btnUrl={'#'}
+            bgColor={'#036141'}
+            lightBgColor={'#bbf2d1'}
+            order={1}
+            imgUrl={'/images/kombuha_set.png'}
+            imgAlt={'kombuha set'} />
+        </div>
       </main>
       <Footer />
     </>

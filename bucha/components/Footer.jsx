@@ -22,49 +22,49 @@ export default function Footer() {
                     <Image className={styles.logo} src={'/images/bucha_logo.png'} width={BUCHA_LOGO_WIDTH} height={BUCHA_LOGO_HEIGHT} alt='bucha logo'></Image>
                 </div>
                 <div>
-                    <strong className={styles.columnHeading}>Jump to</strong>
+                    <strong className={styles.columnHeading}>Setovi</strong>
                     <ul>
                         <li>
-                            <Link href='#'>Why PoolPlanner</Link>
+                            <Link href='#'></Link>
                         </li>
                         <li>
-                            <Link href='#'>Pricing</Link>
+                            <Link href='#'></Link>
                         </li>
                         <li>
-                            <Link href='#'>Resources</Link>
+                            <Link href='#'></Link>
                         </li>
                         <li>
-                            <Link href='#'>Contact us</Link>
+                            <Link href='#'></Link>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <strong className={styles.columnHeading}>Get started</strong>
+                    <strong className={styles.columnHeading}>Kombuha</strong>
                     <ul>
                         <li>
-                            <Link href='#'>Sign in</Link>
+                            <Link href='#'></Link>
                         </li>
                         <li>
-                            <Link href='#'>Sign up</Link>
+                            <Link href='#'></Link>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <strong className={styles.columnHeading}>Curious</strong>
+                    <strong className={styles.columnHeading}>Uputstva</strong>
                     <ul>
                         <li>
-                            <Link href='#'>Blog</Link>
+                            <Link href='#'></Link>
                         </li>
                         <li>
-                            <Link href='#'>Community</Link>
+                            <Link href='#'></Link>
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <strong className={styles.columnHeading}>Partner</strong>
+                    <strong className={styles.columnHeading}>Kontakt</strong>
                     <ul>
                         <li>
-                            <Link href='#'>Affiliate</Link>
+                            <Link href='#'></Link>
                         </li>
                     </ul>
                 </div>
@@ -106,7 +106,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div>
-                    <p>© 2023 PoolPlanner</p>
+                    <p>© 2023 bucha.rs</p>
                 </div>
             </div>
         </div>

@@ -29,10 +29,7 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div>
-                    <MainButton buttonText='Get free trial' link='#' />
-                    <div className={styles.marginLeft}>
-                        <Link href='#'>Sign in</Link>
-                    </div>
+                    <MainButton buttonText='Ponovite se kombuhu' link='#' color={'black'} />
                 </div>
             </div>
         </div>
