@@ -1,11 +1,11 @@
 # bucha
 ![Front](https://github.com/UPocek/bucha/blob/master/docs/bucha_logo.png)
 
-## Projekat bucha Epizoda 1
+## [Projekat bucha Epizoda 1](https://youtu.be/pLSsSwUuUfQ)
 
 - Upoznajte se sa Kombuhom
 - [Postavljanje oglasa za prodaju na KupujemProdajem](https://novi.kupujemprodajem.com/poljoprivreda/seme-i-sadnice/kombuha-kombucha-scoby-cajna-gljiva/oglas/156541277?filterId=1923598108)
-- 
+- Razvojni plan
 
 ## Projekat bucha Epizoda 2
 
@@ -23,5 +23,11 @@
 - Izrada web sajta
 
 
+-Izrada promotinog sadržaja
 
-- 
+<img src="https://github.com/UPocek/bucha/blob/master/docs/kombuha3_5.jpg" width="49%"></img>
+<img src="https://github.com/UPocek/bucha/blob/master/docs/kombuha3_2.jpg" width="49%"></img>
+<img src="https://github.com/UPocek/bucha/blob/master/docs/kombuha3_3.jpg" width="49%"></img>
+<img src="https://github.com/UPocek/bucha/blob/master/docs/kombuha3_1.jpg" width="49%"></img>
+
+- Kreiranje prvih 9 postova na društvenim mrežama
