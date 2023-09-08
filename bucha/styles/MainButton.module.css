@@ -1,7 +1,4 @@
-.btn {
-    background-color: var(--Accent);
-    border: 1px solid var(--Accent);
-    color: var(--BG) !important;
+.btn>span {
     align-items: center;
     border-radius: 50px;
     display: inline-flex;
@@ -16,7 +13,23 @@
     transition: background-color .2s ease-in-out, color .2s ease-in-out;
 }
 
-.btn:hover {
+.btnBlack>span {
+    background-color: var(--Accent);
+    border: 1px solid var(--Accent);
+    color: var(--BG);
+}
+
+.btnWhite>span {
+    background-color: none;
+    border: 1px solid var(--BG);
+    color: var(--BG);
+}
+
+.btnBlack>span:hover {
     background-color: var(--BG);
-    color: var(--AccentDark);
+    color: var(--Accent);
+}
+
+.btnWhite>span:hover {
+    background-color: rgba(0, 0, 0, .2);
 }
