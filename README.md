@@ -7,8 +7,8 @@
 ![Figma](https://github.com/UPocek/bucha/blob/master/docs/figma.png)
 
 - Izrada logoa i brend identiteta
-<img src="https://github.com/tamarailic/cruise/blob/main/docs/assets/images/Screenshot_20230203_002950.png" width="50%"></img>
-<img src="https://github.com/tamarailic/cruise/blob/main/docs/assets/images/Screenshot_20230203_003040.png" width="50%"></img>
-<img src="https://github.com/tamarailic/cruise/blob/main/docs/assets/images/Screenshot_20230203_004159.png" width="50%"></img>
-<img src="https://github.com/tamarailic/cruise/blob/main/docs/assets/images/Screenshot_20230203_003957.png" width="50%"></img>
+<img src="https://github.com/UPocek/bucha/blob/master/docs/card1.png" width="49%"></img>
+<img src="https://github.com/UPocek/bucha/blob/master/docs/card2.png" width="49%"></img>
+<img src="https://github.com/UPocek/bucha/blob/master/docs/card3.png" width="49%"></img>
+<img src="https://github.com/UPocek/bucha/blob/master/docs/card4.png" width="49%"></img>
 - 
