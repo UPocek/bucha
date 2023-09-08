@@ -1,0 +1,22 @@
+.btn {
+    background-color: var(--Accent);
+    border: 1px solid var(--Accent);
+    color: var(--BG) !important;
+    align-items: center;
+    border-radius: 50px;
+    display: inline-flex;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 20px;
+    min-width: 68px;
+    padding: 11px 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--BG);
+    color: var(--AccentDark);
+}
