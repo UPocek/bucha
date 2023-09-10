@@ -2,6 +2,7 @@ import styles from '@/styles/GridCard.module.css'
 import Image from 'next/image'
 import MainButton from './MainButton'
 import { useEffect, useState } from 'react';
+import MainButtonExternal from './MainButtonExternal';
 
 export default function GridCard({ title, text, buttons, bgColor, lightBgColor, order, imgs }) {
     const [screenWidth, setScreenWidth] = useState(1920);
@@ -25,9 +26,12 @@ export default function GridCard({ title, text, buttons, bgColor, lightBgColor, 
                         <h1>{title}</h1>
                         <p>{text}</p>
                         <div className={styles.buttons}>
-                            {buttons.map(button => <MainButton key={button['btnText']} buttonText={button['btnText']} link={button['btnUrl']} color={'blackOut'} />)}
+                            {buttons.map(button =>
+                                button['btnUrl'].startsWith('http') ?
+                                    <MainButtonExternal key={button['btnText']} buttonText={button['btnText']} link={button['btnUrl']} color={'blackOut'} /> :
+                                    <MainButton key={button['btnText']} buttonText={button['btnText']} link={button['btnUrl']} color={'blackOut'} />
+                            )}
                         </div>
-
                     </div>
                 </div>
             </div>
