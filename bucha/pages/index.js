@@ -8,6 +8,7 @@ import GridCard from '@/components/GridCard'
 import TeamSection from '@/components/TeamSection'
 import { useState, useEffect } from 'react'
 import NavbarMobile from '@/components/NavbarMobile'
+import VideoCard from '@/components/VideoCard'
 
 const arimo = Arimo({ subsets: ['latin'] })
 
@@ -30,6 +31,21 @@ export default function Home() {
       <main className={`${styles.main} ${arimo.className}`}>
         <div className={styles.content}>
           <div>
+            <VideoCard title={'Uputstvo za pripremu 🎓'}
+              text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
+              buttons={[{ 'btnText': 'Prva tura', 'btnUrl': '#' }, { 'btnText': 'Ukusi', 'btnUrl': '#' }]}
+              bgColor={'#3D5A80'}
+              lightBgColor={'#6d9ddb'}
+              order={1}
+              videoUrl={'/broll.mp4'} />
+            <Card title={'Nazdravite sa nama 🤩'}
+              text={'Isprobajte naše ukuse. Pa nam javite koji je vaš omiljeni.'}
+              buttons={[{ 'btnText': 'Poručite sada', 'btnUrl': '#' }]}
+              bgColor={'#B04A59'}
+              lightBgColor={'#B04A59'}
+              order={2}
+              imgUrl={'/images/kombuha2_2.jpg'}
+              imgAlt={'kombuha flasa'} />
             <Card title={'Setovi za pravljenje Kombuhe 🏁'}
               text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
               buttons={[{ 'btnText': 'Poručite sada', 'btnUrl': '#' }]}
@@ -39,23 +55,6 @@ export default function Home() {
               imgUrl={'/images/kombuha_set.png'}
               imgAlt={'kombuha set'}
             />
-
-            <Card title={'Nazdravite sa nama 🤩'}
-              text={'Isprobajte naše ukuse. Pa nam javite koji je vaš omiljeni.'}
-              buttons={[{ 'btnText': 'Poručite sada', 'btnUrl': '#' }]}
-              bgColor={'#B04A59'}
-              lightBgColor={'#B04A59'}
-              order={2}
-              imgUrl={'/images/kombuha2_2.jpg'}
-              imgAlt={'kombuha flasa'} />
-            <Card title={'Uputstvo za pripremu 🎓'}
-              text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
-              buttons={[{ 'btnText': 'Prva tura', 'btnUrl': '#' }, { 'btnText': 'Ukusi', 'btnUrl': '#' }]}
-              bgColor={'#3D5A80'}
-              lightBgColor={'#bbf2d1'}
-              order={1}
-              imgUrl={'/images/scoby.jpg'}
-              imgAlt={'kombuha set'} />
             <GridCard title={'Podelite sa nama Vaše iskustvo 🥳'}
               text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
               buttons={[{ 'btnText': 'Zapratite nas', 'btnUrl': '#' }]}

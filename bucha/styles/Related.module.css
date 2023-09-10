@@ -1,0 +1,20 @@
+.related {
+    padding: 8px 0px;
+    margin: 2rem 0px;
+    background-color: var(--Orange);
+    color: var(--BG);
+
+}
+
+.related>div {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.related p {
+    font-weight: 600;
+    font-size: 32px;
+}

@@ -8,6 +8,7 @@ import Step from '@/components/Step'
 import TeamSection from '@/components/TeamSection'
 import { useEffect, useState } from 'react'
 import NavbarMobile from '@/components/NavbarMobile'
+import Related from '@/components/Related'
 
 const arimo = Arimo({ subsets: ['latin'] })
 
@@ -37,6 +38,7 @@ export default function Instructions() {
                 <Step title={'Dodajte šećer'} number={'5'} text={'Naredni korak je da našem Scoby-u pripremimo hranu za narednih nedelju dana. Scoby se hrani šećerom iz čaja i koristi ga za fermentaciju, tako da u suštini nakon 7 dana gotovo sav šećer koji sada dodate će nestati. Potrebno je da u čaj sipate 60 grama šećera po litri Kombuhe koju pripremate, tako da ukoliko imate teglu od 4 litre biće vam potrebno 240 grama šećera. Koji šećer ćete koristiti je sve jedno. Crni i beli šećer su skroz okej, više je stvar kako ste vi navikli. Nakon što ste dodali šećer u teglu dobro ga promešajte da se potpuno rastvori.'} order={'1'} />
                 <Step title={'Dopunite teglu vodom'} number={'6'} text={'Sada dopunite teglu vodom skoro do vrha, ostavite malo mesta za Scoby-a, i sačekajte da se voda ohladi. Kako biste ubrzali ovaj proces voda koju dodajete treba da bude hladna. Nikako Scoby-a ne stavljajte u vruću vodu pošto ćete ga spržiti i on je na kraju krajeva malo ljigavo, ali na neki način drago, živo biće. Kada se voda ohladila na sobnu temperaturu prelazimo na naredni korak.'} order={'2'} />
                 <Step title={'Zagnjurite Scoby-a'} number={'7'} text={'Za kraj treba da dodate glavnog glumca ove predstave. Takođe uz samu gljivu u našem setu ste dobili i “starter” tečnost koju takođe u potpunosti treba da sipate u teglu, ona je zadužena da započne ceo proces fermentacije, obezbedi odgovarajuću ph vrednost čaja i bez nje vaš Scoby može da ..., kako da to kažem na lep način ... ode na produženi odmor. Takođe u svakoj narednoj turi, ostavite malo Kombuha baze sa strane pa kao i sada dodajte je na kraju uz samu gljivu u čaj. Još jedan topli savet je da pre svake ture, malo u mlakoj vodi propereta Scoby-a. Higijena je kod Kombuhe najvažnija stvar i uvek obratite pažnju da sa Scoby-em rukujete sa čisim rukama. Ovo je gljiva i pojava sluzi, neprijatnih mirisa, mrkih fleka ili novih delova je skroz normalna. Jedino što treba da vas zabrine je pojava plavih tačkica ili buđi, u tom slučaju ih što pre otkloniti ili cela Kombuha može propasti. Ukoliko ste uspešno ispratili sve korake do sada ostaje vam samo da ste pozdravite sa Scoby-em do sledeće nedelje, da teglu odložite na mračno i suvo mesto i da ga ne pomerate previše. Znamo da je zanimljivo da svaki dan obilazite i pratite kako vaša mala fabrika napreduje, ali pazite da time na poremetite njen rad. To je to, sada ste zvanično Kombuha majstori.'} order={'1'} />
+                <Related />
                 <TeamSection />
             </main>
             <Footer />
