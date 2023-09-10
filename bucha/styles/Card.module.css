@@ -53,6 +53,10 @@
     gap: 1rem;
 }
 
+.first {
+    margin-top: 6.5rem;
+}
+
 @media (max-width:1400px) {
     .right h1 {
         font-size: 40px;
