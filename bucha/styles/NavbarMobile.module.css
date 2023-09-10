@@ -68,17 +68,22 @@
 }
 
 .drawer>ul {
+    margin-top: 2rem;
     list-style: none;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
 }
 
+.drawer>ul>li {
+    margin: 1rem 0;
+}
+
 .drawer>ul>li>a {
     text-decoration: none;
     color: var(--Accent);
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
 }
 
