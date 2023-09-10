@@ -21,7 +21,7 @@ export default function Navbar() {
                             <Link href='#'>KOMBUHA</Link>
                         </li>
                         <li>
-                            <Link href='#'>UPUTSTVO</Link>
+                            <Link href='/uputstva/priprema-kombuhe'>UPUTSTVO</Link>
                         </li>
                         <li>
                             <Link href='#'>MREŽE</Link>

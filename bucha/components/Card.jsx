@@ -14,7 +14,7 @@ export default function Card({ title, text, buttons, bgColor, lightBgColor, orde
         <div className={styles.card}>
             <div className={styles.container} style={{ background: bgColor }}>
                 <div className={`${styles.left} ${order == 1 ? styles.order1 : styles.order2}`} style={{ background: lightBgColor }}>
-                    <Image src={imgUrl} width={screenWidth > 1400 ? 720 : (screenWidth > 1200 ? 540 : 432)} height={screenWidth > 1400 ? 625 : (screenWidth > 1200 ? 468.75 : 375)} alt={imgAlt} />
+                    <Image src={imgUrl} width={screenWidth > 1400 ? 720 : (screenWidth > 1200 ? 691 : (screenWidth > 720 ? 720 : 390))} height={screenWidth > 1400 ? 625 : (screenWidth > 1200 ? 599.83 : (screenWidth > 720 ? 625 : 338.54))} alt={imgAlt} />
                 </div>
                 <div className={`${styles.right} ${order == 1 ? styles.order2 : styles.order1}`}>
                     <div>

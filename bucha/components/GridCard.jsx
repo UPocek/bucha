@@ -16,7 +16,7 @@ export default function GridCard({ title, text, buttons, bgColor, lightBgColor, 
                 <div className={`${styles.left} ${order == 1 ? styles.order1 : styles.order2}`} style={{ background: lightBgColor }}>
                     <div className={styles.grid}>
                         {imgs.map(img => <div key={img['url']}>
-                            <Image src={img['url']} width={screenWidth > 1400 ? 306 : (screenWidth > 1200 ? 540 : 432)} height={screenWidth > 1400 ? 280 : (screenWidth > 1200 ? 468.75 : 375)} alt={img['alt']} />
+                            <Image src={img['url']} width={screenWidth > 1400 ? 306 : (screenWidth > 1200 ? 294 : (screenWidth > 720 ? 306 : 159))} height={screenWidth > 1400 ? 280 : (screenWidth > 1200 ? 269.23 : (screenWidth > 720 ? 306 : 145.87))} alt={img['alt']} />
                         </div>)}
                     </div>
                 </div>

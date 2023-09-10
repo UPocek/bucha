@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Arimo } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/Navbar'
@@ -7,10 +6,18 @@ import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import GridCard from '@/components/GridCard'
 import TeamSection from '@/components/TeamSection'
+import { useState, useEffect } from 'react'
+import NavbarMobile from '@/components/NavbarMobile'
 
 const arimo = Arimo({ subsets: ['latin'] })
 
 export default function Home() {
+  const [screenWidth, setScreenWidth] = useState(1920);
+
+  useEffect(() => {
+    window && setScreenWidth(window.innerWidth);
+  }, []);
+
   return (
     <>
       <Head>
@@ -19,7 +26,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
+      {screenWidth > 945 ? <Navbar /> : <NavbarMobile />}
       <main className={`${styles.main} ${arimo.className}`}>
         <div className={styles.content}>
           <div>
