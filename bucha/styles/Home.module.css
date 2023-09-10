@@ -1,3 +1,9 @@
 .main {
   padding: 1% 0;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 9.5rem;
+}

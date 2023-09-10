@@ -2,12 +2,11 @@
     max-width: 1440px;
     padding-left: 0;
     padding-right: 0;
-    margin: 3.2rem auto;
+    margin: 2rem auto;
 }
 
 .container {
     display: flex;
-    border-radius: 8px;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
     color: var(--BG);
 }
@@ -47,6 +46,13 @@
     font-weight: 400;
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 @media (max-width:1400px) {
     .right h1 {
         font-size: 40px;
@@ -61,6 +67,10 @@
 
     .card {
         max-width: 800px;
+    }
+
+    .left>img {
+        overflow: hidden;
     }
 
     .right h1 {
@@ -82,7 +92,6 @@
     .right,
     .left {
         width: auto;
-        padding: 3.2rem 1.6rem;
     }
 
     .right h1 {

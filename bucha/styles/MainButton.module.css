@@ -19,7 +19,12 @@
     color: var(--BG);
 }
 
-.btnWhite>span {
+.btnBlackOut>span {
+    border: 1px solid var(--Accent);
+    color: var(--Accent);
+}
+
+.btnWhiteOut>span {
     background-color: none;
     border: 1px solid var(--BG);
     color: var(--BG);
@@ -30,6 +35,41 @@
     color: var(--Accent);
 }
 
-.btnWhite>span:hover {
+.btnWhite,
+.btnBlackOut>span:hover {
     background-color: rgba(0, 0, 0, .2);
+}
+
+@media (max-width:1020px) {
+    .btn>span {
+        align-items: center;
+        border-radius: 50px;
+        display: inline-flex;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 8px 10px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    }
+
+}
+
+@media (max-width:769px) {
+    .btn>span {
+        align-items: center;
+        border-radius: 20px;
+        display: inline-flex;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 8px 10px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    }
+
 }
