@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --Accent: #171321;
+  --LightGray: #DDD;
+  --BG: #FCFCFC;
+  --NoteGray: #74717a;
+  --NoFocus: rgba(51, 51, 51, 0.40);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arimo', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 1rem;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}

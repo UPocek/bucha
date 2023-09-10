@@ -1,0 +1,122 @@
+.footerOuter {
+    background-color: var(--Accent);
+    padding: 40px 16px;
+    color: #fff;
+    width: 100%;
+}
+
+.footerContent {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.footerContent strong {
+    color: var(--BG);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.upperSection {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.upperSection ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.upperSection li {
+    margin: 10px 0;
+}
+
+.upperSection a {
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fff;
+    margin: 0;
+}
+
+.upperSection a:hover {
+    text-decoration: underline;
+}
+
+.columnHeading {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 16px;
+}
+
+.lowerSection {
+    display: flex;
+    flex-direction: column;
+    padding-top: 64px;
+}
+
+.lowerSection p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.topLowerSec {
+    align-items: baseline;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+}
+
+.language {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.social {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    align-items: center;
+    display: flex;
+    gap: 15px;
+}
+
+.social a {
+    cursor: pointer;
+}
+
+@media(max-width:769px) {
+    .upperSection {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem
+    }
+
+    .upperSection>div {
+        text-align: center;
+    }
+
+    .upperSection a {
+        cursor: pointer;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 20px;
+        color: #fff;
+        margin: 0;
+    }
+
+}
