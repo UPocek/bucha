@@ -1,16 +1,21 @@
-.btn>span {
+.btn {
+    display: flex;
     align-items: center;
-    border-radius: 50px;
-    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+.btn>span {
     font-size: 18px;
     font-weight: 600;
     line-height: 20px;
-    min-width: 68px;
-    padding: 11px 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
     transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    padding: 11px 16px;
+    border-radius: 50px;
+    min-width: 68px;
+    text-decoration: none;
 }
 
 .btnBlack>span {
@@ -35,41 +40,19 @@
     color: var(--Accent);
 }
 
-.btnWhite,
+.btnWhiteOut>span:hover,
 .btnBlackOut>span:hover {
     background-color: rgba(0, 0, 0, .2);
 }
 
 @media (max-width:1020px) {
     .btn>span {
-        align-items: center;
-        border-radius: 50px;
-        display: inline-flex;
         font-size: 14px;
-        font-weight: 600;
-        line-height: 20px;
-        padding: 8px 10px;
-        text-align: center;
-        text-decoration: none;
-        cursor: pointer;
-        transition: background-color .2s ease-in-out, color .2s ease-in-out;
     }
-
 }
 
 @media (max-width:769px) {
     .btn>span {
-        align-items: center;
-        border-radius: 20px;
-        display: inline-flex;
         font-size: 12px;
-        font-weight: 600;
-        line-height: 20px;
-        padding: 8px 10px;
-        text-align: center;
-        text-decoration: none;
-        cursor: pointer;
-        transition: background-color .2s ease-in-out, color .2s ease-in-out;
     }
-
 }

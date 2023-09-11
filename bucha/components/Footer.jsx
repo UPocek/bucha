@@ -86,24 +86,24 @@ export default function Footer() {
                     <div>
                         <ul className={styles.social}>
                             <li>
-                                <Link href='#'>
+                                <a href='https://twitter.com/rs_bucha' target="_blank">
                                     <Image src={'/images/x.png'} width={24} height={24} alt='x icon' />
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link href='#'>
+                                <a href='https://www.facebook.com/kombuha.bucha.rs/' target="_blank">
                                     <Image src={'/images/facebook.png'} width={24} height={24} alt='facebook icon' />
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link href='#'>
+                                <a href='https://www.youtube.com/@bucha_rs' target="_blank">
                                     <Image src={'/images/youtube.png'} width={24} height={24} alt='youtube icon' />
-                                </Link>
+                                </a>
                             </li>
                             <li>
-                                <Link href='#'>
+                                <a href='#'>
                                     <Image src={'/images/linkedin.png'} width={24} height={24} alt='linkedin icon' />
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                     </div>

@@ -1,7 +1,6 @@
 import styles from '@/styles/NavbarMobile.module.css'
 import Link from 'next/link'
 import Image from 'next/image'
-import MainButton from './MainButton'
 import { useState } from 'react'
 
 export default function NavbarMobile() {
