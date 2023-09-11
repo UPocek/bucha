@@ -99,24 +99,12 @@
 @media(max-width:769px) {
     .upperSection {
         align-items: center;
-        display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 0.5rem
+        gap: 2rem
     }
 
     .upperSection>div {
         text-align: center;
     }
-
-    .upperSection a {
-        cursor: pointer;
-        text-decoration: none;
-        font-size: 14px;
-        line-height: 20px;
-        color: #fff;
-        margin: 0;
-    }
-
 }

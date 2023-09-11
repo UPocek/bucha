@@ -12,14 +12,13 @@ export default function TeamSection() {
     return <div className={styles.section}>
         <div className={styles.container}>
             <div className={screenWidth > 769 ? styles.order1 : styles.order2}>
-                <Image src={'/images/bucha_team.png'} width={screenWidth > 1580 ? 500 : 300} height={screenWidth > 1580 ? 500 : 300} alt="team picture" />
-
+                <Image src={'/images/bucha_team.png'} width={screenWidth > 1580 ? 400 : 300} height={screenWidth > 1580 ? 400 : 300} alt="team picture" />
             </div>
             <div className={screenWidth > 769 ? styles.order2 : styles.order1}>
                 <div className={styles.title}>
                     <h2>Hejj, ovo je tima iza</h2>
                     <div>
-                        <Image src={'/images/bucha_logo.png'} width={screenWidth > 1580 ? 215.378 : (screenWidth > 769 ? 107.689 : 215.378)} height={screenWidth > 1580 ? 60 : (screenWidth > 769 ? 30 : 60)} alt="bucha logo" />
+                        <Image src={'/images/bucha_logo.png'} width={screenWidth > 1580 ? 215.378 : (screenWidth > 769 ? 161.534 : 215.378)} height={screenWidth > 1580 ? 60 : (screenWidth > 769 ? 45 : 60)} alt="bucha logo" />
                     </div>
                 </div>
                 <div>
