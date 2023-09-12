@@ -41,3 +41,9 @@
 .form .err {
     color: red;
 }
+
+@media (max-width: 768px) {
+    .mainButton {
+        font-size: 18px;
+    }
+}
