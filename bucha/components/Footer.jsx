@@ -27,15 +27,6 @@ export default function Footer() {
                         <li>
                             <Link href='/setovi'>Svi setovi</Link>
                         </li>
-                        <li>
-                            <Link href='#'></Link>
-                        </li>
-                        <li>
-                            <Link href='#'></Link>
-                        </li>
-                        <li>
-                            <Link href='#'></Link>
-                        </li>
                     </ul>
                 </div>
                 <div>
@@ -83,7 +74,7 @@ export default function Footer() {
                         </div>
                         <label htmlFor="language">Jezik:</label>
                         <select id="language" name="language" value="english" onChange={changeLanguage}>
-                            <option value="english">Engleski</option>
+                            <option value="english">Srpski</option>
                         </select>
                     </div>
                     <div>
