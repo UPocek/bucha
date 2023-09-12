@@ -33,7 +33,7 @@ export default function Home() {
               videoUrl={'/broll.mp4'} />
             <Card title={'Nazdravite sa nama 🤩'}
               text={'Isprobajte naše ukuse. Pa nam javite koji je vaš omiljeni.'}
-              buttons={[{ 'btnText': 'Poručite sada', 'btnUrl': '#' }]}
+              buttons={[{ 'btnText': 'Poručite sada', 'btnUrl': '/kombuha' }]}
               bgColor={'#B04A59'}
               lightBgColor={'#B04A59'}
               order={2}
@@ -41,7 +41,7 @@ export default function Home() {
               imgAlt={'kombuha flasa'} />
             <Card title={'Setovi za pravljenje Kombuhe 🏁'}
               text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
-              buttons={[{ 'btnText': 'Poručite sada', 'btnUrl': '#' }]}
+              buttons={[{ 'btnText': 'Poručite sada', 'btnUrl': '/setovi' }]}
               bgColor={'#036141'}
               lightBgColor={'#bbf2d1'}
               order={1}
