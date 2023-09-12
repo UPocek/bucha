@@ -42,6 +42,10 @@
     color: red;
 }
 
+.form .ok {
+    color: green;
+}
+
 @media (max-width: 768px) {
     .mainButton {
         font-size: 18px;
