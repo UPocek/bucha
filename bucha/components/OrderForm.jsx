@@ -10,6 +10,7 @@ export default function OrderForm() {
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
     const [orderConfirmed, setOrderConfirmed] = useState(false);
+    const [orderError, setOrderError] = useState(false);
 
     function processOrder(e) {
         e.preventDefault();
@@ -18,8 +19,8 @@ export default function OrderForm() {
             return;
         }
         axios.post(`${baseUrl}/api`)
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
+            .then(response => { console.log(response); setOrderError(false); setOrderConfirmed(true) })
+            .catch(error => { console.log(error); setOrderError(true); setOrderConfirmed(false); });
     }
 
     function credentialsValid() {
@@ -44,7 +45,9 @@ export default function OrderForm() {
                 <label htmlFor="phone">Adresa isporuke</label>
                 <input type="text" id="phone" name="phone" value={address} onChange={(e) => setAddress(e.currentTarget.value)} />
             </div>
-            <button type="submit"> <span>Poručite</span> </button>
+            <button className={styles.mainButton} type="submit"> <span>Poručite</span> </button>
+            {orderConfirmed ? <p className={styles.err}>Porudžbina nije uspešno kreirana. Pokušajte ponovo malo kasnije!</p> : <></>}
+            {orderError ? <p className={styles.err}>Porudžbina nije uspešno kreirana. Pokušajte ponovo malo kasnije!</p> : <></>}
         </form>
     );
 }

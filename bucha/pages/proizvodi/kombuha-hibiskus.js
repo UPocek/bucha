@@ -31,7 +31,7 @@ export default function Product() {
                             </div>
                             <div>
                                 <h1>{productName}</h1>
-                                {productDescription.map(description => <p>{description}</p>)}
+                                {productDescription.map(description => <p key={description}>{description}</p>)}
                                 <p className={styles.price}>{productPrice}</p>
                                 <OrderForm product={productName} />
                             </div>
