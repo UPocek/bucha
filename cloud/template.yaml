@@ -1,0 +1,94 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  bucha.rs
+
+Parameters:
+  OrdersTableName:
+    Type: String
+    Default: OrdersTable
+
+Globals:
+  Function:
+    Timeout: 29
+    MemorySize: 128
+    Runtime: python3.9
+    Architectures:
+      - x86_64
+    Environment:
+      Variables:
+        ORDER_TABLE: !Ref OrdersTableName
+
+Resources:
+  ApiGatewayApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: Prod
+      CorsConfiguration:
+        AllowMethods:
+          - '*'
+        AllowOrigins:
+          - '*'
+        AllowHeaders:
+          - '*'
+
+  OrdersDynamoDBTable:
+    Type: AWS::DynamoDB::Table
+    Properties: 
+      TableName: !Ref OrdersTableName
+      AttributeDefinitions: 
+        - AttributeName: id
+          AttributeType: S
+      KeySchema: 
+        - AttributeName: id
+          KeyType: HASH
+      BillingMode: PAY_PER_REQUEST
+
+  NewOrderSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+        - Protocol: lambda
+          Endpoint: !GetAtt SendEmailFunction.Arn
+
+  SendEmailFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: send_email/
+      Handler: app.lambda_handler
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonSESFullAccess
+  
+  TopicConsumerFunctionPermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName: !Ref SendEmailFunction
+      Principal: sns.amazonaws.com
+
+  ProcessOrderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: process_order/
+      Handler: app.lambda_handler
+      Environment:
+        Variables:
+          ORDERS_TOPIC: !Ref NewOrderSNSTopic
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonDynamoDBFullAccess
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt NewOrderSNSTopic.TopicName
+      Events:
+        ApiGateway:
+          Type: HttpApi
+          Properties:
+            Path: /api/order
+            Method: post
+            ApiId: !Ref ApiGatewayApi
+  
+Outputs:
+  ApiEndpoint:
+    Description: "API Gateway endpoint URL for Prod stage"
+    Value: !Sub "https://${ApiGatewayApi}.execute-api.${AWS::Region}.amazonaws.com/Prod"
