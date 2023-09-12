@@ -11,10 +11,18 @@ export default function Setovi() {
     return (
         <>
             <Head>
-                <title>Kombuha druga fermentacija</title>
-                <meta name="description" content="Kombuha čajna gljiva druga fermentacija i pravljenje ukusa od kombuhe." />
+                <title>Setovi Za Pripremu Kombuhe Kod Kuće</title>
+                <meta name="description" content="Prodaja setova za pravljenje kombuha čaja u vašem domu, sve što vam je potrebno da počnete da pravite svoju kombuchu bogatu probijoticima za početnike" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
+                <meta charset="utf-8" />
+                <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
+                <meta name="geo.region" content="RS" />
+                <meta property="og:title" content="Setovi Za Pripremu Kombuhe Kod Kuće" />
+                <meta property="og:type" content="website" />
+                <meta property="og:description" content="Prodaja setova za pripremu kombuha čaja u vašem domu, sve što vam je potrebno da počnete da pravite svoju kombuchu bogatu probijoticima za početnike" />
+                <meta property="og:url" content="https://www.bucha.rs/setovi" />
+                <meta property="og:site_name" content="bucha.rs" />
             </Head>
             <NavWrapper />
             <main className={`${styles.main} ${arimo.className}`}>

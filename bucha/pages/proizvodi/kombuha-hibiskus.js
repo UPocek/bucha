@@ -16,10 +16,18 @@ export default function Product() {
     return (
         <>
             <Head>
-                <title>Kombuha Hibiskus Prodaja</title>
-                <meta name="description" content="Kombuha hibiskus prodaja" />
+                <title>Kombuha Ukus Hibiskus 0.5l</title>
+                <meta name="description" content="Poručite kombuhu sa ukusom hibiskusa online i mi je dostavljamo na vašu adresu. Zdravi napitak kombucha je lagano, gazirano piće koje pruža zadovoljstvo ukusa" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
+                <meta charset="utf-8" />
+                <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
+                <meta name="geo.region" content="RS" />
+                <meta property="og:title" content="Kombuha Ukus Hibiskus 0.5l" />
+                <meta property="og:type" content="website" />
+                <meta property="og:description" content="Poručite kombuhu sa ukusom hibiskusa online i mi je dostavljamo na vašu adresu. Zdravi napitak kombucha je lagano, gazirano piće koje pruža zadovoljstvo ukusa" />
+                <meta property="og:url" content="https://www.bucha.rs/kombuha-hibiskus" />
+                <meta property="og:site_name" content="bucha.rs" />
             </Head>
             <Navbar />
             <main className={`${styles.main} ${arimo.className}`}>

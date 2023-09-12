@@ -16,10 +16,18 @@ export default function Product() {
     return (
         <>
             <Head>
-                <title>Kombuha scoby čajna gljiva prodaja</title>
-                <meta name="description" content="Kombuha čajna gljiva druga fermentacija i pravljenje ukusa od kombuhe." />
+                <title>Kombuha Scoby Čajna Gljiva Prodaja</title>
+                <meta name="description" content="Prodaja kombuha čajne gljive po najboljoj ceni u Srbiji. Simbiotska kultura bakterije i kvasca Scobi (Scoby) za pripremu fermentisanog kombuha čaja kod kuće." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
+                <meta charset="utf-8" />
+                <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
+                <meta name="geo.region" content="RS" />
+                <meta property="og:title" content="Kombuha Scoby Čajna Gljiva Prodaja" />
+                <meta property="og:type" content="website" />
+                <meta property="og:description" content="Prodaja kombuha čajne gljive po najboljoj ceni u Srbiji. Simbiotska kultura bakterije i kvasca Scobi (Scoby) za pripremu fermentisanog kombuha čaja kod kuće." />
+                <meta property="og:url" content="https://www.bucha.rs/kombuha-scoby-cajna-gljiva" />
+                <meta property="og:site_name" content="bucha.rs" />
             </Head>
             <Navbar />
             <main className={`${styles.main} ${arimo.className}`}>

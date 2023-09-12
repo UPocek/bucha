@@ -19,6 +19,15 @@ export default function Home() {
         <meta name="description" content="Novi sajt u Srbiji za prodaju kombuha, kombucha scoby čajne gljive i setova za pripremu kombuhe kod kuće. Poručite svoju kombuhu već danas bucha.rs" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <meta charset="utf-8" />
+        <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
+        <meta name="geo.region" content="RS" />
+        <meta property="og:title" content="Kombuha (Kombucha) čajna gljiva - bucha.rs" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description"
+          content="Novi sajt u Srbiji za prodaju kombuha, kombucha scoby čajne gljive i setova za pripremu kombuhe kod kuće. Poručite svoju kombuhu već danas bucha.rs" />
+        <meta property="og:url" content="https://www.bucha.rs/" />
+        <meta property="og:site_name" content="Kombuha (Kombucha) čajna gljiva - bucha.rs" />
       </Head>
       <Navbar />
       <main className={`${styles.main} ${arimo.className}`}>
