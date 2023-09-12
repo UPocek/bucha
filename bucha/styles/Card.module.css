@@ -106,4 +106,8 @@
         font-size: 22px;
         line-height: 1.4;
     }
+
+    .first {
+        margin-top: 6.5rem;
+    }
 }
