@@ -1,24 +1,16 @@
 import Head from 'next/head'
 import { Arimo } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import InstructionsIntro from '@/components/InstructionsIntro'
 import Step from '@/components/Step'
 import TeamSection from '@/components/TeamSection'
-import { useEffect, useState } from 'react'
-import NavbarMobile from '@/components/NavbarMobile'
 import Related from '@/components/Related'
+import Navbar from '@/components/Navbar'
 
 const arimo = Arimo({ subsets: ['latin'] })
 
 export default function Instructions() {
-    const [screenWidth, setScreenWidth] = useState(1920);
-
-    useEffect(() => {
-        window && setScreenWidth(window.innerWidth);
-    }, []);
-
     return (
         <>
             <Head>
@@ -27,7 +19,7 @@ export default function Instructions() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            {screenWidth > 945 ? <Navbar /> : <NavbarMobile />}
+            <Navbar />
             <main className={`${styles.main} ${arimo.className}`}>
                 <InstructionsIntro title={'Kombuha uputstvo za pripremu'} text1={'Ovo uputstvo obuhvata detaljno opisane sve korake  kako da od tek otpakovanog Scoby-a (čajne gljive koju ste kupili) dođete do Vaše prve nadamo se ukusne Kombuhe. Tako da ukoliko još uvek nemate vašu specijalnu gljivu, prvo je poručite preko linka'} link={'#'}
                     linkText={' poručite kombuhu '} text2={'pa se vratite na ovo uputstvo, ono neće otići nigde. E super, sada još osmeh na lice i imate sve što vam je potrebo da vaša Kombuha uspe odlično, pošto je ovo zaista jednostavan proces i vrlo brzo ćete se uhodati. Spremni? Krećemo! 🥳'} />

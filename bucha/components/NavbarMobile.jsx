@@ -20,7 +20,7 @@ export default function NavbarMobile() {
                     className={`${styles.line} ${styles.bottom}`}
                     d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
             </svg>
-            <Link href='../'>
+            <Link href='/'>
                 <div className={styles.icon}>
                     <Image src={'/images/bucha_logo.png'} width={171} height={47.25} alt='bucha icon' />
                 </div>
@@ -29,16 +29,16 @@ export default function NavbarMobile() {
         <div className={`${styles.drawer} ${active ? styles.active : ''}`}>
             <ul>
                 <li>
-                    <Link href='#'>SETOVI</Link>
+                    <Link href='/setovi'>SETOVI</Link>
                 </li>
                 <li>
-                    <Link href='#'>KOMBUHA</Link>
+                    <Link href='/kombuha'>KOMBUHA</Link>
                 </li>
                 <li>
                     <Link href='/uputstva/priprema-kombuhe'>UPUTSTVO</Link>
                 </li>
                 <li>
-                    <Link href='#'>MREŽE</Link>
+                    <Link href='https://www.instagram.com/bucha.rs/'>MREŽE</Link>
                 </li>
             </ul>
         </div>

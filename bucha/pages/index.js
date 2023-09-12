@@ -1,23 +1,16 @@
 import Head from 'next/head'
 import { Arimo } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Card from '@/components/Card'
 import GridCard from '@/components/GridCard'
 import TeamSection from '@/components/TeamSection'
-import { useState, useEffect } from 'react'
-import NavbarMobile from '@/components/NavbarMobile'
 import VideoCard from '@/components/VideoCard'
+import Navbar from '@/components/Navbar'
 
 const arimo = Arimo({ subsets: ['latin'] })
 
 export default function Home() {
-  const [screenWidth, setScreenWidth] = useState(1920);
-
-  useEffect(() => {
-    window && setScreenWidth(window.innerWidth);
-  }, []);
 
   return (
     <>
@@ -27,7 +20,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {screenWidth > 945 ? <Navbar /> : <NavbarMobile />}
+      <Navbar />
       <main className={`${styles.main} ${arimo.className}`}>
         <div className={styles.content}>
           <div>
@@ -53,8 +46,7 @@ export default function Home() {
               lightBgColor={'#bbf2d1'}
               order={1}
               imgUrl={'/images/kombuha_set.png'}
-              imgAlt={'kombuha set'}
-            />
+              imgAlt={'kombuha set'} />
             <GridCard title={'Podelite sa nama Vaše iskustvo 🥳'}
               text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
               buttons={[{ 'btnText': 'Zapratite nas', 'btnUrl': 'https://www.instagram.com/bucha.rs/' }]}

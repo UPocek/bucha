@@ -1,10 +1,13 @@
 .btn {
     display: flex;
     align-items: center;
-    justify-content: center;
     text-align: center;
     cursor: pointer;
     text-decoration: none !important;
+}
+
+.btnCenter {
+    justify-content: center;
 }
 
 .btn>span {
@@ -16,6 +19,7 @@
     border-radius: 50px;
     min-width: 68px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btnBlack>span {

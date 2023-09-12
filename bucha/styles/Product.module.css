@@ -1,0 +1,87 @@
+.container {
+    margin-top: 3rem;
+}
+
+.container>div {
+    width: 90%;
+    margin: auto;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 150px;
+    margin-bottom: 200px;
+}
+
+.top h1 {
+    font-size: 50px;
+    letter-spacing: -.02em;
+    margin-bottom: 0.65em;
+    margin-left: -0.08em;
+    color: #312c2c;
+}
+
+.top p {
+    line-height: 1.66;
+    word-wrap: break-word;
+    margin-bottom: 1em;
+    color: #555;
+    font-size: 20px;
+}
+
+.top p.price {
+    font-size: 36px;
+    font-weight: 600;
+    color: #312c2c;
+    margin-bottom: 42px;
+}
+
+@media (max-width: 1400px) {
+    .container>div {
+        width: 95%;
+    }
+
+    .top {
+        gap: 50px;
+    }
+
+    .top h1 {
+        font-size: 42px;
+    }
+
+    .top p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1069px) {
+    .top {
+        flex-direction: column;
+        margin: 0 auto 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 7rem;
+    }
+
+    .top {
+        gap: 10px;
+    }
+
+    .top h1 {
+        font-size: 32px;
+    }
+
+    .top p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .top p.price {
+        font-size: 24px
+    }
+}

@@ -1,0 +1,21 @@
+.other {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.other img {
+    cursor: pointer;
+}
+
+@media (max-width:768px) {
+    .mainImage {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+}

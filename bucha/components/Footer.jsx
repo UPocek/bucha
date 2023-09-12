@@ -25,7 +25,7 @@ export default function Footer() {
                     <strong className={styles.columnHeading}>Setovi</strong>
                     <ul>
                         <li>
-                            <Link href='#'></Link>
+                            <Link href='/setovi'>Svi setovi</Link>
                         </li>
                         <li>
                             <Link href='#'></Link>
@@ -42,10 +42,10 @@ export default function Footer() {
                     <strong className={styles.columnHeading}>Kombuha</strong>
                     <ul>
                         <li>
-                            <Link href='#'></Link>
+                            <Link href='/kombuha'>Svi ukusi</Link>
                         </li>
                         <li>
-                            <Link href='#'></Link>
+                            <Link href='/proizvodi/kombuha-hibiskus'>Hibiskus</Link>
                         </li>
                     </ul>
                 </div>
@@ -59,7 +59,7 @@ export default function Footer() {
                             <Link href='/uputstva/druga-fermentacija'>Druga fermentacija i ukusi</Link>
                         </li>
                         <li>
-                            <Link href='#'>Kombuha blog</Link>
+                            <Link href='/blog'>Kombuha blog</Link>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +67,10 @@ export default function Footer() {
                     <strong className={styles.columnHeading}>Kontakt</strong>
                     <ul>
                         <li>
-                            <Link href='#'></Link>
+                            <a href="tel:063/427-280">063/427-280</a>
+                        </li>
+                        <li>
+                            <a href="tel:060/6337-280">060/6337-280</a>
                         </li>
                     </ul>
                 </div>
@@ -78,31 +81,31 @@ export default function Footer() {
                         <div>
                             <Image src={'/images/language.png'} width={24} height={24} alt='language icon' />
                         </div>
-                        <label htmlFor="language">Language:</label>
+                        <label htmlFor="language">Jezik:</label>
                         <select id="language" name="language" value="english" onChange={changeLanguage}>
-                            <option value="english">English</option>
+                            <option value="english">Engleski</option>
                         </select>
                     </div>
                     <div>
                         <ul className={styles.social}>
                             <li>
                                 <a href='https://twitter.com/rs_bucha' target="_blank">
-                                    <Image src={'/images/x.png'} width={24} height={24} alt='x icon' />
+                                    <Image src={'/images/x.png'} width={24} height={24} alt='bucha.rs x icon' />
                                 </a>
                             </li>
                             <li>
                                 <a href='https://www.facebook.com/kombuha.bucha.rs/' target="_blank">
-                                    <Image src={'/images/facebook.png'} width={24} height={24} alt='facebook icon' />
+                                    <Image src={'/images/facebook.png'} width={24} height={24} alt='bucha.rs facebook icon' />
                                 </a>
                             </li>
                             <li>
                                 <a href='https://www.youtube.com/@bucha_rs' target="_blank">
-                                    <Image src={'/images/youtube.png'} width={24} height={24} alt='youtube icon' />
+                                    <Image src={'/images/youtube.png'} width={24} height={24} alt='bucha.rs youtube icon' />
                                 </a>
                             </li>
                             <li>
-                                <a href='#'>
-                                    <Image src={'/images/linkedin.png'} width={24} height={24} alt='linkedin icon' />
+                                <a href='https://www.instagram.com/bucha.rs/'>
+                                    <Image src={'/images/instagram.png'} width={24} height={24} alt='bucha.rs instagram icon' />
                                 </a>
                             </li>
                         </ul>
@@ -113,6 +116,5 @@ export default function Footer() {
                 </div>
             </div>
         </div>
-
     </div>
 }

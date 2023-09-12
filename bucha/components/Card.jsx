@@ -23,7 +23,6 @@ export default function Card({ title, text, buttons, bgColor, lightBgColor, orde
                         <div className={styles.buttons}>
                             {buttons.map(button => <MainButton key={button['btnText']} buttonText={button['btnText']} link={button['btnUrl']} color={'whiteOut'} />)}
                         </div>
-
                     </div>
                 </div>
             </div>
