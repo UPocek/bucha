@@ -33,7 +33,7 @@ export default function Home() {
       <main className={`${styles.main} ${arimo.className}`}>
         <div className={styles.content}>
           <div>
-            <VideoCard title={'Uputstvo za pripremu 🎓'}
+            <VideoCard title={'Uputstvo za pripremu 📝'}
               text={'Pronađite sve što vam je potrebno da započnete svoju malu fabriku Kombuhe. Ukoliko ste početnik počnite odavde'}
               buttons={[{ 'btnText': 'Prva tura', 'btnUrl': '/uputstva/priprema-kombuhe' }, { 'btnText': 'Ukusi', 'btnUrl': '/uputstva/druga-fermentacija' }]}
               bgColor={'#3D5A80'}

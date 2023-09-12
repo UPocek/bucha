@@ -29,7 +29,7 @@ export default function NavbarDesktop() {
                     </ul>
                 </div>
                 <div>
-                    <MainButton buttonText='Ponovite se kombuhom' link='/setovi' color={'black'} />
+                    <MainButton buttonText='Poruči svoju kombuhu' link='/setovi' color={'black'} />
                 </div>
             </div>
         </div>
