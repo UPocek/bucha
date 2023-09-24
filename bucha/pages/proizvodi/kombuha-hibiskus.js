@@ -20,7 +20,7 @@ export default function Product() {
                 <meta name="description" content="Poručite kombuhu sa ukusom hibiskusa online i mi je dostavljamo na vašu adresu. Zdravi napitak kombucha je lagano, gazirano piće koje pruža zadovoljstvo ukusa" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
-                <meta charset="utf-8" />
+                <meta charSet="utf-8" />
                 <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
                 <meta name="geo.region" content="RS" />
                 <meta property="og:title" content="Kombuha Ukus Hibiskus 0.5l" />
