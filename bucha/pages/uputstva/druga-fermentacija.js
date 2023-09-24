@@ -18,7 +18,7 @@ export default function Instructions() {
                 <meta name="description" content="Detaljni recept za pravljenje kombuha čaja sa različitim ukusima voća. Druga fermentacija je proces kada kombuha napitak od čajne gljive dobija sjajan ukus." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
-                <meta charset="utf-8" />
+                <meta charSet="utf-8" />
                 <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
                 <meta name="geo.region" content="RS" />
                 <meta property="og:title" content="Kombuha druga fermentacija" />

@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
-export default function Step({ number, title, text, order, link, linkTxt }) {
+export default function Step({ number, title, text, order, link, linkTxt, image }) {
     const [screenWidth, setScreenWidth] = useState(1920);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ export default function Step({ number, title, text, order, link, linkTxt }) {
                 </div>
             </div>
             <div className={screenWidth > 769 ? (order == '1' ? styles.order2 : styles.order1) : styles.order2}>
-                <Image src={'/images/elipse.png'} width={screenWidth > 1580 ? 501 : 301} height={screenWidth > 1580 ? 501 : 301} alt="team picture" />
+                <Image src={image} width={screenWidth > 1580 ? 501 : 301} height={screenWidth > 1580 ? 501 : 301} alt={`Priprema kombuhe korak ${number}`} />
             </div>
         </div>
     </div>

@@ -15,7 +15,7 @@ export default function Setovi() {
                 <meta name="description" content="Prodaja setova za pravljenje kombuha čaja u vašem domu, sve što vam je potrebno da počnete da pravite svoju kombuchu bogatu probijoticima za početnike" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
-                <meta charset="utf-8" />
+                <meta charSet="utf-8" />
                 <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
                 <meta name="geo.region" content="RS" />
                 <meta property="og:title" content="Setovi Za Pripremu Kombuhe Kod Kuće" />

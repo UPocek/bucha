@@ -20,7 +20,7 @@ export default function Product() {
                 <meta name="description" content="Prodaja kombuha čajne gljive po najboljoj ceni u Srbiji. Simbiotska kultura bakterije i kvasca Scobi (Scoby) za pripremu fermentisanog kombuha čaja kod kuće." />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
-                <meta charset="utf-8" />
+                <meta charSet="utf-8" />
                 <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
                 <meta name="geo.region" content="RS" />
                 <meta property="og:title" content="Kombuha Scoby Čajna Gljiva Prodaja" />
