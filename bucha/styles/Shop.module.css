@@ -1,0 +1,98 @@
+.main {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 100px;
+}
+
+.main h1 {
+    font-size: 50px;
+    margin: 32px 0;
+}
+
+.productsGrid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 100px;
+}
+
+.productsGrid4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+}
+
+@media (max-width:1450px) {
+    .main {
+        width: 90%;
+    }
+}
+
+@media (max-width:1280px) {
+
+    .productsGrid4,
+    .productsGrid3 {
+        gap: 16px;
+    }
+}
+
+@media (max-width:1280px) {
+
+    .productsGrid4,
+    .productsGrid3 {
+        column-gap: 32px;
+        row-gap: 64px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width:1069px) {
+    .main {
+        margin-top: 2rem;
+    }
+}
+
+
+@media (max-width:900px) {
+    .main {
+        margin-top: 7rem;
+    }
+
+    .productsGrid4,
+    .productsGrid3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:769px) {
+    .main h1 {
+        font-size: 40px;
+    }
+
+    .productsGrid3 {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .productsGrid3>div {
+        margin: auto;
+    }
+}
+
+@media (max-width:600px) {
+
+    .productsGrid4,
+    .productsGrid3 {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width:450px) {
+    .main {
+        width: 90%;
+    }
+
+    .main h1 {
+        font-size: 32px;
+    }
+}

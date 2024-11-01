@@ -12,16 +12,20 @@ const arimo = Arimo({
     display: 'swap'
 });
 
-export default function Setovi() {
-    const title = "Setovi Za Pripremu Kombuhe Kod Kuće"
-    const description = "Prodaja setova za pravljenje kombuha čaja u vašem domu, sve što vam je potrebno da počnete da pravite svoju kombuchu bogatu probijoticima za početnike"
+export default function Shop() {
+    const title = "Prodaja Kombuhe Čajne Gljive Srbija"
+    const description = "Online prodaja organske kombuhe i SCOBY čajne gljive po najpovoljnijim cenama. Širok izbor probiotskih napitaka sa prirodnim ukusima. Brza isporuka u celoj Srbiji"
     const products = [
         {
             name: "Kombuha SCOBY čajna gljiva",
             price: 950
+        },
+        {
+            name: "Kombuha 0.5l - Hibiskus",
+            price: 650
         }
     ]
-    const canonicalUrl = "https://www.bucha.rs/kombuha";
+    const canonicalUrl = "https://www.bucha.rs/prodaja";
 
     return (
         <>
@@ -93,7 +97,7 @@ export default function Setovi() {
             </Head>
             <NavWrapper />
             <main role="main" className={`${styles.main} ${arimo.className}`}>
-                <h1>Setovi</h1>
+                <h1>Prodaja</h1>
                 <section className={styles.productsGrid4}>
                     {products.map(product => (
                         <ProductCard key={product.name} productName={product.name} productPrice={product.price} />

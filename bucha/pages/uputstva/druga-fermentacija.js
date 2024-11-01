@@ -1,34 +1,57 @@
 import Head from 'next/head'
 import { Arimo } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Footer from '@/components/Footer'
-import InstructionsIntro from '@/components/InstructionsIntro'
-import Step from '@/components/Step'
-import TeamSection from '@/components/TeamSection'
-import Navbar from '@/components/Navbar'
+import Footer from '@/components/footer/Footer'
+import InstructionsIntro from '@/components/tutorials/instructions-intro/InstructionsIntro'
+import Step from '@/components/tutorials/step/Step'
+import TeamSection from '@/components/footer/TeamSection'
+import Navbar from '@/components/nav/Navbar'
 
-const arimo = Arimo({ subsets: ['latin'] })
+const arimo = Arimo({
+    subsets: ['latin'],
+    display: 'swap'
+});
 
 export default function Instructions() {
-
+    const title = 'Kombuha druga fermentacija uputstvo za pripremu kombuhe'
+    const description = 'Detaljni recept za pravljenje kombuha čaja sa različitim ukusima voća. Druga fermentacija je proces kada kombuha napitak od čajne gljive dobija sjajan ukus.'
+    const canonicalUrl = `https://www.bucha.rs/uputstva/druga-fermentacija`
     return (
         <>
             <Head>
-                <title>Kombuha druga fermentacija uputstvo za pripremu kombuhe</title>
-                <meta name="description" content="Detaljni recept za pravljenje kombuha čaja sa različitim ukusima voća. Druga fermentacija je proces kada kombuha napitak od čajne gljive dobija sjajan ukus." />
+                {/* Basic Meta Tags */}
+                <title>{title}</title>
+                <meta name="description" content={description} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
                 <meta charSet="utf-8" />
-                <meta name="author" content="Tamara Ilić, Ivana Ilić and Uroš Poček" />
-                <meta name="geo.region" content="RS" />
-                <meta property="og:title" content="Kombuha druga fermentacija" />
+
+                {/* Canonical URL */}
+                <link rel="canonical" href={canonicalUrl} />
+
+                {/* Open Graph Tags */}
+                <meta property="og:title" content={title} />
                 <meta property="og:type" content="website" />
-                <meta property="og:description" content="Detaljni recept za pravljenje kombuha čaja sa različitim ukusima voća. Druga fermentacija je proces kada kombuha napitak od čajne gljive dobija sjajan ukus." />
-                <meta property="og:url" content="https://www.bucha.rs/druga-fermentacija" />
+                <meta property="og:description" content={description} />
+                <meta property="og:url" content={canonicalUrl} />
                 <meta property="og:site_name" content="bucha.rs" />
+                <meta property="og:image" content={`https://www.bucha.rs/favicon.ico`} />
+                <meta property="og:image:alt" content={title} />
+                <meta property="og:locale" content="sr_RS" />
+
+                {/* Twitter Card Tags */}
+                <meta name="twitter:card" content="website" />
+                <meta property="og:title" content={title} />
+                <meta name="twitter:description" content={description} />
+                <meta name="twitter:image" content="https://www.bucha.rs/favicon.ico" />
+
+                {/* Additional Meta Tags */}
+                <meta name="geo.region" content="RS" />
+                <meta name="language" content="sr" />
+                <meta name="robots" content="index, follow" />
             </Head>
             <Navbar />
-            <main className={`${styles.main} ${arimo.className}`}>
+            <main role="main" className={`${styles.main} ${arimo.className}`}>
                 <InstructionsIntro title={'Kombuha ukusi - uputstvo za drugu fermentaciju'} text1={'Ukoliko ste završili sa pripremom baze za vašu kombuhu i spremni ste da je obogatite sjajnim ukusima onda ste na pravom mestu. Ukoliko ne znate o čemu pričam onda prvo pogledajte'} link={'/uputstva/priprema-kombuhe'}
                     linkText={' uputstvo za pripremu kombuhe'} text2={'. Druga fermentacija je “where magic happens” ovde od relativno nezanimljive baze Kombuhe, kreiramo sjajne ukuse i gazirane sokove koji su veoma zdravi i osvežavajući za pijenje. Tako da ukoliko želite da učinite vašu Kombuhu zabavnom skoknite na prvi korak. '} />
                 <Step title={'Pripremite sastojke'} number={'1'} image={'/images/kombuha_druga_fermentacija_korak1.png'} text={'Došao je trenutak koji ste čekali, vaša Kombuha baza je spremna, vaša mala tegla fabrika je naporno radila i sada možete da pređete na drugu fermentaciju i da obogatite vašu Kombuhu različitim ukusima. Ovaj korak nije obavezan i ukoliko vam je osnovna Kombuha ukusna i odgovarajuća onda ste na konju, ali ako ste kao mi i želite malo šareniju, voćniju, zanimljiviju Kombuhu, flaširanjem i dodavanjem voća možete da u svojoj kući pripremite prelepi, zdravi, sok. Izvadite vašu Kombuha teglu i stavite je na radnu površinu. Zatim odlučite koji ukus Kombuhe želite da pravite i nabavite to voće ili čajeve. Ukoliko ste novi u ovome pređite na korak 2. da čujete neke naše ideje. '} order={'1'} />

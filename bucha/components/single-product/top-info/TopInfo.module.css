@@ -1,0 +1,86 @@
+.top h1 {
+    font-size: 32px;
+    letter-spacing: -.02em;
+    margin: 16px 0 0;
+}
+
+.top p {
+    line-height: 1.7;
+    word-wrap: break-word;
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 18px;
+}
+
+.top p.price {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0;
+    color: var(--PrimaryHover);
+}
+
+.actions {
+    display: flex;
+    gap: 32px;
+}
+
+/* Quantity Selector */
+
+.quantitySelector {
+    border: 1px solid var(--Primary);
+    border-radius: var(--BorderRadius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    width: 150px;
+}
+
+.quantitySelector>button {
+    background-color: var(--BG);
+    border: none;
+    border-radius: var(--BorderRadius);
+    transition: background-color 250ms ease;
+    font-size: 35px;
+    width: 50px;
+}
+
+.quantitySelector>button:hover {
+    background-color: var(--BGHover);
+}
+
+.quantitySelector>input {
+    border: none;
+    outline: none;
+    width: 2em;
+    font-size: 18px;
+    text-align: center;
+}
+
+@media(max-width:1069px) {
+    .top h1 {
+        font-size: 28px;
+    }
+
+    .top p.price {
+        font-size: 22px;
+    }
+}
+
+@media(max-width:769px) {
+    .top h1 {
+        font-size: 24px;
+    }
+
+    .top p.price {
+        font-size: 20px;
+    }
+
+    .top p {
+        font-size: 16px;
+    }
+
+    .actions {
+        gap: 16px;
+    }
+}

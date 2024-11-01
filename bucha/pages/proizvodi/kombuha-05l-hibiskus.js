@@ -17,16 +17,16 @@ const arimo = Arimo({
 
 export default function Product() {
 
-    const productName = "Kombuha SCOBY čajna gljiva";
-    const productPageMetaDescription = "Prodaja kombuha čajna gljiva (SCOBY) za pripremu fermentisanog kombuha pića kod kuće. Organska kultura bakterija i kvasca, po najboljoj ceni u Srbiji"
-    const productShortDescription = ["Uz kupovinu dobijate kombuha gljivu spremnu za pripremu pića, detaljno uputstvo sa našim savetima za početnike i starter tečnost koja je potrebna za prvu fermentaciju", "Kultura kombuhe je bez glutena, pogodan za vegane i ima mnoge zdravstvene benefite.", "Vašu porudžbinu šaljemo istog ili narednog dana.", "Nadamo se da ćete uživati u svom lekovitom kombuha napitku! Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a na 063427280."];
-    const productLongDescription = ["Kada je u pitanju pravljenje kombuhe, ništa nije važnije od kvaliteta vašeg startera za kombuhu.", "Naše SCOBY kultura kombuhe pravljene su koristeći filtriranu vodu, organski šećer, organski rinfuzni čaj i organski starter za kombuhu. Naše kulture rastu koristeći starter koji fermentišemo najmanje 6 nedelja kako bismo osigurali najširi spektar korisnih bakterija u vašoj finalnoj kulturi. Kombuha SCOBY čajna gljiva je neophodan deo za pravljenje vaše prve ture kombuha napitka."];
-    const productPrice = 950;
-    const productImageGallery = [`/images/products/${getLinkFromName(productName)}.webp`, "/images/gallery/scoby2.jpg", "/images/gallery/scoby3.jpg", "/images/gallery/scoby4.jpg", "/images/gallery/scoby5.jpg"];
+    const productName = "Kombuha 0.5l - Hibiskus";
+    const productPageMetaDescription = "Poručite kombuhu sa ukusom hibiskusa online i mi je dostavljamo na vašu adresu. Zdravi napitak kombucha je lagano, gazirano piće koje pruža zadovoljstvo ukusa"
+    const productShortDescription = ["Kombuha sa ukusom hibiskusa", "Vašu porudžbinu šaljemo istog ili narednog dana.", "Nadamo se da ćete uživati u svom kombuha napitku! Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a na 063427280."];
+    const productLongDescription = ["Kombuha Hibiskus je bezalkoholni i lagani fermentisani napitak, proizveden prirodnim procesom fermentacije zelenog čaja uz dodatak rinfuznog cveta hibiskusa. Naša hibiskus kombuha sadrži korisne probiotske bakterije koje povoljno utiču na probavu i imunitet, čineći je savršenim zdravim izborom za svakodnevno osveženje", ["Svaka flaša naše Kombuhe Hibiskus je prirodno blago gazirana i pripremljena sa pažnjom koristeći samo organske sastojke - visokokvalitetni zeleni čaj, filtriranu vodu i rinfuzni hibiskus čaj. Ovo je piće koje ne sadrži gluten i idealno je za vegane, pružajući bogatstvo prirodnih probiotika za podršku celokupnom zdravlju. Dodajte kombuha hibiskus u svoju svakodnevnu rutinu i otkrijte sve njene zdravstvene benefite."]];
+    const productPrice = 650
+    const productImageGallery = [`/images/products/${getLinkFromName(productName)}.webp`, "/images/gallery/kombuha_hibiskus_2.jpg", "/images/gallery/kombuha_hibiskus_3.jpg", "/images/gallery/kombuha_hibiskus_4.jpg", "/images/gallery/kombuha_hibiskus_5.jpg"];
     const relatedItems = [
         {
-            name: "Kombuha 0.5l - Hibiskus",
-            price: 750
+            name: "Kombuha SCOBY čajna gljiva",
+            price: 950
         },
     ]
     const canonicalUrl = `https://www.bucha.rs/${getLinkFromName(productName)}`;
@@ -63,7 +63,7 @@ export default function Product() {
                 {/* Additional Meta Tags */}
                 <meta name="geo.region" content="RS" />
                 <meta name="language" content="sr" />
-                <meta name="keywords" content="kombuha, scoby, čajna gljiva, fermentisano piće, probiotik, organski napitak" />
+                <meta name="keywords" content="kombuha, kombuha prodaja, kombuha piće, kombuha od hibiskusa, kako se priprema kombuha" />
                 <meta name="robots" content="index, follow" />
 
                 {/* JSON-LD Schema Markup for Product */}

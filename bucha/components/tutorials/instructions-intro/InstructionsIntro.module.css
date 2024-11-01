@@ -1,0 +1,50 @@
+.container {
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 8rem auto 4rem auto;
+}
+
+.container h1 {
+    color: #171321;
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 32px;
+}
+
+.container p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.link {
+    color: #EF896D;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media(max-width:1580px) {
+    .container h1 {
+        font-size: 40px;
+        line-height: 1.2;
+    }
+
+    .container p {
+        font-size: 18px;
+    }
+}
+
+@media(max-width:769px) {
+    .container h1 {
+        font-size: 28px;
+    }
+
+    .container p {
+        text-align: justify;
+    }
+
+    .container {
+        margin-top: 7rem;
+    }
+}

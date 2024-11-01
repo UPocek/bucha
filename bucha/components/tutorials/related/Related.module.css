@@ -1,0 +1,28 @@
+.related {
+    padding: 24px 0px;
+    margin: 4rem 0px;
+    background-color: var(--MainAccentColor);
+    color: var(--BG);
+}
+
+.related>div {
+    margin: 0 auto;
+    width: 83%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.related p {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+@media(max-width:1069px) {
+    .related p {
+        font-size: 24px;
+    }
+}
+
+@media(max-width:769px) {}

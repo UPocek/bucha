@@ -1,0 +1,40 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none !important;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: var(--BorderRadius);
+    transition: background-color 250ms ease;
+    text-decoration: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.main {
+    background-color: var(--Primary);
+    color: var(--BG);
+}
+
+.sub {
+    color: var(--Primary);
+    background-color: var(--BG);
+}
+
+.main:hover {
+    background-color: var(--PrimaryHover);
+}
+
+.sub:hover {
+    background-color: var(--BGHover);
+}
+
+@media(max-width:769px) {
+    .btn {
+        padding: 10px 20px;
+    }
+}

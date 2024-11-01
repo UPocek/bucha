@@ -1,0 +1,40 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    min-height: 500px;
+    margin: auto;
+}
+
+.card img {
+    border-radius: var(--BorderRadius);
+}
+
+.card a {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #312c2c;
+    text-decoration: none;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+    margin: 8px 0 16px;
+}
+
+.cardInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0 10px;
+}
+
+.cardInfo>div {
+    min-height: 110px;
+}
+
+.cardInfo>button {
+    margin: auto;
+}
