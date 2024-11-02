@@ -14,6 +14,17 @@ def create_response(status, body):
 
 import re
 
+def map_country_code_to_name(country_code):
+    country_map = {
+        'RS': 'Serbia',
+        'BA': 'Bosnia and Herzegovina',
+        'HR': 'Croatia',
+        'ME': 'Montenegro',
+        'MK': 'North Macedonia',
+        'SI': 'Slovenia'
+    }
+    return country_map.get(country_code, 'Unknown')
+
 def get_link_from_name(product_name):
     return re.sub(r'[^a-z0-9-]', '', 
             str.replace(' ', '-', 

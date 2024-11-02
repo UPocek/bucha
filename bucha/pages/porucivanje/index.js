@@ -53,7 +53,7 @@ export default function Checkout() {
                 router.replace(`/hvala/${response.data.id}`);
             })
             .catch(error => {
-                toast.error('Greške sa naše strane. Molimo Vas da nam pošaljete vašu porudžbinu SMS-om na broj 063/427-280, i obradićemo je u najkraćem roku uz 20% popusta. Softverska greška ne sme da pokvari kombuha avanturu!');
+                toast.error('Softverska greška ne sme da pokvari kombuha avanturu, zato molim te pošalji porudžbinu SMS-om na broj 063/427-280, i obradićemo je uz 20% popusta.');
                 console.error(error);
             });
     }

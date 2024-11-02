@@ -144,6 +144,8 @@ Resources:
     Properties:
       CodeUri: process_order/
       Handler: app.lambda_handler
+      Layers:
+        - !Ref SharedLayers
       Environment:
         Variables:
           ORDERS_TABLE: !Ref OrdersTableName
@@ -175,6 +177,8 @@ Resources:
     Properties:
       CodeUri: get_order/
       Handler: app.lambda_handler
+      Layers:
+        - !Ref SharedLayers
       Environment:
         Variables:
           ORDERS_TABLE: !Ref OrdersTableName
