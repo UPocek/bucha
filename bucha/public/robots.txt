@@ -1,0 +1,10 @@
+User-agent: googlebot
+Disallow: 
+
+User-agent: bingbot
+Disallow: 
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bucha.rs/sitemap.xml
