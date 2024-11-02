@@ -63,7 +63,7 @@
 }
 
 @media (max-width:1400px) {
-    .right h1 {
+    .right h2 {
         font-size: 40px;
     }
 
@@ -78,7 +78,7 @@
         max-width: 800px;
     }
 
-    .right h1 {
+    .right h2 {
         font-size: 40px;
     }
 
@@ -99,7 +99,7 @@
         padding: 3.2rem 1.6rem;
     }
 
-    .right h1 {
+    .right h2 {
         font-size: 28px;
     }
 }

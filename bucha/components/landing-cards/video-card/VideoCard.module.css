@@ -64,7 +64,7 @@
 }
 
 @media (max-width:1400px) {
-    .right h1 {
+    .right h2 {
         font-size: 40px;
     }
 }
@@ -94,7 +94,7 @@
         width: auto;
     }
 
-    .right h1 {
+    .right h2 {
         font-size: 28px;
     }
 
