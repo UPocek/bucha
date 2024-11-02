@@ -12,10 +12,9 @@
   width: 100%;
   max-width: 1440px;
   padding: 0 5%;
-  margin: auto;
+  margin: 2rem auto 0;
   font-size: 32px;
   text-align: left;
-  margin-top: 2rem;
   line-height: 1.2;
   letter-spacing: -0.1px;
 }
