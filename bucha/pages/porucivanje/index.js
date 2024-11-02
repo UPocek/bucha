@@ -131,7 +131,7 @@ export default function Checkout() {
                         {cartItems.map((item, index) => (
                             <div key={index} className={styles.item}>
                                 <div>
-                                    <Image src={`/images/products/${getLinkFromName(item.name)}.webp`} width={64} height={64} />
+                                    <Image src={`/images/products/${getLinkFromName(item.name)}.webp`} width={64} height={64} alt="bucha.rs proizvod" />
                                     <div className={styles.itemInfo}>
                                         <div className={styles.itemName}>{item.name}</div>
                                         <div className={styles.itemQuantity}>{`x${item.quantity}`}</div>

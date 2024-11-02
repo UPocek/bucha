@@ -29,7 +29,7 @@ export default function Footer() {
             <div className={styles.footerContent}>
                 <div className={styles.upperSection}>
                     <div>
-                        <Image className={styles.logo} src={'/images/bucha_logo.png'} width={screenWidth > 875 ? BUCHA_LOGO_WIDTH : BUCHA_LOGO_WIDTH / 2} height={screenWidth > 875 ? BUCHA_LOGO_HEIGHT : BUCHA_LOGO_HEIGHT / 2} alt='bucha logo'></Image>
+                        <Image className={styles.logo} src={'/images/bucha_logo.png'} width={screenWidth > 875 ? BUCHA_LOGO_WIDTH : BUCHA_LOGO_WIDTH / 2} height={screenWidth > 875 ? BUCHA_LOGO_HEIGHT : BUCHA_LOGO_HEIGHT / 2} alt='bucha.rs logo'></Image>
                     </div>
                     <div>
                         <strong className={styles.columnHeading}>Setovi</strong>

@@ -33,7 +33,7 @@ export default function NavbarDesktop() {
             <nav role="navigation" className={styles.nav}>
                 <div className={styles.items}>
                     <Link className={styles.logo} href='/'>
-                        <Image src={'/images/bucha_logo.png'} width={228} height={63} alt='bucha icon' />
+                        <Image src={'/images/bucha_logo.png'} width={228} height={63} alt='kombucha icon' />
                     </Link>
                     <Link style={{ marginTop: 8 }} href='/prodaja'>PRODAJA</Link>
                     <Link style={{ marginTop: 8 }} href='/uputstva/priprema-kombuhe'>RECEPTI</Link>
