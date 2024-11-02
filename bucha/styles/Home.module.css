@@ -23,6 +23,12 @@
   }
 }
 
+@media(max-width:900px) {
+  .content h1 {
+    margin-top: 7rem;
+  }
+}
+
 @media(max-width:768px) {
   .content h1 {
     font-size: 24px;
