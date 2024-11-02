@@ -45,7 +45,7 @@ export default function ThankYou() {
     return (
         <>
             <Head>
-                <title>Uspešna porudžbina | bucha.rs</title>
+                <title>Porudžbina | bucha.rs</title>
                 <meta name="robots" content="noindex" />
                 <meta name="description" content="Uspešna porudžbina" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -114,9 +114,12 @@ export default function ThankYou() {
                             </div>
                         </div>
                     </> :
-                    <div>
-                        <p>Priprema</p>
-                    </div>}
+                    <div className={styles.loading}>
+                        <div className={styles.loadingio_spinner_spinner_2by998twmg8}><div className={styles.ldio_yzaezf3dcmj}>
+                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        </div></div>
+                    </div>
+                }
             </main>
             <Footer />
         </>
