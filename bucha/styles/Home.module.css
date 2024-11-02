@@ -16,6 +16,8 @@
   font-size: 32px;
   text-align: left;
   margin-top: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.1px;
 }
 
 @media(max-width:1069px) {
