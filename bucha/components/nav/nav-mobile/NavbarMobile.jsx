@@ -63,7 +63,7 @@ export default function NavbarMobile() {
                                                 <div className={styles.productInfo}>
                                                     <Link href={`/proizvodi/${getLinkFromName(item.name)}`}>{item.name}</Link>
                                                     <div>
-                                                        <div className={styles.quantitySelectorSmall}>
+                                                        <div className={styles.quantitySelectorExtraSmall}>
                                                             <button disabled={item.quantity == 1} onClick={() => updateQuantity(item.name, item.quantity - 1)}>-</button>
                                                             <input type="text" value={item.quantity} onChange={(e) => updateQuantity(item.name, +e.target.value)} />
                                                             <button style={{ paddingBottom: 2 }} disabled={item.quantity >= 10} onClick={() => updateQuantity(item.name, item.quantity + 1)}>+</button>
