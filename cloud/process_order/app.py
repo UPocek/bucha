@@ -2,71 +2,84 @@ import boto3
 import os
 import json
 import uuid
+from datetime import datetime
+import pytz
+from utils import create_response, admin_email, get_link_from_name
 
 sns_client = boto3.client("sns")
 dynamodb_client = boto3.resource("dynamodb")
-orders_table = dynamodb_client.Table(os.environ["ORDER_TABLE"])
-new_order_topic = os.environ["ORDERS_TOPIC"]
+orders_table = dynamodb_client.Table(os.environ["ORDERS_TABLE"])
+BASIC_EMAIL_TOPIC = os.environ["BASIC_EMAIL_TOPIC"]
+TEMPLATE_EMAIL_TOPIC = os.environ["TEMPLATE_EMAIL_TOPIC"]
 
 
 def lambda_handler(event, context):
     body = json.loads(event["body"])
+    
+    required_fields = ['fullName', 'email', 'phone', 'address', 'city', 'postalCode', 'country', 'note', 'products']
+    missing_fields = [field for field in required_fields if field not in body]
+    if missing_fields:
+        return create_response(400, {'error': 'Missing required fields'})
 
-    if (
-        body.get("fullName") is None
-        or body.get("email") is None
-        or body.get("phone") is None
-        or body.get("city") is None
-        or body.get("address") is None
-        or body.get("count") is None
-        or body.get("product") is None
-    ):
-        return bad_request("Missing required parameters")
+    order_id = str(uuid.uuid4())
+    orders_table.put_item(Item={
+        'id': order_id,
+        'fullName': body['fullName'],
+        'email': body['email'],
+        'phone': body['phone'],
+        'address': body['address'],
+        'city': body['city'],
+        'postalCode': body['postalCode'],
+        'country': body['country'],
+        'note': body['note'],
+        'products': body['products'],
+        'status': 'U obradi'
+    })
 
-    save_order(body)
-    send_email(body)
+    send_email(order_id, body['fullName'], body['email'], body['phone'], body['address'], body['city'], body['postalCode'], body['country'], body['note'], body['products'])
+    send_template_email(order_id, body['fullName'], body['email'], body['phone'], body['address'], body['city'], body['postalCode'], body['country'], body['note'], body['products'])
 
-    return successfull(f"Order with id={body['id']} processed sucessfully")
-
-
-def save_order(order):
-    order["id"] = str(uuid.uuid4())
-    order["status"] = "U obradi"
-    orders_table.put_item(Item=order)
+    return create_response(200, {'id': order_id})
+    
 
 
-def send_email(order):
+def send_email(order_id, user_name, user_email, user_phone, user_address, user_city, user_postal_code, user_country, user_note, user_products):
+    order = ''
+    total_price = 0
+    for product in user_products:
+        order += f'{product["name"]} - {product["quantity"]}\n'
+        total_price += product['price'] * product['quantity']
     sns_client.publish(
-        TopicArn=new_order_topic,
+        TopicArn=BASIC_EMAIL_TOPIC,
         Message=json.dumps(
             {
-                "event": "order",
-                "subject": "Nova porudžbina za bucha.rs",
-                "content": f"Korisnik {order['fullName']}\nEmail: {order['email']}\nBroj telefona: {order['phone']}\nAdresa: {order['address']}, {order['city']}\n\nJe poručio {order['count']}x {order['product']}",
+                "event": "new_order",
+                "recipient": admin_email,
+                "subject": f'Nova Porudžbina - {order_id}',
+                "content": f'Naručilac:\n\nIme:{user_name}\nAdresa:{user_address}\nGrad:{user_city}\nPoštanski broj:{user_postal_code}\nDržava:{user_country}\nTelefon:{user_phone}\nE-mail:{user_email}\nNapomena:{user_note}\n\n Porudžbina:\n\n {order} \n\n Ukupna cena: {total_price}\n'
             }
         ),
     )
+    
 
-
-def bad_request(message):
-    return {
-        "statusCode": 400,
-        "headers": {
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST",
-        },
-        "body": json.dumps({"message": message}),
-    }
-
-
-def successfull(response):
-    return {
-        "statusCode": 200,
-        "headers": {
-            "Access-Control-Allow-Headers": "Content-Type",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST",
-        },
-        "body": response,
-    }
+def send_template_email(order_id, user_name, user_email, user_phone, user_address, user_city, user_postal_code, user_country, user_note, user_products):
+    belgrade_tz = pytz.timezone('Europe/Belgrade')
+    current_date = datetime.now(belgrade_tz)
+    formatted_date = current_date.strftime("%d.%m.%Y")
+    currency = 'RSD'
+    total_price = 0
+    order_link = f'https://www.bucha.rs/hvala/{order_id}'
+    products = ''
+    for product in user_products:
+        products += '<tr><td width=\"70\"><img src=\"https://static-resources-buchars.s3.eu-central-1.amazonaws.com/{0}.webp\" width=\"70\" height=\"70\" alt=\"{1}\" style=\"border-radius: 6px; display: block;\" /></td><td width=\"16\" style=\"font-size: 1px;\">&nbsp;</td><td style=\"font-family: Arial, sans-serif; vertical-align: top; padding-top: 8px;\"><p style=\"margin: 0 0 8px 0; font-size: 14px; font-weight: bold; color: #213343;\">{1}</p><p style=\"margin: 0; font-size: 14px; color: #213343;\">{2}</p></td><td style=\"font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #213343; text-align: right; vertical-align: top; padding-top: 8px;\">{3}{4}</td></tr>'.format(get_link_from_name(product['name']), product['name'], product['quantity'], product['price'], currency)
+        total_price += product['price'] * product['quantity']
+    data = json.dumps({'emailDate': formatted_date, 'orderId': order_id, 'userName': user_name, 'userEmail': user_email, 'userPhone': user_phone, 'userAddress': user_address, 'userCity': user_city, 'userPostalCode': user_postal_code, 'userCountry': user_country, 'userNote': user_note, 'totalPrice': total_price, 'currency': currency, 'products': products, 'orderLink': order_link })
+    sns_client.publish(
+        TopicArn=TEMPLATE_EMAIL_TOPIC,
+        Message=json.dumps({
+            "event": "webiste_form",
+            "recipient": user_email,
+            "template_name": "BuchaOrderConfirmation",
+            "data_to_replace": data
+        }),
+    )

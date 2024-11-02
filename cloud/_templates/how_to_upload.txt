@@ -1,0 +1,8 @@
+aws ses create-template --cli-input-json file://team_invite.json
+
+aws ses update-template --cli-input-json file://team_invite.json
+
+aws ses delete-template --template-name MyTemplate
+
+More info:
+https://medium.com/intelliconnect-engineering/send-emails-with-amazon-ses-part-1-simple-ses-template-1f400ac26c3f

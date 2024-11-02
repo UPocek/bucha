@@ -50,7 +50,7 @@ export default function NavbarDesktop() {
                         <SheetHeader>
                             <SheetTitle className='text-2xl m-0 mb-2'>Korpa</SheetTitle>
                             <SheetDescription>
-                                Hej, super izbor proizvoda 👍
+                                {cartItemCount > 0 ? 'Hej, super izbor proizvoda 👍' : 'Idite na PRODAJA da izaberete vaš prvi proizvod'}
                             </SheetDescription>
                         </SheetHeader>
                         <div className="flex flex-col mt-6">

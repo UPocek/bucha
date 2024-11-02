@@ -15,8 +15,33 @@ codeuri = "/Users/urospocek/Documents/Projects/MyProjects/bucha/cloud/process_or
 runtime = "python3.9"
 architecture = "x86_64"
 handler = "app.lambda_handler"
-manifest_hash = "d41d8cd98f00b204e9800998ecf8427e"
+manifest_hash = "07c1a5bba43ad4584fb3d7ee0be01799"
 packagetype = "Zip"
 functions = ["ProcessOrderFunction"]
 
-[layer_build_definitions]
+[function_build_definitions.df7518e3-18af-4ea4-8d3a-5796beb9791d]
+codeuri = "/Users/urospocek/Documents/Projects/MyProjects/bucha/cloud/send_templated_email"
+runtime = "python3.9"
+architecture = "x86_64"
+handler = "app.lambda_handler"
+manifest_hash = ""
+packagetype = "Zip"
+functions = ["SendTemplatedEmailFunction"]
+
+[function_build_definitions.1687b711-a07d-452c-b0c9-60f029e5b64d]
+codeuri = "/Users/urospocek/Documents/Projects/MyProjects/bucha/cloud/get_order"
+runtime = "python3.9"
+architecture = "x86_64"
+handler = "app.lambda_handler"
+manifest_hash = ""
+packagetype = "Zip"
+functions = ["GetOrderFunction"]
+
+[layer_build_definitions.6bed830a-dba7-4f53-b403-55a2a329e8b5]
+layer_name = "SharedLayers"
+codeuri = "/Users/urospocek/Documents/Projects/MyProjects/bucha/cloud/layers"
+build_method = "python3.9"
+compatible_runtimes = ["python3.9"]
+architecture = "x86_64"
+manifest_hash = ""
+layer = "SharedLayers"

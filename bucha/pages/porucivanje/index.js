@@ -8,11 +8,13 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { getLinkFromName } from "@/helper/helper";
-import { mainCurrency, shippingPrice, supportedCountries } from "../_app";
+import { baseUrl, mainCurrency, shippingPrice, supportedCountries } from "../_app";
 import ActionButton from "@/components/buttons/ActionButton";
 import { Input } from "@/components/ui/input"
 import { SelectSearch } from "@/components/ui/SelectSearch";
 import { Textarea } from "@/components/ui/textarea"
+import { toast } from "sonner";
+import axios from "axios";
 
 
 const arimo = Arimo({
@@ -22,7 +24,7 @@ const arimo = Arimo({
 
 export default function Checkout() {
     const router = useRouter();
-    const { cartItemCount, cartItems, updateQuantity } = useCart();
+    const { cartItemCount, cartItems, emptyCart } = useCart();
 
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState('')
@@ -41,7 +43,59 @@ export default function Checkout() {
     }, [])
 
     function createOrder() {
+        if (!credentialsValid) {
+            return;
+        }
+        axios.post(`${baseUrl}/api/order`, { 'fullName': `${surname} ${name}`, 'email': email, 'phone': phone, 'address': address, 'city': city, 'postalCode': postalCode, 'country': country, 'note': note, 'products': cartItems })
+            .then(response => {
+                toast.success('Vaša porudžbina je uspešno kreirana! Čestitamo Kombuha avantura počinje 🎉');
+                emptyCart();
+                router.replace(`/hvala/${response.data.id}`);
+            })
+            .catch(error => {
+                toast.error('Greške sa naše strane. Molimo Vas da nam pošaljete vašu porudžbinu SMS-om na broj 063/427-280, i obradićemo je u najkraćem roku uz 20% popusta. Softverska greška ne sme da pokvari kombuha avanturu!');
+                console.error(error);
+            });
+    }
 
+    function credentialsValid() {
+        if (email.trim().length == 0 || !email.includes('@') || !email.includes('.')) {
+            toast.error('Email nije ispravan. Pokušajte ponovo.');
+            return false;
+        }
+        if (phone.trim().length == 0 || phone.trim().length < 9) {
+            toast.error('Telefon nije ispravan. Pokušajte ponovo.');
+            return false;
+        }
+        if (name.trim().length == 0) {
+            toast.error('Ime nije ispravno. Pokušajte ponovo.');
+            return false;
+        }
+        if (surname.trim().length == 0) {
+            toast.error('Prezime nije ispravno. Pokušajte ponovo.');
+            return false;
+        }
+        if (address.trim().length == 0) {
+            toast.error('Adresa nije ispravna. Pokušajte ponovo.');
+            return false;
+        }
+        if (city.trim().length == 0) {
+            toast.error('Grad nije ispravan. Pokušajte ponovo.');
+            return false;
+        }
+        if (postalCode.trim().length == 0) {
+            toast.error('Poštanski broj nije ispravan. Pokušajte ponovo.');
+            return false;
+        }
+        if (country.trim().length == 0) {
+            toast.error('Država nije ispravna. Pokušajte ponovo.');
+            return false;
+        }
+        if (cartItems.length == 0) {
+            toast.error('Korpa je prazna. Pokušajte ponovo.');
+            return false;
+        }
+        return true
     }
 
     return (
@@ -53,11 +107,6 @@ export default function Checkout() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
                 <meta charSet="utf-8" />
-                <meta property="og:title" content="Poručivanje | bucha.rs" />
-                <meta property="og:type" content="website" />
-                <meta property="og:description" content="Još samo korak te deli od zdravlja. Kompletiraj svoju porudžbinu." />
-                <meta property="og:url" content="https://www.bucha.rs/porucivanje" />
-                <meta property="og:site_name" content="bucha.rs" />
             </Head>
             <NavWrapper />
             <main role="main" className={`${styles.main} ${arimo.className}`}>

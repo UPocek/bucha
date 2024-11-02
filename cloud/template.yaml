@@ -1,4 +1,4 @@
-AWSTemplateFormatVersion: '2010-09-09'
+AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: >
   bucha.rs
@@ -7,17 +7,20 @@ Parameters:
   OrdersTableName:
     Type: String
     Default: OrdersTable
+  SharedLayerName:
+    Type: String
+    Default: buchars-dependencies
+  StaticResourcesBucketName:
+    Type: String
+    Default: static-resources-buchars
 
 Globals:
   Function:
     Timeout: 29
-    MemorySize: 128
+    MemorySize: 256
     Runtime: python3.9
     Architectures:
       - x86_64
-    Environment:
-      Variables:
-        ORDER_TABLE: !Ref OrdersTableName
 
 Resources:
   ApiGatewayApi:
@@ -26,47 +29,116 @@ Resources:
       StageName: Prod
       CorsConfiguration:
         AllowMethods:
-          - '*'
+          - "*"
         AllowOrigins:
-          - '*'
+          - "*"
         AllowHeaders:
-          - '*'
+          - "*"
+
+  SharedLayers:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: !Ref SharedLayerName
+      Description: Utilities for buchars
+      ContentUri: layers/
+      CompatibleRuntimes:
+        - python3.9
+      LicenseInfo: MIT
+      RetentionPolicy: Retain
+    Metadata:
+      BuildMethod: python3.9
+
+  StaticResourcesBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref StaticResourcesBucketName
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+  StaticResourcesBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref StaticResourcesBucket
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal: "*"
+            Action:
+              - s3:GetObject
+            Resource: !Sub "arn:aws:s3:::${StaticResourcesBucketName}/*"
 
   OrdersDynamoDBTable:
     Type: AWS::DynamoDB::Table
-    Properties: 
+    Properties:
       TableName: !Ref OrdersTableName
-      AttributeDefinitions: 
+      AttributeDefinitions:
         - AttributeName: id
           AttributeType: S
-      KeySchema: 
+      KeySchema:
         - AttributeName: id
           KeyType: HASH
       BillingMode: PAY_PER_REQUEST
-
-  NewOrderSNSTopic:
-    Type: AWS::SNS::Topic
-    Properties:
-      Subscription:
-        - Protocol: lambda
-          Endpoint: !GetAtt SendEmailFunction.Arn
 
   SendEmailFunction:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: send_email/
       Handler: app.lambda_handler
+      Layers:
+        - !Ref SharedLayers
       Policies:
         - AWSLambdaBasicExecutionRole
         - AmazonSESFullAccess
-  
-  TopicConsumerFunctionPermission:
-    Type: 'AWS::Lambda::Permission'
+  SendEmailFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
     Properties:
-      Action: 'lambda:InvokeFunction'
+      LogGroupName: !Sub "/aws/lambda/${SendEmailFunction}"
+      RetentionInDays: 90
+  TopicConsumerFunctionPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
       FunctionName: !Ref SendEmailFunction
       Principal: sns.amazonaws.com
 
+  SendTemplatedEmailFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: send_templated_email/
+      Handler: app.lambda_handler
+      Layers:
+        - !Ref SharedLayers
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonSESFullAccess
+  SendTemplatedEmailFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${SendTemplatedEmailFunction}"
+      RetentionInDays: 90
+  TopicConsumerSendTemplatedEmailFunctionPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunction
+      FunctionName: !Ref SendTemplatedEmailFunction
+      Principal: sns.amazonaws.com
+
+  BasicEmailSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+        - Protocol: lambda
+          Endpoint: !GetAtt SendEmailFunction.Arn
+  TemplateEmailSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+        - Protocol: lambda
+          Endpoint: !GetAtt SendTemplatedEmailFunction.Arn
+
+  # ProcessOrderFunction
   ProcessOrderFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -74,12 +146,16 @@ Resources:
       Handler: app.lambda_handler
       Environment:
         Variables:
-          ORDERS_TOPIC: !Ref NewOrderSNSTopic
+          ORDERS_TABLE: !Ref OrdersTableName
+          BASIC_EMAIL_TOPIC: !Ref BasicEmailSNSTopic
+          TEMPLATE_EMAIL_TOPIC: !Ref TemplateEmailSNSTopic
       Policies:
         - AWSLambdaBasicExecutionRole
         - AmazonDynamoDBFullAccess
         - SNSPublishMessagePolicy:
-            TopicName: !GetAtt NewOrderSNSTopic.TopicName
+            TopicName: !GetAtt BasicEmailSNSTopic.TopicName
+        - SNSPublishMessagePolicy:
+            TopicName: !GetAtt TemplateEmailSNSTopic.TopicName
       Events:
         ApiGateway:
           Type: HttpApi
@@ -87,8 +163,33 @@ Resources:
             Path: /api/order
             Method: post
             ApiId: !Ref ApiGatewayApi
-  
-Outputs:
-  ApiEndpoint:
-    Description: "API Gateway endpoint URL for Prod stage"
-    Value: !Sub "https://${ApiGatewayApi}.execute-api.${AWS::Region}.amazonaws.com/Prod"
+  ProcessOrderFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${ProcessOrderFunction}"
+      RetentionInDays: 90
+
+  # GetOrderFunction
+  GetOrderFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: get_order/
+      Handler: app.lambda_handler
+      Environment:
+        Variables:
+          ORDERS_TABLE: !Ref OrdersTableName
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - AmazonDynamoDBFullAccess
+      Events:
+        ApiGateway:
+          Type: HttpApi
+          Properties:
+            Path: /api/order/{id}
+            Method: get
+            ApiId: !Ref ApiGatewayApi
+  GetOrderFunctionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${GetOrderFunction}"
+      RetentionInDays: 90
