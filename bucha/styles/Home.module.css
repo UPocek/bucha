@@ -16,3 +16,15 @@
   text-align: left;
   margin-top: 2rem;
 }
+
+@media(max-width:1069px) {
+  .content h1 {
+    font-size: 28px;
+  }
+}
+
+@media(max-width:768px) {
+  .content h1 {
+    font-size: 24px;
+  }
+}
