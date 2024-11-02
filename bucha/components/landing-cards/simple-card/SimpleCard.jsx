@@ -27,7 +27,7 @@ export default function Card({ title, text, buttons, bgColor, lightBgColor, orde
                 </div>
                 <div className={`${styles.right} ${screenWidth > 720 ? (order == 1 ? styles.order2 : styles.order1) : styles.order2}`}>
                     <div>
-                        <h1>{title}</h1>
+                        <h2>{title}</h2>
                         <p>{text}</p>
                         <div className={styles.buttons}>
                             {buttons.map(button => <LinkButton key={button['btnText']} buttonText={button['btnText']} link={button['btnUrl']} main={false} />)}

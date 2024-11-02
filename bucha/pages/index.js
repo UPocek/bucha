@@ -54,6 +54,9 @@ export default function Home() {
       <Navbar />
       <main className={`${styles.main} ${arimo.className}`}>
         <div className={styles.content}>
+          <h1>
+            Kombuha (Kombucha) čajna gljiva prodaja
+          </h1>
           <div>
             <VideoCard title={'Uputstvo za pripremu 📝'}
               text={'Istražujete kako se pravi kombuha - fermentisano piće od čajne gljive? Na pravom ste mestu! Otkrijte uputstva, recepte i savete za pripremu kombuhe kod kuće. Saznajte sve o procesima fermentacije, idealnoj temperaturi, i trikovima za postizanje savršenog ukusa.'}
