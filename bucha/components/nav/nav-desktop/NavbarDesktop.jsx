@@ -46,7 +46,7 @@ export default function NavbarDesktop() {
                             <div>{cartItemCount}</div>
                         </button>
                     </SheetTrigger>
-                    <SheetContent className='w-96'>
+                    <SheetContent>
                         <SheetHeader>
                             <SheetTitle className='text-2xl m-0 mb-2'>Korpa</SheetTitle>
                             <SheetDescription>
