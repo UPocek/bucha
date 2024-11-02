@@ -15,14 +15,14 @@ def create_response(status, body):
 
 def map_country_code_to_name(country_code):
     country_map = {
-        'RS': 'Serbia',
-        'BA': 'Bosnia and Herzegovina',
-        'HR': 'Croatia',
-        'ME': 'Montenegro',
-        'MK': 'North Macedonia',
-        'SI': 'Slovenia'
+        'RS': 'Srbija',
+        'BA': 'Bosna i Hercegovina',
+        'HR': 'Hrvatska',
+        'ME': 'Crna Gora',
+        'MK': 'Makedonija',
+        'SI': 'Slovenija'
     }
-    return country_map.get(country_code, 'Unknown')
+    return country_map.get(country_code, '')
 
 import re
 

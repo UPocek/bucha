@@ -73,6 +73,7 @@ def send_email(order_id, user_name, user_email, user_phone, user_address, user_c
     order = ''
     total_price = 0
     currency = 'RSD'
+    user_country = map_country_code_to_name(user_country)
     for product in user_products:
         order += f'{product["name"]} - {product["quantity"]}kom\n'
         total_price += product['price'] * product['quantity']
@@ -98,7 +99,7 @@ def send_template_email(order_id, user_name, user_email, user_phone, user_addres
     order_link = f'https://www.bucha.rs/hvala/{order_id}'
     products = ''
     for product in user_products:
-        products += '<tr><td width=\"70\"><img src=\"https://static-resources-buchars.s3.eu-central-1.amazonaws.com/{0}.webp\" width=\"70\" height=\"70\" alt=\"{1}\" style=\"border-radius: 6px; display: block;\" /></td><td width=\"16\" style=\"font-size: 1px;\">&nbsp;</td><td style=\"font-family: Arial, sans-serif; vertical-align: top; padding-top: 8px;\"><p style=\"margin: 0 0 8px 0; font-size: 14px; font-weight: bold; color: #213343;\">{1}</p><p style=\"margin: 0; font-size: 14px; color: #213343;\">{2}</p></td><td style=\"font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #213343; text-align: right; vertical-align: top; padding-top: 8px;\">{3}{4}</td></tr>'.format(get_link_from_name(product['name']), product['name'], product['quantity'], product['price'], currency)
+        products += '<tr><td width=\"70\"><img src=\"https://static-resources-buchars.s3.eu-central-1.amazonaws.com/{0}.webp\" width=\"70\" height=\"70\" alt=\"{1}\" style=\"border-radius: 6px; display: block;\" /></td><td width=\"16\" style=\"font-size: 1px;\">&nbsp;</td><td style=\"font-family: Arial, sans-serif; vertical-align: top; padding-top: 8px;\"><p style=\"margin: 0 0 8px 0; font-size: 14px; font-weight: bold; color: #213343;\">{1}</p><p style=\"margin: 0; font-size: 14px; color: #213343;\">{2}</p></td><td style=\"font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #213343; text-align: right; vertical-align: top; padding-top: 8px;\">{3}{4}</td></tr>'.format(get_link_from_name(product['name']), product['name'], '{} {}'.format(product['quantity'], 'kom'), product['price'], currency)
         total_price += product['price'] * product['quantity']
     data = json.dumps({'orderDate': formatted_date, 'orderId': order_id, 'userName': user_name, 'userEmail': user_email, 'userPhone': user_phone, 'userAddress': user_address, 'userCity': user_city, 'userPostalCode': user_postal_code, 'userCountry': map_country_code_to_name(user_country), 'userNote': user_note, 'totalPrice': total_price, 'currency': currency, 'products': products, 'orderLink': order_link })
     sns_client.publish(
