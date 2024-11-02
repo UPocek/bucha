@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import axios from "axios";
 import { baseUrl, mainCurrency, shippingPrice } from "../_app";
 import { toast } from "sonner";
-import { getLinkFromName } from "@/helper/helper";
+import { getCountryFromCode, getLinkFromName } from "@/helper/helper";
 import Image from "next/image";
 
 
@@ -70,8 +70,8 @@ export default function ThankYou() {
                             <p className={styles.title}>Isporuka za</p>
                             <p>{order['fullName']}</p>
                             <p>{order['address']}</p>
-                            <p>{order['postalCode']},{order['city']}</p>
-                            <p>{order['country']}</p>
+                            <p>{order['postalCode']}, {order['city']}</p>
+                            <p>{getCountryFromCode(order['country'])}</p>
                             <p>{order['email']}</p>
                             <p>{order['phone']}</p>
                             <hr />
@@ -83,7 +83,7 @@ export default function ThankYou() {
                         </div>
                         <div>
                             <p className={styles.title}>Pregled porudžbine:</p>
-                            <p>{`Kod vas je između ${new Date(orderCreatedDate.setDate(orderCreatedDate.getDate() + 2)).toLocaleDateString('sr-RS')} i ${new Date(orderCreatedDate.setDate(orderCreatedDate.getDate() + 7)).toLocaleDateString('sr-RS')}`}</p>
+                            <p>{`Isporuku očujete između ${new Date(orderCreatedDate.setDate(orderCreatedDate.getDate() + 2)).toLocaleDateString('sr-RS')} i ${new Date(orderCreatedDate.setDate(orderCreatedDate.getDate() + 7)).toLocaleDateString('sr-RS')}`}</p>
                             <div className={styles.itemsOverview}>
                                 {order['products'].map((item, index) => (
                                     <div key={index} className={styles.item}>
