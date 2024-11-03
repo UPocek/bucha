@@ -29,7 +29,7 @@ export default function Product() {
             price: 950
         },
     ]
-    const canonicalUrl = `https://www.bucha.rs/${getLinkFromName(productName)}`;
+    const canonicalUrl = `https://www.bucha.rs/proizvodi/${getLinkFromName(productName)}`;
 
     return (
         <>

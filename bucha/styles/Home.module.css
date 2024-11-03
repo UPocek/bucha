@@ -5,6 +5,8 @@
 .content {
   display: flex;
   flex-direction: column;
+  /* max-width: 1140px;
+  margin: auto; */
 }
 
 .content h1 {
