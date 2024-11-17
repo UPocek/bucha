@@ -1,0 +1,51 @@
+.container {
+    padding: 80px 16px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -.024em;
+    font-weight: 400;
+    max-width: 630px;
+    margin: 0 auto;
+}
+
+.container h1 {
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -.016em;
+    font-weight: 600;
+    margin: 0 0 32px;
+}
+
+.container h2 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -.008em;
+    font-weight: 600;
+    margin: 32px 0 0;
+}
+
+.container .date{
+    margin: 0 0 32px;
+}
+
+.container hr {
+    height: 0px;
+    margin: 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.container p {
+    margin: 24px 0;
+    font-size: 18px;
+}
+
+.container ul{
+    list-style: circle;
+}
+
+@media (max-width:1069px) {
+    .container {
+        padding: 80px 32px;
+        margin-top: 40px;
+    }
+}

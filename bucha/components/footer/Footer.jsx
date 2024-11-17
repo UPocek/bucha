@@ -32,18 +32,30 @@ export default function Footer() {
                         <Image className={styles.logo} src={'/images/bucha_logo.png'} width={screenWidth > 875 ? BUCHA_LOGO_WIDTH : BUCHA_LOGO_WIDTH / 2} height={screenWidth > 875 ? BUCHA_LOGO_HEIGHT : BUCHA_LOGO_HEIGHT / 2} alt='bucha.rs logo'></Image>
                     </div>
                     <div>
-                        <strong className={styles.columnHeading}>Setovi</strong>
+                        <strong className={styles.columnHeading}>Prodavnica</strong>
                         <ul>
                             <li>
                                 <Link href='/setovi'>Svi setovi</Link>
                             </li>
+                            <li>
+                                <Link href='/kombuha'>Svi ukusi</Link>
+                            </li>
                         </ul>
                     </div>
                     <div>
-                        <strong className={styles.columnHeading}>Kombuha</strong>
+                        <strong className={styles.columnHeading}>Dodatne stranice</strong>
                         <ul>
                             <li>
-                                <Link href='/kombuha'>Svi ukusi</Link>
+                                <Link href='/uslovi/o-nama'>O nama</Link>
+                            </li>
+                            <li>
+                                <Link href='/uslovi/politika-privatnosti'>Politika privatnosti</Link>
+                            </li>
+                            <li>
+                                <Link href='/uslovi/prava-potrosaca'>Prava potrošača</Link>
+                            </li>
+                            <li>
+                                <Link href='/uslovi/nacin-isporuke'>Način isporuke</Link>
                             </li>
                         </ul>
                     </div>
@@ -51,7 +63,7 @@ export default function Footer() {
                         <strong className={styles.columnHeading}>Uputstva</strong>
                         <ul>
                             <li>
-                                <Link href='/uputstva/priprema-kombuhe'>Priprema kombuhe za početnike</Link>
+                                <Link href='/uputstva/priprema-kombuhe'>Kako se pravi kombuha</Link>
                             </li>
                             <li>
                                 <Link href='/uputstva/druga-fermentacija'>Druga fermentacija i ukusi</Link>
