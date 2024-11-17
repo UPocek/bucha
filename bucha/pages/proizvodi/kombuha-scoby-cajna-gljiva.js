@@ -93,6 +93,41 @@ export default function Product() {
                                 "seller": {
                                     "@type": "Organization",
                                     "name": "bucha.rs"
+                                },
+                                "hasMerchantReturnPolicy": {
+                                    "@type": "MerchantReturnPolicy",
+                                    "name": "Prava potrošača",
+                                    "url": "https://www.bucha.rs/uslovi/prava-potrosaca",
+                                    "itemCondition": "https://schema.org/NewCondition",
+                                    "merchantReturnDays": "1",
+                                    "returnMethod": "http://schema.org/ReturnByMail"
+                                },
+                                "shippingDetails": {
+                                    "@type": "OfferShippingDetails",
+                                    "shippingRate": {
+                                        "@type": "MonetaryAmount",
+                                        "value": "400.00",
+                                        "currency": "RSD"
+                                    },
+                                    "shippingDestination": {
+                                        "@type": "DefinedRegion",
+                                        "addressCountry": "RS"
+                                    },
+                                    "deliveryTime": {
+                                        "@type": "ShippingDeliveryTime",
+                                        "handlingTime": {
+                                            "@type": "QuantitativeValue",
+                                            "minValue": 1,
+                                            "maxValue": 2,
+                                            "unitText": "Day"
+                                        },
+                                        "transitTime": {
+                                            "@type": "QuantitativeValue",
+                                            "minValue": 1,
+                                            "maxValue": 5,
+                                            "unitText": "Day"
+                                        }
+                                    }
                                 }
                             }
                         })
