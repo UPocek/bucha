@@ -68,6 +68,12 @@ export default function Footer() {
                             <li>
                                 <Link href='/uputstva/druga-fermentacija'>Druga fermentacija i ukusi</Link>
                             </li>
+                            <li>
+                                <Link href='/uputstva/kako-se-pravi-kombuha'>Jednostavan recept za pripremu kombuhe</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/sta-je-kombuha'>Šta je uopšte kombuha?</Link>
+                            </li>
                         </ul>
                     </div>
                     <div>
