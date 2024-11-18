@@ -15,6 +15,10 @@
   --SecundaryAccentColor: #F2AF6F;
   --OutOfFocus: #E9E9E9;
 
+  /* Blog */
+  --bullet-list-decoration-unicode: "\25A0";
+  --meta-list-decoration-unicode: " \2022 ";
+
   /* Fonts */
   --MainFont: 'Noto Sans', sans-serif;
 

@@ -50,6 +50,117 @@ export default function Instructions() {
                 <meta name="geo.region" content="RS" />
                 <meta name="language" content="sr" />
                 <meta name="robots" content="index, follow" />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "HowTo",
+                            "name": "Kako se pravi kombuha - uputstvo pripreme kombuhe kod kuće",
+                            "description": "Saznajte kako se pravi kombuha čaj kod kuće. Uputstvo i recept za pripremu zdravog kombucha čajna gljiva napitka.",
+                            "totalTime": "PT7D",
+                            "estimatedCost": {
+                                "@type": "MonetaryAmount",
+                                "currency": "RSD",
+                                "value": "1000"
+                            },
+                            "supply": [
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Staklena tegla"
+                                },
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "SCOBY (čajna gljiva)"
+                                },
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Zeleni ili crni čaj"
+                                },
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Šećer"
+                                },
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Voda"
+                                }
+                            ],
+                            "tool": [
+                                {
+                                    "@type": "HowToTool",
+                                    "name": "Šerpa ili džezva"
+                                },
+                                {
+                                    "@type": "HowToTool",
+                                    "name": "Prozračna krpa"
+                                }
+                            ],
+                            "step": [
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Pripremite teglu",
+                                    "text": "Operite staklenu teglu detaljno. Zdrava Scoby jedinka može da proizvode između 2 i 10 litara kombuha baze za nedelju dana.",
+                                    "image": "https://www.bucha.rs/images/priprema-kombuhe-korak1.png",
+                                    "url": "https://www.bucha.rs/uputstva/priprema-kombuhe#step1"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Prokuvajte vodu za čaj",
+                                    "text": "Napunite oko 1l vode u šerpicu ili džezvu i stavite je na vatru da prokuva.",
+                                    "image": "https://www.bucha.rs/images/priprema-kombuhe-korak2.png",
+                                    "url": "https://www.bucha.rs/uputstva/priprema-kombuhe#step2"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Spremite čaj",
+                                    "text": "Koristite zeleni ili crni čaj. Potrebno je 4 grama čaja po litri kombuhe.",
+                                    "image": "https://www.bucha.rs/images/priprema-kombuhe-korak3.png",
+                                    "url": "https://www.bucha.rs/uputstva/priprema-kombuhe#step3"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Završite osnovu",
+                                    "text": "Sipajte proključalu vodu u teglu, dodajte čaj i sačekajte 3-4 minuta.",
+                                    "image": "https://www.bucha.rs/images/priprema-kombuhe-korak4.png",
+                                    "url": "https://www.bucha.rs/uputstva/priprema-kombuhe#step4"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Dodajte šećer",
+                                    "text": "Dodajte 60 grama šećera po litri kombuhe i dobro promešajte da se rastvori.",
+                                    "image": "https://www.bucha.rs/images/priprema-kombuhe-korak5.png",
+                                    "url": "https://www.bucha.rs/uputstva/priprema-kombuhe#step5"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Dopunite teglu vodom",
+                                    "text": "Dopunite teglu hladnom vodom skoro do vrha, ostavite malo mesta za Scoby. Sačekajte da se voda ohladi na sobnu temperaturu.",
+                                    "image": "https://www.bucha.rs/images/priprema-kombuhe-korak6.png",
+                                    "url": "https://www.bucha.rs/uputstva/priprema-kombuhe#step6"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Zagnjurite Scoby-a",
+                                    "text": "Dodajte Scoby i starter tečnost u teglu. Prekrijte teglu prozračnom krpom i ostavite na tamnom i suvom mestu 7 dana.",
+                                    "image": "https://www.bucha.rs/images/priprema-kombuhe-korak7.png",
+                                    "url": "https://www.bucha.rs/uputstva/priprema-kombuhe#step7"
+                                }
+                            ],
+                            "aggregateRating": {
+                                "@type": "AggregateRating",
+                                "ratingValue": "4.8",
+                                "ratingCount": "150"
+                            },
+                            "author": {
+                                "@type": "Organization",
+                                "name": "bucha.rs",
+                                "url": "https://www.bucha.rs"
+                            }
+                        })
+                    }}
+                />
             </Head>
             <Navbar />
             <main role="main" className={`${styles.main} ${arimo.className}`}>

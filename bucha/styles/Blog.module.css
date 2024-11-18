@@ -1,0 +1,251 @@
+/* Blog specific */
+
+.blog,
+.blog,
+.blog {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 190%;
+    font-weight: 400;
+    text-transform: none;
+    max-width: 750px;
+    margin: auto;
+    border-top: 2px solid var(--MainAccentColor);
+    padding: 20px;
+    position: relative;
+}
+
+.blogWide {
+    max-width: 1200px;
+}
+
+.blog h1 {
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.2em;
+}
+
+.blog h2 {
+    font-size: 2.4em;
+    margin: 1em 0 0.8em;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.2em;
+}
+
+.blog h3 {
+    font-size: 2em;
+    margin: 1em 0 0.8em;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.2em;
+}
+
+.blog p,
+.blog strong {
+    margin-bottom: 1.3rem;
+}
+
+.blog a {
+    color: var(--SecundaryAccentColor);
+    transition: color .1s ease-in-out;
+}
+
+.blog a:hover {
+    color: var(--SecundaryAccentColor);
+}
+
+.blog a:visited {
+    color: var(--SecundaryAccentColor);
+}
+
+.blog .grid1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.blog .grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.blog .grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.blog .grid4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.archive {
+    max-width: 900px;
+    margin: 5vh auto;
+}
+
+.archive h1,
+.archive h2 {
+    margin: 5%;
+}
+
+.blog .callToAction {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 2px solid var(--MainAccentColorHover);
+    text-align: center;
+}
+
+.blog .callToAction strong {
+    font-size: 2em;
+    margin: 1em 0 0.8em;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.2em;
+}
+
+.blog .mainButton {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--MainAccentColorHover);
+    color: var(--BG);
+    text-transform: uppercase;
+    box-shadow: 5px 5px 20px rgba(0, 201, 224, .2);
+    border: 0;
+    font-size: 1rem;
+    letter-spacing: .15em;
+    cursor: pointer;
+    padding: 12px 22px;
+    border-radius: 8px;
+    transition: background-color .1s ease-in-out, color .1s ease-in-out;
+    text-align: center;
+}
+
+.archive .mainButton {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 220px;
+}
+
+.archive .categorie {
+    font-size: 3rem;
+}
+
+.blog .mainButton:hover {
+    color: var(--BG);
+    background-color: var(--MainAccentColorHover);
+}
+
+.marginTopBottom {
+    margin: 1rem 0;
+}
+
+/* Aditional */
+
+.spacer10 {
+    height: 10vh;
+}
+
+@media (max-width:900px) {
+
+    .blog,
+    .blogWide {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    .blog h1 {
+        font-size: 2.2em;
+    }
+
+    .blog h2 {
+        font-size: 1.8em;
+    }
+
+    .blog h3 {
+        font-size: 1.2em;
+    }
+
+    .blog p,
+    .blog strong {
+        margin-bottom: 1.2rem;
+    }
+}
+
+@media (max-width:768px) {
+    .blog h1 {
+        font-size: 2em;
+    }
+
+    .blog h2 {
+        font-size: 1.6em;
+    }
+
+    .blog h3 {
+        font-size: 1.1em;
+    }
+
+    .archive {
+        margin: 2vh auto;
+    }
+
+    .blog .mainButton {
+        font-size: .9rem;
+        letter-spacing: 0;
+        padding: 10px 18px;
+        border-radius: 4px;
+    }
+
+    .archive .mainButton {
+        max-width: 180px;
+    }
+
+    .author-box {
+        padding: 2em 1em 5%;
+    }
+
+    .author-description {
+        font-size: 1.1rem;
+        padding: 0;
+    }
+
+    .blog .grid1,
+    .blog .grid2,
+    .blog .grid3,
+    .blog .grid4 {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width:450px) {
+
+    .spacer15 {
+        height: 2vh;
+    }
+
+    .blog,
+    .blogWide {
+        line-height: 180%;
+        width: 95%;
+    }
+
+    .blog h1 {
+        font-size: 1.6em;
+    }
+
+    .blog h2 {
+        font-size: 1.4em;
+    }
+
+    .blog h3 {
+        font-size: 1.1em;
+    }
+}

@@ -1,0 +1,15 @@
+.tableOfContents {
+    font-size: 20px;
+    line-height: 190%;
+    margin-top: 32px;
+}
+
+.tableOfContents a {
+    text-decoration: none;
+    color: var(--MainAccentColor);
+    transition: color .1s ease-in-out;
+}
+
+.tableOfContents a:hover {
+    color: var(--MainAccentColorHover);
+}

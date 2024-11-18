@@ -49,6 +49,111 @@ export default function Instructions() {
                 <meta name="geo.region" content="RS" />
                 <meta name="language" content="sr" />
                 <meta name="robots" content="index, follow" />
+                <meta name="keywords" content="druga fermentacija kombuhe, kombuha sa ukusima, hibiskus kombuha, đumbir kombuha, karbonizacija kombuhe" />
+                <meta property="article:readTime" content="5" />
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "HowTo",
+                            "name": "Kombuha druga fermentacija - uputstvo za pripremu kombuhe sa ukusima",
+                            "description": "Recept za pravljenje kombuha čaja sa različitim ukusima voća. Druga fermentacija je proces kada kombuha napitak od čajne gljive dobija sjajan ukus.",
+                            "totalTime": "PT4D",
+                            "estimatedCost": {
+                                "@type": "MonetaryAmount",
+                                "currency": "RSD",
+                                "value": "1000"
+                            },
+                            "supply": [
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Kombuha baza iz prve fermentacije"
+                                },
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Hibiskus čaj (10g po flaši)"
+                                },
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Đumbir (5-6g)"
+                                },
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Limun"
+                                },
+                                {
+                                    "@type": "HowToSupply",
+                                    "name": "Voće po izboru"
+                                }
+                            ],
+                            "tool": [
+                                {
+                                    "@type": "HowToTool",
+                                    "name": "Flaša sa herm čepom"
+                                },
+                                {
+                                    "@type": "HowToTool",
+                                    "name": "Nož za seckanje"
+                                }
+                            ],
+                            "step": [
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Pripremite sastojke",
+                                    "text": "Izvadite vašu Kombuha bazu i pripremite voće ili čajeve koje ćete koristiti za aromatizaciju.",
+                                    "image": "https://www.bucha.rs/images/kombuha_druga_fermentacija_korak1.png",
+                                    "url": "https://www.bucha.rs/uputstva/druga-fermentacija#step1"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Odaberite ukus",
+                                    "text": "Za Hibiskus + Đumbir kombinaciju: Pripremite 10g hibiskus čaja, 5-6g đumbira i jedan limun. Nacedite limun u flašu, dodajte hibiskus i sitno seckani đumbir.",
+                                    "image": "https://www.bucha.rs/images/kombuha_druga_fermentacija_korak2.png",
+                                    "url": "https://www.bucha.rs/uputstva/druga-fermentacija#step2"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Sipajte kombuha bazu",
+                                    "text": "Sipajte kombuha bazu iz prve fermentacije u flašu skoro do vrha, ostavite malo prostora. Zatvorite herm čep pažljivo.",
+                                    "image": "https://www.bucha.rs/images/kombuha_druga_fermentacija_korak3.png",
+                                    "url": "https://www.bucha.rs/uputstva/druga-fermentacija#step3"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Otvaranje flaše",
+                                    "text": "Nakon 3-4 dana fermentacije, odložite flaše u frižider preko noći. Otvarajte flašu veoma oprezno zbog pritiska koji se stvorio.",
+                                    "image": "https://www.bucha.rs/images/kombuha_druga_fermentacija_korak4.png",
+                                    "url": "https://www.bucha.rs/uputstva/druga-fermentacija#step4"
+                                },
+                                {
+                                    "@type": "HowToStep",
+                                    "name": "Uživajte",
+                                    "text": "Vaša aromatizovana kombuha je spremna za konzumiranje. Eksperimentišite sa različitim ukusima i delite svoje rezultate.",
+                                    "image": "https://www.bucha.rs/images/kombuha_druga_fermentacija_korak5.png",
+                                    "url": "https://www.bucha.rs/uputstva/druga-fermentacija#step5"
+                                }
+                            ],
+                            "recipeYield": "1 flaša kombuhe",
+                            "aggregateRating": {
+                                "@type": "AggregateRating",
+                                "ratingValue": "4.9",
+                                "ratingCount": "120"
+                            },
+                            "author": {
+                                "@type": "Organization",
+                                "name": "bucha.rs",
+                                "url": "https://www.bucha.rs"
+                            },
+                            "nutrition": {
+                                "@type": "NutritionInformation",
+                                "calories": "30 calories",
+                                "servingSize": "240ml"
+                            }
+                        })
+                    }}
+                />
             </Head>
             <Navbar />
             <main role="main" className={`${styles.main} ${arimo.className}`}>

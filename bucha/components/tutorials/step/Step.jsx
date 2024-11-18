@@ -19,7 +19,7 @@ export default function Step({ number, title, text, order, link, linkTxt, image 
         };
     }, []);
 
-    return <div className={styles.section}>
+    return <div id={`step${number}`} className={styles.section}>
         <div className={styles.container}>
             <div className={screenWidth > 769 ? (order == '1' ? styles.order1 : styles.order2) : styles.order1}>
                 <div className={styles.title}>

@@ -1,0 +1,22 @@
+.bulletList {
+    list-style: none;
+    font-size: 20px;
+    line-height: 190%;
+    margin-bottom: 32px;
+}
+
+.bulletList a {
+    text-decoration: none;
+    color: var(--MainAccentColor);
+    transition: color .1s ease-in-out;
+}
+
+.bulletList a:hover {
+    color: var(--MainAccentColorHover);
+}
+
+.bulletList>li::before {
+    content: var(--bullet-list-decoration-unicode);
+    margin-right: 4px;
+    color: var(--MainAccentColor);
+}

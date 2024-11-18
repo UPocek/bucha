@@ -1,0 +1,52 @@
+.meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+.meta span:after,
+.meta p:after {
+    content: var(--meta-list-decoration-unicode);
+    color: var(--MainAccentColor);
+    margin: 0 0.45em 0 0.2em;
+}
+
+@media (max-width:900px) {
+    .meta {
+        margin: 1em auto;
+        font-size: .9rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width:768px) {
+    .meta {
+        margin: .5em auto;
+        font-size: .8rem;
+        letter-spacing: 0px;
+    }
+}
+
+@media (max-width:550px) {
+    .meta {
+        flex-direction: column;
+        font-size: 1rem;
+    }
+
+    .meta span:after,
+    .meta p:after {
+        display: none;
+    }
+
+    .meta span,
+    .meta p {
+        margin: 10px;
+    }
+}

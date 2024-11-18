@@ -1,0 +1,61 @@
+.floatingNav {
+    position: absolute;
+    right: -270px;
+    top: 0;
+    height: 100%;
+}
+
+.floatingNav>div {
+    padding: 10px 5px;
+    width: 220px;
+    max-height: 50vh;
+    overflow-y: scroll;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 180px;
+    border-top: 4px solid var(--SecundaryAccentColor);
+    border-bottom: 4px solid var(--SecundaryAccentColor);
+}
+
+.floatingNav p {
+    font-size: 1.2em;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.2em;
+    margin: 0;
+}
+
+.floatingNav ol {
+    line-height: 1.5em;
+}
+
+.floatingNav li {
+    margin-bottom: 0.5em;
+}
+
+.floatingNav a {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: -.02em;
+    text-decoration: none;
+    color: var(--MainAccentColorHover);
+    line-height: 1.1em;
+    transition: color .1s ease-in-out;
+}
+
+.floatingNav a:hover {
+    color: var(--Primary);
+}
+
+@media (max-width:1400px) {
+    .floatingNav {
+        right: -230px;
+    }
+}
+
+@media (max-width:1200px) {
+
+    .floatingNav {
+        display: none;
+    }
+}

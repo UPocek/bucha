@@ -1,0 +1,52 @@
+.relatedExtrabig,
+.relatedXXL {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    transition: box-shadow .1s ease-in-out;
+    padding: 30px 100px;
+    border-top: 2px solid var(--MainAccentColorHover);
+}
+
+.heroImage {
+    margin-bottom: 24px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.previewTitle {
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.2em;
+    color: var(--Primary);
+}
+
+.text {
+    font-size: 1rem;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+    color: var(--Primary);
+}
+
+.mainButton {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--MainAccentColorHover);
+    color: var(--BG);
+    text-transform: uppercase;
+    box-shadow: 5px 5px 20px rgba(0, 201, 224, .2);
+    border: 0;
+    font-size: 1rem;
+    letter-spacing: .15em;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: background-color .1s ease-in-out, color .1s ease-in-out;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 220px;
+}

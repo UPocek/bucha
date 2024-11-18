@@ -1,0 +1,25 @@
+.title {
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.2em;
+}
+
+@media (max-width:900px) {
+    .title {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width:768px) {
+    .title {
+        font-size: 2em;
+    }
+}
+
+@media (max-width:450px) {
+    .title {
+        font-size: 1.6em;
+    }
+
+}
