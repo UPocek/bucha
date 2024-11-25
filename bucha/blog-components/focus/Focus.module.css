@@ -9,8 +9,13 @@
     padding: 2em;
 }
 
-.important>strong {
+.important strong {
     text-transform: uppercase;
+}
+
+.important p{
+    color: var(--Primary);
+    font-weight: normal;
 }
 
 .important>div {

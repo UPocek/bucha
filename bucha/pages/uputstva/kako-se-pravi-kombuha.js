@@ -35,7 +35,7 @@ export default function KakoSePraviKombuhaBlog() {
                     content="Praktičan vodič za pravljenje kombuhe kod kuće. Naučite korak po korak proces, neophodnu opremu i savete za najbolji ukus." />
                 <meta property="og:url" content="https://www.bucha.rs/blog/kako-se-pravi-kombuha" />
                 <meta property="og:site_name" content="Online prodaja kombuhe - bucha.rs" />
-                <meta property="og:image" content="https://www.bucha.rs/images/posta2/kako-se-pravi-kombuha.webp" />
+                <meta property="og:image" content="https://www.bucha.rs/images/post2/kako-se-pravi-kombuha.webp" />
                 <meta property="og:image:width" content="1080" />
                 <meta property="og:image:height" content="719" />
                 <meta property="og:locale" content="sr_RS" />
@@ -132,7 +132,7 @@ function MainArea() {
             <div className={styles.spacer10}></div>
             <article className={styles.blog} id="kako-se-pravi-kombuha" role="article">
                 <BlogTitle title={"Jednostavan recept za pripremu kombuhe"} />
-                <Meta metaTag1={'OBJAVLJENO 17. NOVEMBAR 2024.'} metaTag2={"POČETNICI"} metaTag3={"KOMBUHA"} />
+                <Meta metaTag1={'17. NOVEMBAR 2024.'} metaTag2={"3 minuta čitanja"} metaTag3={"Kombuha"} />
                 <BlogImage src={'/images/post2/kako-se-pravi-kombuha.webp'} alt={'Kako se pravi kombuha?'} priority={true} />
                 <StrongParagraph text={"Pravljenje kombuhe kod kuće je jednostavno, zabavno i omogućava vam da kontrolišete ukus i kvalitet ovog zdravog napitka. U ovom vodiču saznajte sve što vam je potrebno za uspešan početak."} />
                 <TableOfContents sections={['Šta je SCOBY i fermentacija?', 'Neophodni sastojci i oprema', 'Recept', 'Kako znati da je fermentacija uspešna?', 'Saveti za savršenu kombuhu']} />

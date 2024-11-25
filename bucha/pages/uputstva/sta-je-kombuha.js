@@ -83,7 +83,7 @@ function MainArea() {
             <div className={styles.spacer10}></div>
             <article className={styles.blog} id="sta-je-kombuha" role="article">
                 <BlogTitle title={"Šta je kombuha?"} />
-                <Meta metaTag1={'OBJAVLJENO 17. NOVEMBAR 2024.'} metaTag2={"POČETNICI"} metaTag3={"KOMBUHA"} />
+                <Meta metaTag1={'17. NOVEMBAR 2024.'} metaTag2={"3 minuta čitanja"} metaTag3={"KOMBUHA"} />
                 <BlogImage src={'/images/post1/sta-je-kombuha.webp'} alt={'Primer kako izgleda kombuha?'} priority={true} />
                 <StrongParagraph text={"Kombuha je fermentisani napitak napravljen od zaslađenog zelenog ili crnog čaja i simbiozne kulture bakterija i kvasca (SCOBY). Ovaj napitak, poznat po svojim probiotičkim svojstvima, sve više osvaja ljubitelje prirodnog zdravlja širom sveta, a od nedavno i Srbije!"} />
                 <TableOfContents sections={['Šta je kombuha?', 'Zašto je popularna u Srbiji?', 'Zdravstvene prednosti kombuhe', 'Kako se pravi kombuha?', 'Gde kupiti kombuhu?']} />

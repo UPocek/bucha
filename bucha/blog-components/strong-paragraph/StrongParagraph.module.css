@@ -1,5 +1,5 @@
-.paragraph {
-    margin-bottom: 1.3rem;
+strong.paragraph {
+    padding-bottom: 2rem !important;
 }
 
 @media (max-width:900px) {
