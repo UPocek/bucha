@@ -3,8 +3,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react";
 
-const BUCHA_LOGO_WIDTH = 360.4;
-const BUCHA_LOGO_HEIGHT = 100.4;
+const BUCHA_LOGO_WIDTH = 300;
+const BUCHA_LOGO_HEIGHT = 83.57;
 export default function Footer() {
     const [screenWidth, setScreenWidth] = useState(1920);
 
