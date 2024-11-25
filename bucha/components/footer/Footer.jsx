@@ -71,7 +71,37 @@ export default function Footer() {
                                 <Link href='/uputstva/kako-se-pravi-kombuha'>Jednostavan recept za pripremu kombuhe</Link>
                             </li>
                             <li>
-                                <Link href='/uputstva/sta-je-kombuha'>Šta je uopšte kombuha?</Link>
+                                <Link href='/uputstva/sta-je-kombuha'>Šta je kombuha?</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/zdravstveni-benefiti-kombuhe'>10 zdravstvenih benefita kombuhe</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/da-li-kombuha-sadrzi-alkohol'>Da li kombuha sadrži alkohol?</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/kako-prepoznati-dobru-kombuhu'>Kako da prepoznate da li je vaša kombuha dobra?</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/kako-se-cuva-kombuha'>Kako se čuva kombuha?</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/da-li-je-braon-boja-kombuhe-uredu'>Da li je braon boja kombuhe uredu?</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/koliko-kombuhe-treba-piti'>Koliko kombuhe treba piti?</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/kombucha-dijeta'>Kombucha i različite ishrane</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/mehurici-u-kombuhi'>Šta su mehurići u kombuhi</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/moze-li-svako-praviti-kombuhu'>Može li svako praviti kombuhu??</Link>
+                            </li>
+                            <li>
+                                <Link href='/uputstva/nuspojave-kombuhe'>Nuspojave kombuhe</Link>
                             </li>
                         </ul>
                     </div>
