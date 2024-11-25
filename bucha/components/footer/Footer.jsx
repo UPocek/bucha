@@ -98,7 +98,7 @@ export default function Footer() {
                                 <Link href='/uputstva/mehurici-u-kombuhi'>Šta su mehurići u kombuhi</Link>
                             </li>
                             <li>
-                                <Link href='/uputstva/moze-li-svako-praviti-kombuhu'>Može li svako praviti kombuhu??</Link>
+                                <Link href='/uputstva/moze-li-svako-praviti-kombuhu'>Može li svako praviti kombuhu?</Link>
                             </li>
                             <li>
                                 <Link href='/uputstva/nuspojave-kombuhe'>Nuspojave kombuhe</Link>

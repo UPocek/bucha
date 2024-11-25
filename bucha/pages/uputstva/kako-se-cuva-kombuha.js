@@ -28,7 +28,7 @@ export default function CuvanjeKombuhaBlog() {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="geo.region" content="RS" />
 
-                <meta property="og:title" content="Kako se čuva kombuha? Kompletan vodič za pravilno skladištenje" />
+                <meta property="og:title" content="Kako se čuva kombuha? Vodič za pravilno skladištenje" />
                 <meta property="og:type" content="website" />
                 <meta property="og:description"
                     content="Kako pravilno čuvati kombuhu? Saznajte sve o optimalnoj temperaturi, roku trajanja i načinima skladištenja kombuhe za najbolji ukus i očuvanje probiotika." />
@@ -45,7 +45,7 @@ export default function CuvanjeKombuhaBlog() {
                 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
                 <link rel="manifest" href="img/site.webmanifest" />
 
-                <title>Kako se čuva kombuha? Kompletan vodič za pravilno skladištenje</title>
+                <title>Kako se čuva kombuha? Vodič za pravilno skladištenje</title>
 
                 <script
                     type="application/ld+json"
