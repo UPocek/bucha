@@ -8,73 +8,123 @@
 
 <url>
   <loc>https://www.bucha.rs/</loc>
-  <lastmod>2024-11-18T00:27:20+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:08+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/prodaja</loc>
-  <lastmod>2024-11-18T00:27:20+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:08+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/uputstva/priprema-kombuhe</loc>
-  <lastmod>2024-11-18T00:27:20+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:09+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/uputstva/druga-fermentacija</loc>
-  <lastmod>2024-11-18T00:27:21+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:09+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/kombuha</loc>
-  <lastmod>2024-11-18T00:27:21+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2024-11-25T22:58:09+00:00</lastmod>
+  <priority>0.1</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/setovi</loc>
-  <lastmod>2024-11-18T00:27:21+00:00</lastmod>
-  <priority>0.64</priority>
+  <lastmod>2024-11-25T22:58:09+00:00</lastmod>
+  <priority>0.1</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/uslovi/o-nama</loc>
-  <lastmod>2024-11-18T00:27:21+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:09+00:00</lastmod>
   <priority>0.1</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/uslovi/politika-privatnosti</loc>
-  <lastmod>2024-11-18T00:27:21+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:09+00:00</lastmod>
   <priority>0.1</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/uslovi/prava-potrosaca</loc>
-  <lastmod>2024-11-18T00:27:21+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:10+00:00</lastmod>
   <priority>0.1</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/uslovi/nacin-isporuke</loc>
-  <lastmod>2024-11-18T00:27:21+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:10+00:00</lastmod>
   <priority>0.1</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/uputstva/kako-se-pravi-kombuha</loc>
-  <lastmod>2024-11-18T00:27:22+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:10+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/uputstva/sta-je-kombuha</loc>
-  <lastmod>2024-11-18T00:27:22+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/zdravstveni-benefiti-kombuhe</loc>
+  <lastmod>2024-11-25T22:58:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/da-li-kombuha-sadrzi-alkohol</loc>
+  <lastmod>2024-11-25T22:57:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/kako-prepoznati-dobru-kombuhu</loc>
+  <lastmod>2024-11-25T22:58:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/kako-se-cuva-kombuha</loc>
+  <lastmod>2024-11-25T22:58:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/da-li-je-braon-boja-kombuhe-uredu</loc>
+  <lastmod>2024-11-25T22:58:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/koliko-kombuhe-treba-piti</loc>
+  <lastmod>2024-11-25T22:58:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/kombucha-dijeta</loc>
+  <lastmod>2024-11-25T22:58:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/mehurici-u-kombuhi</loc>
+  <lastmod>2024-11-25T22:58:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/moze-li-svako-praviti-kombuhu</loc>
+  <lastmod>2024-11-25T22:58:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://www.bucha.rs/uputstva/nuspojave-kombuhe</loc>
+  <lastmod>2024-11-25T22:58:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/proizvodi/kombuha-scoby-cajna-gljiva</loc>
-  <lastmod>2024-11-18T00:27:22+00:00</lastmod>
+  <lastmod>2024-11-25T22:58:11+00:00</lastmod>
   <priority>0.8</priority>
 </url>
 <url>
   <loc>https://www.bucha.rs/proizvodi/kombuha-05l-hibiskus</loc>
-  <lastmod>2024-11-18T00:27:22+00:00</lastmod>
-  <priority>0.8</priority>
+  <lastmod>2024-11-25T22:58:12+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 
 
