@@ -20,7 +20,7 @@ export default function StaJeKombuhaBlog() {
             <Head>
                 <meta charset="utf-8" />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://www.bucha.rs/blog/sta-je-kombuha" />
+                <link rel="canonical" href="https://www.bucha.rs/uputstva/sta-je-kombuha" />
                 <meta name="description"
                     content="Šta je kombuha čajna gljiva, zašto je popularna u Srbiji, koje su njene zdravstvene prednosti i kako je možete praviti kod kuće. Kupite kombuhu na bucha.rs" />
                 <meta name="keywords"
@@ -32,7 +32,7 @@ export default function StaJeKombuhaBlog() {
                 <meta property="og:type" content="website" />
                 <meta property="og:description"
                     content="Sve o kombuhi: njenim prednostima, popularnosti u Srbiji i kako da je napravite kod kuće." />
-                <meta property="og:url" content="https://www.bucha.rs/blog/sta-je-kombuha" />
+                <meta property="og:url" content="https://www.bucha.rs/uputstva/sta-je-kombuha" />
                 <meta property="og:site_name" content="Online prodaja kombuhe - bucha.rs" />
                 <meta property="og:image" content="https://www.bucha.rs/images/kombucha-blog-cover.jpg" />
                 <meta property="og:image:width" content="1080" />
