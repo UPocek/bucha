@@ -27,7 +27,7 @@ export default function PrepoznavanjeDobreKombuheBlog() {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta name="geo.region" content="RS" />
 
-                <meta property="og:title" content="Kako prepoznati da li je moja kombuha dobra? Vodič za početnike" />
+                <meta property="og:title" content="Kako prepoznati dobru kombuhu? Vodič za početnike" />
                 <meta property="og:type" content="website" />
                 <meta property="og:description"
                     content="Naučite znakove dobre i zdrave kombuhe! Otkrijte kako da prepoznate ispravnu fermentaciju i izbehnete potencijalne probleme." />
@@ -44,7 +44,7 @@ export default function PrepoznavanjeDobreKombuheBlog() {
                 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
                 <link rel="manifest" href="img/site.webmanifest" />
 
-                <title>Kako prepoznati da li je moja kombuha dobra? Vodič za početnike</title>
+                <title>Kako prepoznati dobru kombuhu? Vodič za početnike</title>
 
                 <script
                     type="application/ld+json"
