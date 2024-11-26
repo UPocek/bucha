@@ -130,7 +130,7 @@ function MainArea() {
     return (
         <main>
             <div className={styles.spacer10}></div>
-            <article className={styles.blog} id="kako-se-pravi-kombuha" role="article">
+            <article className={styles.blog} id="kako-se-pravi-kombuha" >
                 <BlogTitle title={"Jednostavan recept za pripremu kombuhe"} />
                 <Meta metaTag1={'17. NOVEMBAR 2024.'} metaTag2={"3 minuta čitanja"} metaTag3={"Kombuha"} />
                 <BlogImage src={'/images/post2/kako-se-pravi-kombuha.webp'} alt={'Kako se pravi kombuha?'} />

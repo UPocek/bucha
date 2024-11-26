@@ -81,7 +81,7 @@ function MainArea() {
     return (
         <main>
             <div className={styles.spacer10}></div>
-            <article className={styles.blog} id="sta-je-kombuha" role="article">
+            <article className={styles.blog} id="sta-je-kombuha" >
                 <BlogTitle title={"Šta je kombuha?"} />
                 <Meta metaTag1={'17. NOVEMBAR 2024.'} metaTag2={"3 minuta čitanja"} metaTag3={"KOMBUHA"} />
                 <BlogImage src={'/images/post1/sta-je-kombuha.webp'} alt={'Primer kako izgleda kombuha?'} />

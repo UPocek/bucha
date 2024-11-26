@@ -77,7 +77,7 @@ function MainArea() {
     return (
         <main>
             <div className={styles.spacer10}></div>
-            <article className={styles.blog} id="bezbednost-kombuhe" role="article">
+            <article className={styles.blog} id="bezbednost-kombuhe" >
                 <BlogTitle title="Koliko kombuhe je bezbedno piti? Kompletan vodič" />
 
                 <Meta

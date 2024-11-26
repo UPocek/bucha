@@ -22,7 +22,7 @@ export default function KombuhaNuspojaveRiziciBlog() {
             <Head>
                 <meta charset="utf-8" />
                 <meta name="robots" content="index, follow" />
-                <link rel="canonical" href="https://www.bucha.rs/uputstva/nuspojave-kombuche" />
+                <link rel="canonical" href="https://www.bucha.rs/uputstva/nuspojave-kombuhe" />
                 <meta name="description"
                     content="Otkrijte sve o mogućim rizicima i nuspojavama kombuhe. Stručan vodič o zdravstvenim aspektima i pravilnoj konzumaciji." />
                 <meta name="keywords" content="kombuha nuspojave, rizici kombuhe, zdravstveni efekti kombuhe, sigurnost kombuhe, kombuha zdravlje" />
@@ -53,7 +53,7 @@ export default function KombuhaNuspojaveRiziciBlog() {
                                 "name": "Koje su nuspojave kombuhe?",
                                 "acceptedAnswer": {
                                     "@type": "Answer",
-                                    "text": ""
+                                    "text": "Moguće nuspojave su: alergijske reakcije, problemi sa varanjem kod osetljivih osoba, interakcije sa nekim lekovima. Zato uvodite kombuhu postepeno u vašu ishranu i pratite odgovor vašeg tela. "
                                 },
                                 "datePublished": "2024-11-24",
                                 "author": {
@@ -77,8 +77,8 @@ function MainArea() {
     return (
         <main>
             <div className={styles.spacer10}></div>
-            <article className={styles.blog} id="kombuha-rizici" role="article">
-                <BlogTitle title="Rizici i nuspojave kombuhe koje morate znati" />
+            <article className={styles.blog} id="kombuha-rizici" >
+                <BlogTitle title="Rizici i nuspojave kombuhe (kombuche) koje morate znati" />
 
                 <Meta
                     metaTag1="25. NOVEMBAR 2024."
@@ -105,11 +105,11 @@ function MainArea() {
                 <BlogSubtitle text="Najčešći zdravstveni rizici" id={1} />
 
                 <BasicParagraph
-                    text="Kombuha je generalno sigarna, ali postoje određeni rizici koje treba razumeti:"
+                    text="Kombuha (kombucha) je generalno sigarna, ali postoje određeni rizici koje treba razumeti:"
                 />
 
                 <BulletPointsBold items={[
-                    { 'title': 'Mogućnost kontaminacije štetnim bakterijama', 'text': 'Ukoliko se priprema sa prljavim rukama' },
+                    { 'title': 'Mogućnost kontaminacije pića štetnim bakterijama', 'text': 'Ukoliko se priprema sa prljavim rukama' },
                     { 'title': 'Potencijalne alergijske reakcije', 'text': 'Prilikom prvog pijenja počnite sa malom dozom' },
                     { 'title': 'Problemi sa varanjem kod osetljivih osoba', 'text': 'Konzumirajte u malim količinama do 125ml na dan' },
                     { 'title': 'Interakcije sa nekim lekovima', 'text': 'Ukoliko koristite neku terapiju pre uvođenja kombuhe posavetujete se sa lekarom' },

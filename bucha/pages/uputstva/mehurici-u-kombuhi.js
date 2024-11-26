@@ -81,7 +81,7 @@ function MainArea() {
             <Navbar />
             <main>
                 <div className={styles.spacer10}></div>
-                <article className={styles.blog} id="mehurici-u-kombuhi" role="article">
+                <article className={styles.blog} id="mehurici-u-kombuhi" >
                     <BlogTitle title="Mehurići u kombuhi - Da li je to normalno?" />
 
                     <Meta

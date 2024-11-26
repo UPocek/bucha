@@ -82,7 +82,7 @@ function MainArea() {
             <Navbar />
             <main>
                 <div className={styles.spacer10}></div>
-                <article className={styles.blog} id="smedji-konci-u-kombuhi" role="article">
+                <article className={styles.blog} id="smedji-konci-u-kombuhi" >
                     <BlogTitle title="Da li je braon boja kombuhe uredu? Izgled zdrave kombuhe" />
 
                     <Meta

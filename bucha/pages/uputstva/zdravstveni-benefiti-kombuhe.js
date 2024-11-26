@@ -81,7 +81,7 @@ function MainArea() {
             <Navbar />
             <main>
                 <div className={styles.spacer10}></div>
-                <article className={styles.blog} id="zdravstvene-koristi-kombuhe" role="article">
+                <article className={styles.blog} id="zdravstvene-koristi-kombuhe" >
                     <BlogTitle title="10 zdravstvenih koristi kombuhe" />
 
                     <Meta

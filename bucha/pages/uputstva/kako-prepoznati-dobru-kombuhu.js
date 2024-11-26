@@ -81,7 +81,7 @@ function MainArea() {
     return (
         <main>
             <div className={styles.spacer10}></div>
-            <article className={styles.blog} id="prepoznavanje-dobre-kombuhe" role="article">
+            <article className={styles.blog} id="prepoznavanje-dobre-kombuhe" >
                 <BlogTitle title="Kako prepoznati da li je moja kombuha dobra? Stručni vodič!" />
 
                 <Meta
