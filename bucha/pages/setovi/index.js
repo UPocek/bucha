@@ -21,7 +21,7 @@ export default function Setovi() {
             price: 950
         }
     ]
-    const canonicalUrl = "https://www.bucha.rs/kombuha";
+    const canonicalUrl = "https://www.bucha.rs/setovi";
 
     return (
         <>
