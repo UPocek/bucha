@@ -1,0 +1,54 @@
+.variant {
+    width: 100%;
+    height: 112px;
+    display: flex;
+    gap: 20px;
+    padding: 8px;
+    margin: 12px 0;
+    border: 1px solid var(--OutOfFocus);
+    border-radius: var(--BorderRadius);
+    transition: border 250ms ease;
+}
+
+.variant:hover,
+.selected {
+    border: 1px solid var(--MainAccentColor);
+}
+
+.variant .info {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.variant p {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.variant .title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -.025em;
+    margin-bottom: 4px;
+}
+
+.variant .price {
+    color: var(--PrimaryHover);
+}
+
+.variant .save {
+    color: var(--MainAccentColor);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.variant img {
+    border-radius: var(--BorderRadius);
+    aspect-ratio: 1/1;
+}

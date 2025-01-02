@@ -43,7 +43,7 @@ export default function Checkout() {
     }, [])
 
     function createOrder() {
-        if (!credentialsValid) {
+        if (!checkOrderFilledCorrectly()) {
             return;
         }
         axios.post(`${baseUrl}/api/order`, { 'fullName': `${surname} ${name}`, 'email': email, 'phone': phone, 'address': address, 'city': city, 'postalCode': postalCode, 'country': country, 'note': note, 'products': cartItems })
@@ -58,7 +58,7 @@ export default function Checkout() {
             });
     }
 
-    function credentialsValid() {
+    function checkOrderFilledCorrectly() {
         if (email.trim().length == 0 || !email.includes('@') || !email.includes('.')) {
             toast.error('Email nije ispravan. Pokušajte ponovo.');
             return false;

@@ -18,23 +18,23 @@ const arimo = Arimo({
 
 export default function Product() {
 
-    const productName = "Kombuha SCOBY čajna gljiva";
-    const pageMetaDescription = "Prodaja kombuha čajna gljiva (SCOBY) za pripremu fermentisanog kombuha pića kod kuće. Organska kultura bakterija i kvasca, po najboljoj ceni u Srbiji"
-    const pageKeywords = "kombuha, kombucha, scoby, čajna gljiva, kako se sprema kombuha, gljiva za kombuhu, fermentisano piće, organski napitak"
-    const productShortDescription = ["Uz kupovinu dobijate kombuha gljivu spremnu za pripremu pića, detaljno uputstvo sa našim savetima za početnike i starter tečnost koja je potrebna za prvu fermentaciju", "Kultura kombuhe je bez glutena, pogodan za vegane i ima mnoge zdravstvene benefite.", "Vašu porudžbinu šaljemo istog ili narednog dana.", "Nadamo se da ćete uživati u svom lekovitom kombuha napitku! Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a, Viber-a ili WhatsApp-a na 063/427-280."];
-    const productLongDescription = ["Kada je u pitanju pravljenje kombuhe, ništa nije važnije od kvaliteta vašeg startera za kombuhu.", "Naše SCOBY kultura kombuhe pravljene su koristeći filtriranu vodu, organski trskin šećer, rinfuzni čaj i organski starter za kombuhu. Naše kulture rastu koristeći starter koji fermentišemo najmanje 6 nedelja kako bismo osigurali najširi spektar korisnih bakterija u vašoj finalnoj kulturi. Kombuha SCOBY čajna gljiva je neophodan deo za pravljenje vaše prve ture kombuha napitka."];
-    const singleProductPrice = 950;
-    const productImageGallery = [`/images/products/${getLinkFromName(productName)}.webp`, "/images/gallery/scoby2.jpg", "/images/gallery/scoby3.jpg", "/images/gallery/scoby4.jpg", "/images/gallery/scoby5.jpg"];
+    const productName = "Termometar za fermentaciju";
+    const pageMetaDescription = "Samolepljivi termometar za fermentaciju kombuhe kod kuće. Jednostavno se postavlja na teglu i omogućava vam da pratite temperaturu fermentacije."
+    const pageKeywords = "samolepljivi termometar, termometar za fermentaciju, termometar za teglu, termometar za kombuhu, termometar traka"
+    const productShortDescription = ["Termometar koji se lepi za stranu vaše posude za pripremu i prikazuje temperaturu sa tačnošću od 1 stepena.", "Vašu porudžbinu šaljemo istog ili narednog dana. Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a, Viber-a ili WhatsApp-a na 063/427-280."];
+    const productLongDescription = ["Ovaj samolepljivi termometar sadrži tečne kristalne i pomaže da osigurate da vaša fermentacija ostane između 22 i 28 stepeni.", "Podeok za temperaturu postaje zelen kako bi ukazao tačnu temperaturu (plava znači nešto nižu, a braon nešto višu od prikazane vrednosti).", "Možete ga premestiti, ukloniti po potrebi ili ostaviti na posudi godinama za kontinuirano merenje temperature. Ostaje pričvršćen čak i tokom pranja tegle!"];
+    const singleProductPrice = 200;
+    const productImageGallery = [`/images/products/${getLinkFromName(productName)}.webp`, "/images/gallery/termometar_za_fermentaciju_2.webp", "/images/products/3kom-termometar-za-fermentaciju.webp", "/images/products/5kom-termometar-za-fermentaciju.webp"];
 
     // UPSELL ITEMS
     const relatedItems = [
         {
-            name: "Pamučna prekrivka za teglu tokom fermentacije",
-            price: 250
+            name: "Kombuha SCOBY čajna gljiva",
+            price: 950
         },
         {
-            name: "Termometar za fermentaciju",
-            price: 200
+            name: "Pamučna prekrivka za teglu tokom fermentacije",
+            price: 250
         },
         {
             name: "Kombuha 0.5l - Hibiskus",
@@ -46,7 +46,17 @@ export default function Product() {
     const variants = [
         {
             name: productName,
-            price: singleProductPrice,
+            price: singleProductPrice
+        },
+        {
+            name: "3kom termometar za fermentaciju",
+            price: 500,
+            procentageDiscount: 17
+        },
+        {
+            name: "5kom termometar za fermentaciju",
+            price: 800,
+            procentageDiscount: 20
         }
     ]
 

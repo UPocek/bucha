@@ -4,8 +4,9 @@
     margin: 16px 0 0;
 }
 
-.top p {
-    line-height: 1.7;
+.top p,
+.top h2 {
+    line-height: 1.67;
     word-wrap: break-word;
     margin: 0;
     margin-bottom: 1em;
@@ -22,6 +23,13 @@
 .actions {
     display: flex;
     gap: 32px;
+    margin-top: 32px;
+}
+
+.top .variantsTitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 32px 0 8px;
 }
 
 /* Quantity Selector */

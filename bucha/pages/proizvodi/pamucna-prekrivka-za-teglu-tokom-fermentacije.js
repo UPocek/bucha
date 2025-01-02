@@ -18,19 +18,19 @@ const arimo = Arimo({
 
 export default function Product() {
 
-    const productName = "Kombuha SCOBY čajna gljiva";
-    const pageMetaDescription = "Prodaja kombuha čajna gljiva (SCOBY) za pripremu fermentisanog kombuha pića kod kuće. Organska kultura bakterija i kvasca, po najboljoj ceni u Srbiji"
-    const pageKeywords = "kombuha, kombucha, scoby, čajna gljiva, kako se sprema kombuha, gljiva za kombuhu, fermentisano piće, organski napitak"
-    const productShortDescription = ["Uz kupovinu dobijate kombuha gljivu spremnu za pripremu pića, detaljno uputstvo sa našim savetima za početnike i starter tečnost koja je potrebna za prvu fermentaciju", "Kultura kombuhe je bez glutena, pogodan za vegane i ima mnoge zdravstvene benefite.", "Vašu porudžbinu šaljemo istog ili narednog dana.", "Nadamo se da ćete uživati u svom lekovitom kombuha napitku! Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a, Viber-a ili WhatsApp-a na 063/427-280."];
-    const productLongDescription = ["Kada je u pitanju pravljenje kombuhe, ništa nije važnije od kvaliteta vašeg startera za kombuhu.", "Naše SCOBY kultura kombuhe pravljene su koristeći filtriranu vodu, organski trskin šećer, rinfuzni čaj i organski starter za kombuhu. Naše kulture rastu koristeći starter koji fermentišemo najmanje 6 nedelja kako bismo osigurali najširi spektar korisnih bakterija u vašoj finalnoj kulturi. Kombuha SCOBY čajna gljiva je neophodan deo za pravljenje vaše prve ture kombuha napitka."];
-    const singleProductPrice = 950;
-    const productImageGallery = [`/images/products/${getLinkFromName(productName)}.webp`, "/images/gallery/scoby2.jpg", "/images/gallery/scoby3.jpg", "/images/gallery/scoby4.jpg", "/images/gallery/scoby5.jpg"];
+    const productName = "Pamučna prekrivka za teglu tokom fermentacije";
+    const pageMetaDescription = "Pamučna prekrivka za teglu za fermentaciju kombuhe kod kuće. Pamučni poklopac omogućava da vaša kombuha diše, a ne dozvoljava prašini da uđu u teglu."
+    const pageKeywords = "kombuha, scoby, čajna gljiva, fermentisano piće, probiotik, organski napitak"
+    const productShortDescription = ["Pamučna prekrivka za teglu je neophodan deo opreme za fermentaciju kombuhe kod kuće", "Pamučna prekrivka omogućava da vaša kombuha diše, a da pritom ne dozvoljava prašini i insektima da uđu u teglu.", "Vašu porudžbinu šaljemo istog ili narednog dana. Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a, Viber-a ili WhatsApp-a na 063/427-280."];
+    const productLongDescription = ["Višekratni 100% pamučni poklopac za teglu tokom fermentacije.", "Za tegle od 7.6cm do 10.1cm prečnika.", "Pamučna tkanina omogućava slobodan protok vazduha do vaše fermentacije, dok elastična traka čvrsto prijanja uz rub tegle, sprečavajući ulazak voćnih mušica i prašine. Lako se stavljaju i skidaju kada vam zatrebaju. Mogu da se pere u mašini za veš.",];
+    const singleProductPrice = 250;
+    const productImageGallery = [`/images/products/${getLinkFromName(productName)}.webp`, "/images/gallery/prekrivka_za_fermentaciju_2.webp", "/images/products/3kom-pamucne-prekrivke-za-teglu.webp", "/images/products/5kom-pamucnih-prekrivki-za-teglu.webp"];
 
     // UPSELL ITEMS
     const relatedItems = [
         {
-            name: "Pamučna prekrivka za teglu tokom fermentacije",
-            price: 250
+            name: "Kombuha SCOBY čajna gljiva",
+            price: 950
         },
         {
             name: "Termometar za fermentaciju",
@@ -39,7 +39,7 @@ export default function Product() {
         {
             name: "Kombuha 0.5l - Hibiskus",
             price: 650
-        }
+        },
     ]
 
     // ADD VARIANTS IF NEEDED
@@ -47,7 +47,17 @@ export default function Product() {
         {
             name: productName,
             price: singleProductPrice,
-        }
+        },
+        {
+            name: "3kom pamučne prekrivke za teglu",
+            price: 600,
+            procentageDiscount: 20
+        },
+        {
+            name: "5kom pamučnih prekrivki za teglu",
+            price: 950,
+            procentageDiscount: 24
+        },
     ]
 
     // DO NOT CHANGE BELOW THIS LINE
@@ -129,7 +139,7 @@ export default function Product() {
                                     "@type": "OfferShippingDetails",
                                     "shippingRate": {
                                         "@type": "MonetaryAmount",
-                                        "value": singleProductPrice,
+                                        "value": { singleProductPrice },
                                         "currency": "RSD"
                                     },
                                     "shippingDestination": {

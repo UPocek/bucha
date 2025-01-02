@@ -23,6 +23,14 @@ export default function Shop() {
         {
             name: "Kombuha 0.5l - Hibiskus",
             price: 650
+        },
+        {
+            name: "Pamučna prekrivka za teglu tokom fermentacije",
+            price: 250
+        },
+        {
+            name: "Termometar za fermentaciju",
+            price: 200
         }
     ]
     const canonicalUrl = "https://www.bucha.rs/prodaja";
