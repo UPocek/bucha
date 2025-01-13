@@ -18,9 +18,9 @@ const arimo = Arimo({
 
 export default function Product() {
 
-    const productName = "Kombuha SCOBY čajna gljiva";
-    const pageMetaDescription = "Prodaja kombuha čajna gljiva (SCOBY) za pripremu fermentisanog kombuha pića kod kuće. Organska kultura kombucha bakterija i kvasca, po najboljoj ceni u Srbiji"
-    const pageKeywords = "kombuha, kombucha, scoby, čajna gljiva, kako se sprema kombuha, gljiva za kombuhu, fermentisano piće, organski napitak, gljiva kombuha gde kupiti, kombucha srbija"
+    const productName = "Lakmus papir za merenje PH fermentacije";
+    const pageMetaDescription = "Prodaja lakmus papira za merenje PH vrednosti fermentacije kod kuće. Lakmus papir za merenje kiselosti i baznosti kombuhe, po najboljoj ceni u Srbiji"
+    const pageKeywords = "lakmus papir, lakmus hartija, merenje ph vrednosti, ph vrednost kombuhe, ph fermentacije kod kuce, kako meriti ph vrednost, lakmus papir srbija"
     const productShortDescription = ["Uz kupovinu dobijate kombuha gljivu spremnu za pripremu pića, detaljno uputstvo sa našim savetima za početnike i starter tečnost koja je potrebna za prvu fermentaciju", "Kultura kombuhe je bez glutena, pogodan za vegane i ima mnoge zdravstvene benefite.", "Vašu porudžbinu šaljemo istog ili narednog dana.", "Nadamo se da ćete uživati u svom lekovitom kombuha napitku! Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a, Viber-a ili WhatsApp-a na 063/427-280."];
     const productLongDescription = ["Kada je u pitanju pravljenje kombuhe, ništa nije važnije od kvaliteta vašeg startera za kombuhu.", "Naše SCOBY kulture kombuhe pravljene su koristeći filtriranu vodu, organski trskin šećer, rinfuzni čaj i organski starter za kombuhu u Srbiji. Naše kulture rastu koristeći starter koji fermentišemo najmanje 6 nedelja kako bismo osigurali najširi spektar korisnih bakterija u vašoj finalnoj kulturi. Kombuha starter čajna gljiva je neophodan deo za pravljenje vaše prve ture kombuha napitka."];
     const singleProductPrice = 950;
