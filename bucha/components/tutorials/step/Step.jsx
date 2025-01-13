@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 
-export default function Step({ number, title, text, order, link, linkTxt, image }) {
+export default function Step({ number, title, text, order, links, linkTxts, image }) {
     const [screenWidth, setScreenWidth] = useState(1920);
 
     useEffect(() => {
@@ -27,11 +27,14 @@ export default function Step({ number, title, text, order, link, linkTxt, image 
                     <h2>{title}</h2>
                 </div>
                 <div>
-                    <p>{text}{link && <Link className={styles.link} href={link}>{linkTxt}</Link>}</p>
+                    <p>{text}</p>
+                    {
+                        links.map((link, i) => <Link key={i} className={styles.link} href={link}>{`, ${linkTxts[i]}`}</Link>)
+                    }
                 </div>
             </div>
             <div className={screenWidth > 769 ? (order == '1' ? styles.order2 : styles.order1) : styles.order2}>
-                <Image src={image} width={screenWidth > 1580 ? 501 : 301} height={screenWidth > 1580 ? 501 : 301} alt={`Priprema kombuhe korak ${number}`} />
+                {image && <Image src={image} width={screenWidth > 1580 ? 501 : 301} height={screenWidth > 1580 ? 501 : 301} alt={`Priprema kombuhe korak ${number}`} />}
             </div>
         </div>
     </div>
