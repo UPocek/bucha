@@ -52,6 +52,10 @@
     text-decoration: none;
 }
 
+.link:hover {
+    text-decoration: underline;
+}
+
 @media(max-width:1580px) {
     .container h2 {
         font-size: 40px;
