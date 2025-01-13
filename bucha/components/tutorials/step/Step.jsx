@@ -29,7 +29,7 @@ export default function Step({ number, title, text, order, links, linkTxts, imag
                 <div>
                     <p>{text}</p>
                     {
-                        links?.map((link, i) => <Link key={link} className={styles.link} href={link}>{`, ${linkTxts?.[i]}`}</Link>)
+                        links?.map((link, i) => <Link key={link} className={styles.link} href={link}>{`${i != 0 && ' ,'} ${linkTxts?.[i]}`}</Link>)
                     }
                 </div>
             </div>
