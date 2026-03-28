@@ -335,7 +335,7 @@ export const tutorialPages = {
                     text1: 'If your first fermentation is finished and you want to turn the base into a lively, fruity and sparkling drink, this is the next step. If you need the first stage first, check the ',
                     link: '/uputstva/priprema-kombuhe',
                     linkText: 'kombucha brewing guide',
-                    text2: '. Second fermentation is where the base develops personality and flavor.',
+                    text2: '. Second fermentation is where the base develops personality flavor and fun.',
                 },
                 steps: [
                     {
