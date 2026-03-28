@@ -2,5 +2,19 @@
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
-    "python.formatting.provider": "none"
+    "python.formatting.provider": "none",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+    
 }

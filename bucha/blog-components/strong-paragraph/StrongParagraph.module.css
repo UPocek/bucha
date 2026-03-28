@@ -1,9 +1,0 @@
-strong.paragraph {
-    padding-bottom: 2rem !important;
-}
-
-@media (max-width:900px) {
-    .paragraph {
-        margin-bottom: 1.2rem;
-    }
-}

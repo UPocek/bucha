@@ -1,18 +1,11 @@
-import Script from 'next/script'
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export default function Analytics() {
-    return (
-        <>
-            <Script src="https://www.googletagmanager.com/gtag/js?id=G-2DQWBKE9T0" strategy="afterInteractive" />
-            <Script id="google-analytics" strategy="afterInteractive">
-                {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-     
-              gtag('config', 'G-2DQWBKE9T0');
-            `}
-            </Script>
-        </>
-    )
+    const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
+    if (process.env.NODE_ENV !== 'production' || !gaId) {
+        return null;
+    }
+
+    return <GoogleAnalytics gaId={gaId} />;
 }

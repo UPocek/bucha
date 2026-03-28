@@ -1,127 +1,230 @@
-import Footer from "@/components/footer/Footer";
-import NavWrapper from "@/components/nav/Navbar";
-import Head from "next/head";
-import styles from "@/styles/ThankYou.module.css"
-import { Arimo } from 'next/font/google'
-import { useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/router";
-import axios from "axios";
-import { baseUrl, mainCurrency, shippingPrice } from "../_app";
-import { toast } from "sonner";
-import { getCountryFromCode, getLinkFromName } from "@/helper/helper";
-import Image from "next/image";
+import Footer from '@/components/footer/Footer';
+import NavWrapper from '@/components/nav/Navbar';
+import SeoHead from '@/components/seo/SeoHead';
+import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
+import { baseUrl, mainCurrency, shippingPrice } from '../_app';
+import { toast } from 'sonner';
+import { getCountryFromCode } from '@/helper/helper';
+import Image from 'next/image';
+import { getProductImagePath, normalizeCartItem } from '@/lib/catalog';
+import { useTranslations } from 'next-intl';
+import { getMessages } from '@/lib/messages';
 
+export async function getStaticPaths() {
+    return {
+        paths: [],
+        fallback: 'blocking',
+    };
+}
 
-const arimo = Arimo({
-    subsets: ['latin'],
-    display: 'swap'
-});
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            messages: getMessages(locale),
+        },
+    };
+}
 
 export default function ThankYou() {
     const router = useRouter();
     const [order, setOrder] = useState(null);
-    const orderCreatedDate = useMemo(() => {
-        if (order) {
-            return new Date(order['createdAt']);
+    const locale = router.locale || 'sr';
+    const t = useTranslations('thankYou');
+    const a11y = useTranslations('accessibility');
+    const statusTranslations = useTranslations('thankYou.statuses');
+    const productTranslations = useTranslations('products.names');
+    const orderCreatedDate = useMemo(() => (order ? new Date(order.createdAt) : null), [order]);
+    const normalizedProducts = useMemo(
+        () =>
+            order
+                ? order.products.map((item) => {
+                      const normalizedItem = normalizeCartItem(item);
+
+                      return {
+                          ...normalizedItem,
+                          image: normalizedItem.productId
+                              ? getProductImagePath(normalizedItem.productId)
+                              : '/favicon.ico',
+                          displayName: normalizedItem.productId
+                              ? productTranslations(normalizedItem.productId)
+                              : normalizedItem.fallbackName || item.name || '',
+                      };
+                  })
+                : [],
+        [order, productTranslations],
+    );
+    const subtotal = normalizedProducts.reduce((total, item) => total + item.price * item.quantity, 0);
+    const shippingLabel =
+        shippingPrice !== 0 ? `${shippingPrice}${mainCurrency.toLowerCase()}` : t('summary.shippingFallback');
+    const dateFormatter = useMemo(() => new Intl.DateTimeFormat(locale), [locale]);
+    const deliveryRange = useMemo(() => {
+        if (!orderCreatedDate) {
+            return null;
         }
-        return null;
-    }, [order])
+
+        const fromDate = new Date(orderCreatedDate);
+        fromDate.setDate(fromDate.getDate() + 2);
+
+        const toDate = new Date(orderCreatedDate);
+        toDate.setDate(toDate.getDate() + 7);
+
+        return {
+            from: dateFormatter.format(fromDate),
+            to: dateFormatter.format(toDate),
+        };
+    }, [dateFormatter, orderCreatedDate]);
+    const statusLabel = order?.status === 'processing' ? statusTranslations('processing') : order?.status;
 
     useEffect(() => {
         const { id } = router.query;
         if (id) {
-            axios.get(`${baseUrl}/api/order/${id}`)
-                .then(response => {
-                    console.log(response.data)
-                    setOrder(response.data);
+            fetch(`${baseUrl}/api/order/${id}`)
+                .then(async (response) => {
+                    if (!response.ok) {
+                        throw new Error('Request failed');
+                    }
+                    const data = await response.json();
+                    setOrder(data);
                 })
-                .catch(_ => {
-                    toast.error('Zatražena podružbina ne postoji. Ukoliko mislite da je došlo do greške pišite nam na: tamarailic11@gmail.com');
+                .catch((_) => {
+                    toast.error(t('missingOrder'));
                     router.replace('/');
-                })
+                });
         }
-    }, [router.query])
+    }, [router, router.query, t]);
 
     return (
         <>
-            <Head>
-                <title>Porudžbina | bucha.rs</title>
-                <meta name="robots" content="noindex" />
-                <meta name="description" content="Uspešna porudžbina" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
-                <meta charSet="utf-8" />
-            </Head>
+            <SeoHead
+                title={t('title')}
+                description={t('description')}
+                pathname={router.query.id ? `/hvala/${router.query.id}` : '/hvala'}
+                noindex
+            />
             <NavWrapper />
-            <main role="main" className={`${styles.main} ${arimo.className}`}>
-                {order ?
+            <main
+                role="main"
+                className="mx-auto my-24 grid max-w-300 grid-cols-2 gap-16 px-[5%] max-[1069px]:gap-8 max-[900px]:mt-28 max-[769px]:grid-cols-1">
+                {order ? (
                     <>
-                        <div className={styles.left}>
-                            <div className={styles.confirmationContainer}>
-                                <h1 className={styles.title}>Porudžbina je uspešno kreirana.</h1>
-                                <Image style={{ marginBottom: 16 }} src={'/images/check.png'} width={24} height={24} alt="Confirmed" />
+                        <div className="flex flex-col gap-1 [&_p]:text-[15px] [&_p]:leading-[1.6] [&_p]:font-light [&_p]:text-(--PrimaryHover)">
+                            <div className="flex items-center gap-4">
+                                <h1 className="mb-4 text-[24px] leading-[1.1] font-medium tracking-[0.08px]">
+                                    {t('heading')}
+                                </h1>
+                                <Image
+                                    style={{ marginBottom: 16 }}
+                                    src={'/images/check.png'}
+                                    width={24}
+                                    height={24}
+                                    alt={a11y('confirmed')}
+                                />
                             </div>
-                            <p className={styles.subTitle}>Proverite svoj email za potvrdu porudžbine.</p>
-                            <p>Broj porudžbine: {order['id']}</p>
-                            <p>Status: {order['status']}</p>
-                            <p>Datum kreiranja porudžbine: {new Date(order['createdAt']).toLocaleDateString('sr-RS')}</p>
-                            <p>Poslali smo detalje o potvrdi na: {order['email']}</p>
-                            <hr />
-                            <p className={styles.title}>Isporuka za</p>
-                            <p>{order['fullName']}</p>
-                            <p>{order['address']}</p>
-                            <p>{order['postalCode']}, {order['city']}</p>
-                            <p>{getCountryFromCode(order['country'])}</p>
-                            <p>{order['email']}</p>
-                            <p>{order['phone']}</p>
-                            <hr />
-                            <p className={styles.title}>Plaćanje</p>
-                            <p>Pouzećem po isporuci</p>
-                            <hr />
-                            <p className={styles.title}>Napomena</p>
-                            <p>{order['note']}</p>
+                            <p>
+                                <span className="text-[16px] font-bold">{t('emailNotice')}</span>
+                            </p>
+                            <p>{t('orderNumber', { id: order.id })}</p>
+                            <p>{t('status', { status: statusLabel })}</p>
+                            <p>
+                                {t('createdAt', {
+                                    date: dateFormatter.format(new Date(order.createdAt)),
+                                })}
+                            </p>
+                            <p>{t('sentTo', { email: order.email })}</p>
+                            <hr className="my-8" />
+                            <p className="mb-4 text-[24px] leading-[1.1] font-medium tracking-[0.08px]">
+                                {t('shippingFor')}
+                            </p>
+                            <p>{order.fullName}</p>
+                            <p>{order.address}</p>
+                            <p>
+                                {order.postalCode}, {order.city}
+                            </p>
+                            <p>{getCountryFromCode(order.country, locale)}</p>
+                            <p>{order.email}</p>
+                            <p>{order.phone}</p>
+                            <hr className="my-8" />
+                            <p className="mb-4 text-[24px] leading-[1.1] font-medium tracking-[0.08px]">
+                                {t('payment')}
+                            </p>
+                            <p>{t('paymentMethod')}</p>
+                            <hr className="my-8" />
+                            <p className="mb-4 text-[24px] leading-[1.1] font-medium tracking-[0.08px]">{t('note')}</p>
+                            <p>{order.note || '-'}</p>
                         </div>
                         <div>
-                            <p className={styles.title}>Pregled porudžbine:</p>
-                            <p>{`Isporuku očujete između ${new Date(orderCreatedDate.setDate(orderCreatedDate.getDate() + 2)).toLocaleDateString('sr-RS')} i ${new Date(orderCreatedDate.setDate(orderCreatedDate.getDate() + 7)).toLocaleDateString('sr-RS')}`}</p>
-                            <div className={styles.itemsOverview}>
-                                {order['products'].map((item, index) => (
-                                    <div key={index} className={styles.item}>
-                                        <div>
-                                            <Image src={`/images/products/${getLinkFromName(item.name)}.webp`} width={64} height={64} alt={item['name']} />
-                                            <div className={styles.itemInfo}>
-                                                <div className={styles.itemName}>{item.name}</div>
-                                                <div className={styles.itemQuantity}>{`x${item.quantity}`}</div>
+                            <p className="mb-4 text-[24px] leading-[1.1] font-medium tracking-[0.08px]">
+                                {t('summaryHeading')}
+                            </p>
+                            {deliveryRange ? <p>{t('deliveryWindow', deliveryRange)}</p> : null}
+                            <div className="flex flex-col gap-4 border-b border-(--OutOfFocus) py-8">
+                                {normalizedProducts.map((item, index) => (
+                                    <div key={index} className="flex items-center justify-between">
+                                        <div className="flex items-start">
+                                            <Image
+                                                className="aspect-square rounded-(--BorderRadius) object-cover"
+                                                src={item.image}
+                                                width={64}
+                                                height={64}
+                                                alt={item.displayName}
+                                            />
+                                            <div className="flex flex-col pl-4">
+                                                <div className="m-0 pt-2 pr-4 text-[14px] font-extrabold">
+                                                    {item.displayName}
+                                                </div>
+                                                <div className="m-0 text-[14px]">{`x${item.quantity}`}</div>
                                             </div>
                                         </div>
-                                        <p className={styles.itemTotal}>{`${item.price * item.quantity}${mainCurrency.toLowerCase()}`}</p>
+                                        <p className="m-0 pt-2 text-[14px] font-extrabold">{`${item.price * item.quantity}${mainCurrency.toLowerCase()}`}</p>
                                     </div>
                                 ))}
                             </div>
-                            <div className={styles.priceOverview}>
-                                <div>
-                                    <p className={styles.label}>Ukupno</p>
-                                    <p className={styles.value}>{`${order['products'].reduce((total, item) => total + item.price * item.quantity, 0)}${mainCurrency.toLowerCase()}`}</p>
+                            <div className="flex flex-col gap-4 border-b border-(--OutOfFocus) py-8">
+                                <div className="flex items-center justify-between">
+                                    <p className="text-[14px] font-semibold">{t('summary.subtotal')}</p>
+                                    <p className="text-[14px]">{`${subtotal}${mainCurrency.toLowerCase()}`}</p>
                                 </div>
-                                <div>
-                                    <p className={styles.label}>Poštarina</p>
-                                    <p className={styles.value}>{`${shippingPrice != 0 ? `${shippingPrice}${mainCurrency.toLowerCase()}` : 'Standardna kurirska taksa'}`}</p>
+                                <div className="flex items-center justify-between">
+                                    <p className="text-[14px] font-semibold">{t('summary.shipping')}</p>
+                                    <p className="text-[14px]">{shippingLabel}</p>
                                 </div>
-                                <div>
-                                    <p className={styles.labelBig}>Ukupno</p>
-                                    <p className={styles.valueBig}>{`${order['products'].reduce((total, item) => total + item.price * item.quantity, 0) + shippingPrice} ${mainCurrency}`}</p>
+                                <div className="flex items-center justify-between">
+                                    <p className="text-[20px] font-bold">{t('summary.total')}</p>
+                                    <p className="text-[20px] font-bold">{`${subtotal + shippingPrice} ${mainCurrency}`}</p>
                                 </div>
                             </div>
                         </div>
-                    </> :
-                    <div className={styles.loading}>
-                        <div className={styles.loadingio_spinner_spinner_2by998twmg8}><div className={styles.ldio_yzaezf3dcmj}>
-                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-                        </div></div>
+                    </>
+                ) : (
+                    <div className="col-span-2 flex min-h-[40vh] w-full items-center justify-center">
+                        <div className="inline-block h-50 w-50 overflow-hidden bg-white">
+                            <div className="relative h-full w-full origin-top-left transform-[translateZ(0)_scale(1)] backface-hidden">
+                                {Array.from({ length: 12 }).map((_, index) => (
+                                    <div
+                                        key={index}
+                                        className="absolute top-12 left-23.5 h-6 w-3 origin-[6px_52px] animate-[ldio_yzaezf3dcmj_1s_linear_infinite] rounded-[6px/12px] bg-(--MainAccentColor)"
+                                        style={{
+                                            transform: `rotate(${index * 30}deg)`,
+                                            animationDelay: `${-1 + index / 12}s`,
+                                        }}></div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-                }
+                )}
             </main>
             <Footer />
+            <style jsx global>{`
+                @keyframes ldio_yzaezf3dcmj {
+                    0% {
+                        opacity: 1;
+                    }
+                    100% {
+                        opacity: 0;
+                    }
+                }
+            `}</style>
         </>
-    )
+    );
 }

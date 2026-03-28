@@ -1,10 +1,17 @@
+# googlebot
 User-agent: googlebot
 Disallow: 
 
+# bingbot
 User-agent: bingbot
 Disallow: 
 
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://www.bucha.rs
+
+# Sitemaps
 Sitemap: https://www.bucha.rs/sitemap.xml

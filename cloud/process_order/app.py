@@ -4,7 +4,17 @@ import os
 import json
 from datetime import datetime
 import pytz
-from utils import create_response, admin_email, map_country_code_to_name, get_link_from_name
+from utils import (
+    STATUS_PROCESSING,
+    admin_email,
+    create_response,
+    get_customer_email_copy,
+    get_order_link,
+    get_product_image_slug,
+    get_product_name,
+    map_country_code_to_name,
+    normalize_locale,
+)
 
 sns_client = boto3.client("sns")
 dynamodb_client = boto3.resource("dynamodb")
@@ -15,6 +25,7 @@ TEMPLATE_EMAIL_TOPIC = os.environ["TEMPLATE_EMAIL_TOPIC"]
 
 def lambda_handler(event, context):
     body = json.loads(event["body"])
+    locale = normalize_locale(body.get('locale'))
     
     required_fields = ['fullName', 'email', 'phone', 'address', 'city', 'postalCode', 'country', 'note', 'products']
     missing_fields = [field for field in required_fields if field not in body]
@@ -23,8 +34,32 @@ def lambda_handler(event, context):
 
     order_id = generate_order_number(prefix="SHOP")
 
-    send_email(order_id, body['fullName'], body['email'], body['phone'], body['address'], body['city'], body['postalCode'], body['country'], body['note'], body['products'])
-    send_template_email(order_id, body['fullName'], body['email'], body['phone'], body['address'], body['city'], body['postalCode'], body['country'], body['note'], body['products'])
+    send_email(
+        order_id,
+        body['fullName'],
+        body['email'],
+        body['phone'],
+        body['address'],
+        body['city'],
+        body['postalCode'],
+        body['country'],
+        body['note'],
+        body['products'],
+        locale,
+    )
+    send_template_email(
+        order_id,
+        body['fullName'],
+        body['email'],
+        body['phone'],
+        body['address'],
+        body['city'],
+        body['postalCode'],
+        body['country'],
+        body['note'],
+        body['products'],
+        locale,
+    )
     
     orders_table.put_item(Item={
         'id': order_id,
@@ -35,10 +70,11 @@ def lambda_handler(event, context):
         'city': body['city'],
         'postalCode': body['postalCode'],
         'country': body['country'],
+        'locale': locale,
         'note': body['note'],
         'products': body['products'],
         'createdAt': datetime.now(pytz.timezone('Europe/Belgrade')).isoformat(),
-        'status': 'U obradi'
+        'status': STATUS_PROCESSING,
     })
 
     return create_response(200, {'id': order_id})
@@ -69,13 +105,14 @@ def generate_order_number(prefix="ORD"):
     return order_number   
 
 
-def send_email(order_id, user_name, user_email, user_phone, user_address, user_city, user_postal_code, user_country, user_note, user_products):
+def send_email(order_id, user_name, user_email, user_phone, user_address, user_city, user_postal_code, user_country, user_note, user_products, locale):
     order = ''
     total_price = 0
     currency = 'RSD'
-    user_country = map_country_code_to_name(user_country)
+    user_country = map_country_code_to_name(user_country, 'sr')
     for product in user_products:
-        order += f'{product["name"]} - {product["quantity"]}kom\n'
+        product_name = get_product_name(product, locale)
+        order += f'{product_name} - {product["quantity"]}kom\n'
         total_price += product['price'] * product['quantity']
     sns_client.publish(
         TopicArn=BASIC_EMAIL_TOPIC,
@@ -84,24 +121,56 @@ def send_email(order_id, user_name, user_email, user_phone, user_address, user_c
                 "event": "new_order",
                 "recipient": admin_email,
                 "subject": f'Nova Porudžbina - {order_id}',
-                "content": f'Porudžbina preko bucha.rs\n\nIme: {user_name}\nAdresa: {user_address}\nGrad: {user_city}\nPoštanski broj: {user_postal_code}\nDržava: {user_country}\nTelefon: {user_phone}\nE-mail: {user_email}\nNapomena: {user_note}\n\n Porudžbina:\n\n {order} \n Ukupna cena porudžbine: {total_price}{currency}\n'
+                "content": f'Porudžbina preko bucha.rs\n\nIme: {user_name}\nAdresa: {user_address}\nGrad: {user_city}\nPoštanski broj: {user_postal_code}\nDržava: {user_country}\nTelefon: {user_phone}\nE-mail: {user_email}\nJezik porudžbine: {locale}\nNapomena: {user_note}\n\nPorudžbina:\n\n{order}\nUkupna cena porudžbine: {total_price}{currency}\n'
             }
         ),
     )
     
 
-def send_template_email(order_id, user_name, user_email, user_phone, user_address, user_city, user_postal_code, user_country, user_note, user_products):
+def send_template_email(order_id, user_name, user_email, user_phone, user_address, user_city, user_postal_code, user_country, user_note, user_products, locale):
     belgrade_tz = pytz.timezone('Europe/Belgrade')
     current_date = datetime.now(belgrade_tz)
     formatted_date = current_date.strftime("%d.%m.%Y")
     currency = 'RSD'
     total_price = 0
-    order_link = f'https://www.bucha.rs/hvala/{order_id}'
+    order_link = get_order_link(order_id, locale)
+    email_copy = get_customer_email_copy(locale)
     products = ''
     for product in user_products:
-        products += '<tr><td width=\"70\"><img src=\"https://static-resources-buchars.s3.eu-central-1.amazonaws.com/{0}.webp\" width=\"70\" height=\"70\" alt=\"{1}\" style=\"border-radius: 6px; display: block;\" /></td><td width=\"16\" style=\"font-size: 1px;\">&nbsp;</td><td style=\"font-family: Arial, sans-serif; vertical-align: top; padding-top: 8px;\"><p style=\"margin: 0 0 8px 0; font-size: 14px; font-weight: bold; color: #213343;\">{1}</p><p style=\"margin: 0; font-size: 14px; color: #213343;\">{2}</p></td><td style=\"font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #213343; text-align: right; vertical-align: top; padding-top: 8px;\">{3}{4}</td></tr>'.format(get_link_from_name(product['name']), product['name'], '{} {}'.format(product['quantity'], 'kom'), product['price'], currency)
+        product_name = get_product_name(product, locale)
+        quantity_label = '{} {}'.format(product['quantity'], email_copy['quantity_suffix'])
+        products += '<tr><td width=\"70\"><img src=\"https://static-resources-buchars.s3.eu-central-1.amazonaws.com/{0}.webp\" width=\"70\" height=\"70\" alt=\"{1}\" style=\"border-radius: 6px; display: block;\" /></td><td width=\"16\" style=\"font-size: 1px;\">&nbsp;</td><td style=\"font-family: Arial, sans-serif; vertical-align: top; padding-top: 8px;\"><p style=\"margin: 0 0 8px 0; font-size: 14px; font-weight: bold; color: #213343;\">{1}</p><p style=\"margin: 0; font-size: 14px; color: #213343;\">{2}</p></td><td style=\"font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; color: #213343; text-align: right; vertical-align: top; padding-top: 8px;\">{3}{4}</td></tr>'.format(get_product_image_slug(product), product_name, quantity_label, product['price'], currency)
         total_price += product['price'] * product['quantity']
-    data = json.dumps({'orderDate': formatted_date, 'orderId': order_id, 'userName': user_name, 'userEmail': user_email, 'userPhone': user_phone, 'userAddress': user_address, 'userCity': user_city, 'userPostalCode': user_postal_code, 'userCountry': map_country_code_to_name(user_country), 'userNote': user_note, 'totalPrice': total_price, 'currency': currency, 'products': products, 'orderLink': order_link })
+    data = json.dumps({
+        'subject': email_copy['subject'].format(order_id=order_id),
+        'htmlLang': email_copy['html_lang'],
+        'title': email_copy['title'],
+        'heading': email_copy['heading'],
+        'successMessage': email_copy['success_message'],
+        'nameLabel': email_copy['name_label'],
+        'emailLabel': email_copy['email_label'],
+        'phoneLabel': email_copy['phone_label'],
+        'addressLabel': email_copy['address_label'],
+        'noteLabel': email_copy['note_label'],
+        'orderLinkLabel': email_copy['order_link_label'],
+        'totalLabel': email_copy['total_label'],
+        'footerText': email_copy['footer'],
+        'textPart': email_copy['text_part'],
+        'orderDate': formatted_date,
+        'orderId': order_id,
+        'userName': user_name,
+        'userEmail': user_email,
+        'userPhone': user_phone,
+        'userAddress': user_address,
+        'userCity': user_city,
+        'userPostalCode': user_postal_code,
+        'userCountry': map_country_code_to_name(user_country, locale),
+        'userNote': user_note or '-',
+        'totalPrice': total_price,
+        'currency': currency,
+        'products': products,
+        'orderLink': order_link,
+    })
     sns_client.publish(
         TopicArn=TEMPLATE_EMAIL_TOPIC,
         Message=json.dumps({

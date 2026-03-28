@@ -1,11 +1,41 @@
-* {
-  box-sizing: border-box;
-}
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@custom-variant dark (&:where(.dark, .dark *));
+@source "./pages/**/*.{js,ts,jsx,tsx}";
+@source "./components/**/*.{js,ts,jsx,tsx}";
+@source "./blog-components/**/*.{js,ts,jsx,tsx}";
 
-/* EDIT THIS */
+@theme {
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 
-:root {
-  /* Colors */
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* Custom tokens */
   --Primary: #213343;
   --PrimaryHover: #425466;
   --BG: #FCFCFC;
@@ -14,70 +44,13 @@
   --MainAccentColorHover: #f29c82;
   --SecundaryAccentColor: #F2AF6F;
   --OutOfFocus: #E9E9E9;
+  --light-gray: #e5e7eb;
 
-  /* Blog */
   --bullet-list-decoration-unicode: "\25A0";
   --meta-list-decoration-unicode: " \2022 ";
 
-  /* Fonts */
   --MainFont: 'Noto Sans', sans-serif;
-
-  /* Style */
   --BorderRadius: 6px;
-}
-
-/* DON'T EDIT ANYTHING BELOW THIS LINE */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--MainFont);
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--Primary);
-  margin: 0;
-  overflow-x: hidden;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold !important;
-}
-
-img,
-video {
-  max-width: none;
-}
-
-input[type="color"],
-input[type="date"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="email"],
-input[type="month"],
-input[type="number"],
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="text"],
-input[type="time"],
-input[type="url"],
-input[type="week"],
-select:focus,
-textarea {
-  font-size: 16px !important;
 }
 
 @layer base {
@@ -135,14 +108,57 @@ textarea {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
-
-@layer base {
   * {
+    box-sizing: border-box;
     @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--MainFont);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--Primary);
+    margin: 0;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold !important;
+  }
+
+  img,
+  video {
+    max-width: none;
+  }
+
+  input[type="color"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"],
+  select:focus,
+  textarea {
+    font-size: 16px !important;
   }
 }

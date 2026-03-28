@@ -1,6 +1,3 @@
-import styles from './BasicParagraph.module.css'
 export default function BasicParagraph({ text }) {
-    return <p className={styles.paragraph}>
-        {text}
-    </p>
+    return <p className="mb-[1.3rem] max-[900px]:mb-[1.2rem]">{text}</p>;
 }

@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import NavbarMobile from './nav-mobile/NavbarMobile';
 import NavbarDesktop from './nav-desktop/NavbarDesktop';
 
 export default function Navbar() {
-
     const [screenWidth, setScreenWidth] = useState(1920);
 
     useEffect(() => {
@@ -19,9 +18,5 @@ export default function Navbar() {
         };
     }, []);
 
-    return (
-        <>
-            {screenWidth > 900 ? <NavbarDesktop /> : <NavbarMobile />}
-        </>
-    );
+    return <>{screenWidth > 900 ? <NavbarDesktop /> : <NavbarMobile />}</>;
 }

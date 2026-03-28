@@ -1,10 +1,7 @@
-import styles from './StrongParagraph.module.css'
 export default function StrongParagraph({ text }) {
     return (
         <>
-            <strong className={styles.paragraph}>
-                {text}
-            </strong >
+            <strong className="pb-8! max-[900px]:mb-[1.2rem]">{text}</strong>
         </>
-    )
+    );
 }

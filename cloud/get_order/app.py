@@ -10,7 +10,11 @@ def lambda_handler(event, context):
     if not order_id:
         return create_response(400, {'message': 'Missing order id'})
 
-    order = orders_table.get_item(Key={'id': order_id})['Item']
+    response = orders_table.get_item(Key={'id': order_id})
+    order = response.get('Item')
+
+    if not order:
+        return create_response(404, {'message': 'Order not found'})
 
     return create_response(200, order)
 

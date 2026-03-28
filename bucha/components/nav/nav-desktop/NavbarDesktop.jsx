@@ -1,7 +1,7 @@
 import { useCart } from '@/context/CartContext';
-import styles from './NavbarDesktop.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import {
     Sheet,
     SheetContent,
@@ -9,87 +9,176 @@ import {
     SheetFooter,
     SheetTitle,
     SheetDescription,
-    SheetTrigger
-} from "@/components/ui/sheet";
-import { getLinkFromName } from '@/helper/helper';
-import { useEffect, useState } from 'react';
+    SheetTrigger,
+} from '@/components/ui/sheet';
+import { useState } from 'react';
 import { mainCurrency } from '@/pages/_app';
 import LinkButton from '@/components/buttons/LinkButton';
+import { getProductFallbackName, getProductImagePath, getProductRoutePath } from '@/lib/catalog';
+import LocaleSwitcher from '@/components/i18n/LocaleSwitcher';
 
 export default function NavbarDesktop() {
     const { cartItemCount, cartItems, updateQuantity, removeFromCart, change, setChange } = useCart();
-    const [isSheetOpen, setIsSheetOpen] = useState(false);  // State to control Sheet visibility
+    const [isSheetOpen, setIsSheetOpen] = useState(false);
+    const t = useTranslations('navigation');
+    const productNameTranslations = useTranslations('products.names');
+    const isCartSheetOpen = change || isSheetOpen;
 
-    // Automatically open Sheet when cartItems change
-    useEffect(() => {
-        if (cartItems.length > 0 && change) {
+    const handleSheetOpenChange = (open) => {
+        setIsSheetOpen(open);
+
+        if (!open && change) {
             setChange(false);
-            setIsSheetOpen(true);
         }
-    }, [cartItems]);
+    };
+
+    const handleCheckoutClick = () => {
+        setChange(false);
+    };
 
     return (
-        <nav role="navigation" className={styles.nav}>
-            <div className={styles.items}>
-                <Link className={styles.logo} href='/'>
-                    <Image src={'/images/bucha_logo.png'} width={228} height={63} alt='kombucha icon' />
+        <nav
+            role="navigation"
+            className="sticky top-0 left-0 z-11 flex items-center justify-between bg-[rgba(255,255,255,0.98)] px-[10%] py-2 shadow-[0_0_0.125rem_rgba(0,0,0,0.12),0_0.125rem_0.25rem_rgba(0,0,0,0.14)]">
+            <div className="flex items-center gap-6 [&_a]:cursor-pointer [&_a]:text-[16px] [&_a]:font-bold [&_a]:text-(--Primary) [&_a]:no-underline">
+                <Link className="mr-2 flex items-center justify-center" href="/">
+                    <Image src={'/images/bucha_logo.png'} width={228} height={63} alt="kombucha icon" />
                 </Link>
-                <Link style={{ marginTop: 8 }} href='/prodaja'>PRODAJA</Link>
-                <Link style={{ marginTop: 8 }} href='/uputstva/priprema-kombuhe'>RECEPTI</Link>
-                <a style={{ marginTop: 8 }} href='https://www.instagram.com/bucha.rs/' target='_blank'>MREŽE</a>
+                <Link className="mt-2" href="/prodaja">
+                    {t('shop')}
+                </Link>
+                <Link className="mt-2" href="/uputstva/priprema-kombuhe">
+                    {t('recipes')}
+                </Link>
+                <a className="mt-2" href="https://www.instagram.com/bucha.rs/" target="_blank">
+                    {t('social')}
+                </a>
             </div>
-            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-                <SheetTrigger asChild>
-                    <button style={{ marginTop: 8 }} className={styles.cart}>
-                        <Image src={'/images/cart_new.webp'} width={41} height={32} alt='Cart' />
-                        <div>{cartItemCount}</div>
-                    </button>
-                </SheetTrigger>
-                <SheetContent>
-                    <SheetHeader>
-                        <SheetTitle className='text-2xl m-0 mb-2'>Korpa</SheetTitle>
-                        <SheetDescription>
-                            {cartItemCount > 0 ? 'Hej, super izbor proizvoda 👍' : 'Idi na PRODAJA da izabereš prvi proizvod'}
-                        </SheetDescription>
-                    </SheetHeader>
-                    <div className="flex flex-col mt-6">
-                        {cartItemCount === 0 ? (
-                            <p className="text-center text-xl">Vaša korpa je prazna.</p>
-                        ) : (
-                            <div>
-                                {cartItems.map(item => (
-                                    <div className={styles.cartItem} key={item.name}>
-                                        <Image className={styles.productImage} src={`/images/products/${getLinkFromName(item.name)}.webp`} width={96} height={96} alt={`${item.name} je u korpi`} />
-                                        <div className={styles.productInfo}>
-                                            <Link href={`/proizvodi/${getLinkFromName(item.name)}`}>{item.name}</Link>
-                                            <div>
-                                                <div className={styles.quantitySelectorSmall}>
-                                                    <button disabled={item.quantity == 1} onClick={() => updateQuantity(item.name, item.quantity - 1)}>-</button>
-                                                    <input type="text" value={item.quantity} onChange={(e) => updateQuantity(item.name, +e.target.value)} />
-                                                    <button style={{ paddingBottom: 2 }} disabled={item.quantity >= 10} onClick={() => updateQuantity(item.name, item.quantity + 1)}>+</button>
-                                                </div>
-                                                <p className='pr-1'>{`${item.price}${mainCurrency.toLowerCase()}`}</p>
-                                            </div>
-                                        </div>
-                                        <button className='flex align-top' onClick={() => removeFromCart(item.name)}>
-                                            <Image className={styles.removeIcon} src={'/images/close.png'} width={12} height={12} alt='Remove' />
-                                        </button>
-                                    </div>
-                                ))}
+            <div className="flex items-center gap-3">
+                <LocaleSwitcher variant="nav" />
+                <Sheet open={isCartSheetOpen} onOpenChange={handleSheetOpenChange}>
+                    <SheetTrigger asChild>
+                        <button className="relative mt-2 cursor-pointer">
+                            <Image src={'/images/cart_new.webp'} width={41} height={32} alt="Cart" />
+                            <div className="absolute top-0 -right-2.5 flex h-6.25 w-6.25 items-center justify-center rounded-full bg-[#f3c76a] text-[12px]">
+                                {cartItemCount}
                             </div>
-                        )}
-                    </div>
-                    <SheetFooter className='mt-9 flex flex-col gap-10 sm:flex-col'>
-                        <div className={styles.cartTotal}>
-                            <p className={styles.subtotal}>Ukupno:</p>
-                            <p className={styles.price}>{`${cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)} ${mainCurrency}`}</p>
+                        </button>
+                    </SheetTrigger>
+                    <SheetContent className="overflow-y-auto">
+                        <SheetHeader>
+                            <SheetTitle className="m-0 mb-2 text-2xl">{t('cart.title')}</SheetTitle>
+                            <SheetDescription>
+                                {cartItemCount > 0 ? t('cart.descriptionFilled') : t('cart.descriptionEmpty')}
+                            </SheetDescription>
+                        </SheetHeader>
+                        <div className="mt-6 flex flex-col">
+                            {cartItemCount === 0 ? (
+                                <p className="text-center text-xl">{t('cart.empty')}</p>
+                            ) : (
+                                <div>
+                                    {cartItems.map((item) => (
+                                        <div
+                                            className="flex gap-5 border-b border-(--PrimaryHover) py-8"
+                                            key={item.productId || item.fallbackName}>
+                                            {(() => {
+                                                const productName = item.productId
+                                                    ? productNameTranslations(item.productId)
+                                                    : item.fallbackName || getProductFallbackName(item.productId);
+
+                                                return (
+                                                    <>
+                                                        <Image
+                                                            className="aspect-square rounded-(--BorderRadius)"
+                                                            src={getProductImagePath(item.productId)}
+                                                            width={96}
+                                                            height={96}
+                                                            alt={`${productName} ${t('cart.itemInCart')}`}
+                                                        />
+                                                        <div className="flex flex-col justify-between">
+                                                            <Link
+                                                                className="text-[16px] leading-[1.2] font-semibold tracking-[-0.025em] transition-colors duration-250 hover:text-(--MainAccentColor)"
+                                                                href={getProductRoutePath(item.productId)}>
+                                                                {productName}
+                                                            </Link>
+                                                            <div className="flex items-center justify-between gap-2">
+                                                                <div className="flex w-25 items-center justify-between rounded-(--BorderRadius) border border-(--Primary) text-[1rem]">
+                                                                    <button
+                                                                        className="w-7.5 cursor-pointer rounded-(--BorderRadius) border-0 bg-(--BG) text-[22px] leading-[1.3] transition-colors duration-250 hover:bg-(--BGHover)"
+                                                                        disabled={item.quantity == 1}
+                                                                        onClick={() =>
+                                                                            updateQuantity(
+                                                                                item.productId,
+                                                                                item.quantity - 1,
+                                                                            )
+                                                                        }>
+                                                                        -
+                                                                    </button>
+                                                                    <input
+                                                                        className="w-[2em] border-0 text-center text-[16px] outline-none"
+                                                                        type="text"
+                                                                        value={item.quantity}
+                                                                        onChange={(e) =>
+                                                                            updateQuantity(
+                                                                                item.productId,
+                                                                                +e.target.value,
+                                                                            )
+                                                                        }
+                                                                    />
+                                                                    <button
+                                                                        className="w-7.5 cursor-pointer rounded-(--BorderRadius) border-0 bg-(--BG) pb-0.5 text-[22px] leading-[1.3] transition-colors duration-250 hover:bg-(--BGHover)"
+                                                                        disabled={item.quantity >= 10}
+                                                                        onClick={() =>
+                                                                            updateQuantity(
+                                                                                item.productId,
+                                                                                item.quantity + 1,
+                                                                            )
+                                                                        }>
+                                                                        +
+                                                                    </button>
+                                                                </div>
+                                                                <p className="pr-1 text-[14px] leading-none font-bold">{`${item.price}${mainCurrency.toLowerCase()}`}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <button
+                                                                className="flex cursor-pointer align-top"
+                                                                onClick={() => removeFromCart(item.productId)}>
+                                                                <Image
+                                                                    className="aspect-square opacity-40"
+                                                                    src={'/images/close.png'}
+                                                                    width={12}
+                                                                    height={12}
+                                                                    alt="Remove"
+                                                                />
+                                                            </button>
+                                                        </div>
+                                                    </>
+                                                );
+                                            })()}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
-                        <div className={styles.cartButtonContainer}>
-                            <LinkButton buttonText={'Naruči'} link="/porucivanje" />
-                        </div>
-                    </SheetFooter>
-                </SheetContent>
-            </Sheet>
+                        <SheetFooter className="mt-9 flex flex-col gap-10 sm:flex-col">
+                            <div className="flex w-full items-center justify-between [&_p]:m-0">
+                                <p className="text-[15px] font-bold tracking-widest text-(--PrimaryHover) uppercase">
+                                    {t('cart.totalLabel')}
+                                </p>
+                                <p className="text-[32px] font-bold uppercase">{`${cartItems.reduce((total, item) => total + item.price * item.quantity, 0)} ${mainCurrency}`}</p>
+                            </div>
+                            <div className="ml-0 w-full [&>a]:w-full">
+                                <LinkButton
+                                    buttonText={t('cart.checkout')}
+                                    link="/porucivanje"
+                                    onClick={handleCheckoutClick}
+                                />
+                            </div>
+                        </SheetFooter>
+                    </SheetContent>
+                </Sheet>
+            </div>
         </nav>
     );
 }
