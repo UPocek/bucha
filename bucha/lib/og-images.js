@@ -6,7 +6,7 @@ import post12Image from '../public/images/post12/kombuha-priprema.webp';
 import post2Image from '../public/images/post2/kako-se-pravi-kombuha.webp';
 import post3Image from '../public/images/post3/da-li-je-braon-boja-kombuhe-uredu.webp';
 import post4Image from '../public/images/post4/mehurici-u-kombuhi.webp';
-import post5Image from '../public/images/post5/zdravstveni-benefiti-kombuhe.webp';
+import post5Image from '../public/images/post5/benefiti-kombuhe.webp';
 import post6Image from '../public/images/post6/da-li-kombuha-sadrzi-alkohol.webp';
 import post7Image from '../public/images/post7/kako-se-cuva-kombuha.webp';
 import post8Image from '../public/images/post8/koliko-kombuhe-treba-piti.webp';
@@ -22,7 +22,7 @@ const OG_IMAGE_METADATA = {
     '/images/post2/kako-se-pravi-kombuha.webp': post2Image,
     '/images/post3/da-li-je-braon-boja-kombuhe-uredu.webp': post3Image,
     '/images/post4/mehurici-u-kombuhi.webp': post4Image,
-    '/images/post5/zdravstveni-benefiti-kombuhe.webp': post5Image,
+    '/images/post5/benefiti-kombuhe.webp': post5Image,
     '/images/post6/da-li-kombuha-sadrzi-alkohol.webp': post6Image,
     '/images/post7/kako-se-cuva-kombuha.webp': post7Image,
     '/images/post8/koliko-kombuhe-treba-piti.webp': post8Image,

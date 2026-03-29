@@ -13,13 +13,13 @@ const productContent = {
             shortDescription: [
                 'Uz kupovinu dobijate kombuha gljivu spremnu za pripremu pića, detaljno uputstvo sa našim savetima za početnike i starter tečnost koja je potrebna za prvu fermentaciju',
                 {
-                    textBefore: 'Kultura kombuhe je bez glutena, pogodna za vegane i ima mnoge ',
-                    linkText: 'zdravstvene benefite',
+                    textBefore: 'Kultura kombuhe je bez glutena, pogodna za vegane i ima ',
+                    linkText: 'mnoge benefite',
                     href: kombuchaBenefitsGuidePath,
                     textAfter: '.',
                 },
                 'Vašu porudžbinu šaljemo istog ili narednog dana.',
-                'Nadamo se da ćete uživati u svom lekovitom kombuha napitku! Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a, Viber-a ili WhatsApp-a na 063/427-280.',
+                'Nadamo se da ćete uživati u svom kombuha napitku! Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a, Viber-a ili WhatsApp-a na 063/427-280.',
             ],
             longDescription: [
                 'Kada je u pitanju pravljenje kombuhe, ništa nije važnije od kvaliteta vašeg startera za kombuhu.',
@@ -86,17 +86,17 @@ const productContent = {
         sr: {
             seoTitle: 'Kombuha 0.5l - Hibiskus - Prodaja',
             description:
-                'Poručite kombuhu sa ukusom hibiskusa online, a mi je dostavljamo na adresu. Kombuha je zdrav napitak, lagano gazirano piće sa prirodnim probiotikom.',
+                'Poručite kombuhu sa ukusom hibiskusa online, a mi je dostavljamo na adresu. Kombuha je napitak, lagano gazirano piće sa prirodnim probiotikom.',
             keywords:
-                'kombuha, kombucha, kombuha cena, koliko kosta kombuha, kombuha caj prodaja, zdravi sok, sok bez secera, lepa kombuha, domaca kombuha',
+                'kombuha, kombucha, kombuha cena, koliko kosta kombuha, kombuha caj prodaja, sok bez secera, lepa kombuha, domaca kombuha',
             shortDescription: [
                 'Kombuha sa ukusom hibiskusa.',
                 'Vašu porudžbinu šaljemo istog ili narednog dana.',
                 'Nadamo se da ćete uživati u svom kombuha napitku! Ako imate bilo kakva pitanja, slobodno nam pišite putem SMS-a, Viber-a ili WhatsApp-a na 063/427-280.',
             ],
             longDescription: [
-                'Kombuha Hibiskus je bezalkoholni, lagani fermentisani napitak, proizveden prirodnim procesom fermentacije zelenog čaja uz dodatak rinfuznog cveta hibiskusa. Naša kombuha sa hibiskusom sadrži korisne probiotske bakterije koje povoljno utiču na probavu i imunitet, čineći je savršenim, zdravim izborom za svakodnevno osveženje.',
-                'Svaka flaša naše kombuhe Hibiskus prirodno je blago gazirana i pripremljena s pažnjom, koristeći samo organske sastojke - visokokvalitetni zeleni čaj, filtriranu vodu i rinfuzni čaj od hibiskusa. Ovo je piće koje ne sadrži gluten i idealno je za vegane, pružajući bogatstvo prirodnih probiotika za podršku celokupnom zdravlju. Dodajte kombuhu Hibiskus u svoju svakodnevnu rutinu i otkrijte sve njene zdravstvene benefite.',
+                'Kombuha Hibiskus je bezalkoholni, lagani fermentisani napitak, proizveden prirodnim procesom fermentacije zelenog čaja uz dodatak rinfuznog cveta hibiskusa. Naša kombuha sa hibiskusom sadrži korisne probiotske bakterije koje povoljno utiču na probavu i imunitet, čineći je savršenim izborom za svakodnevno osveženje.',
+                'Svaka flaša naše kombuhe Hibiskus prirodno je blago gazirana i pripremljena s pažnjom, koristeći samo organske sastojke, visokokvalitetni zeleni čaj, filtriranu vodu i rinfuzni čaj od hibiskusa. Ovo je piće koje ne sadrži gluten i idealno je za vegane, pružajući bogatstvo prirodnih probiotika. Dodajte kombuhu Hibiskus u svoju svakodnevnu rutinu i otkrijte sve njene benefite.',
             ],
         },
         en: {

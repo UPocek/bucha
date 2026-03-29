@@ -9,9 +9,8 @@ export const kombuchaWhatIsIt = {
             title: 'Šta je kombuha?',
             seoTitle: 'Šta je kombuha?',
             description:
-                'Saznajte šta je kombuha, zašto je popularna u Srbiji, koje zdravstvene prednosti se najčešće vezuju za nju i kako se pravi kod kuće.',
-            keywords:
-                'šta je kombuha, kombuha zdravstvene prednosti, kombuha pravljenje, kombuha Srbija, kombuha SCOBY',
+                'Saznajte šta je kombuha, zašto je popularna u Srbiji, koje prednosti se najčešće vezuju za nju i kako se pravi kod kuće.',
+            keywords: 'šta je kombuha, kombuha prednosti, kombuha pravljenje, kombuha Srbija, kombuha SCOBY',
             imageAlt: 'Primer kako izgleda kombuha',
             meta: {
                 date: '17. NOVEMBAR 2024.',
@@ -22,7 +21,7 @@ export const kombuchaWhatIsIt = {
             sections: [
                 'Šta je kombuha?',
                 'Zašto je popularna u Srbiji?',
-                'Zdravstvene prednosti kombuhe',
+                'Prednosti kombuhe',
                 'Kako se pravi kombuha?',
                 'Gde kupiti kombuhu?',
             ],
@@ -95,7 +94,7 @@ export const kombuchaWhatIsIt = {
                 },
                 {
                     type: 'subtitle',
-                    text: 'Zdravstvene prednosti kombuhe',
+                    text: 'Prednosti kombuhe',
                 },
                 {
                     type: 'bullets',

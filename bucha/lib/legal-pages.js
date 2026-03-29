@@ -21,7 +21,7 @@ export const legalPages = {
                     },
                     { type: 'paragraph', text: 'Internet adresa: https://www.bucha.rs/' },
                     { type: 'paragraph', text: 'Kontakt telefon: +381 63 427 280' },
-                    { type: 'paragraph', text: 'Kontakt email: tamarailic11@gmail.com' },
+                    { type: 'paragraph', text: 'Email adresa: tamarailic11@gmail.com' },
                 ],
             },
             en: {
@@ -65,7 +65,7 @@ export const legalPages = {
                     },
                     { type: 'paragraph', text: 'Сайт: https://www.bucha.rs/' },
                     { type: 'paragraph', text: 'Телефон: +381 63 427 280' },
-                    { type: 'paragraph', text: 'Email: tamarailic11@gmail.com' },
+                    { type: 'paragraph', text: 'Электронная почта: tamarailic11@gmail.com' },
                 ],
             },
         },
@@ -108,7 +108,7 @@ export const legalPages = {
                             'Realizacija ugovora i isporuka proizvoda',
                             'Komunikacija u vezi sa porudžbinom',
                             'Postprodajna podrška',
-                            'Obrada pouzeća i evidencija transakcije',
+                            'Obrada plaćanja pouzećem i evidencija transakcija',
                         ],
                     },
                     { type: 'strong', text: '4. Period čuvanja podataka' },
@@ -250,7 +250,7 @@ export const legalPages = {
                         items: [
                             'Исполнение заказа и доставка',
                             'Связь по поводу заказа',
-                            'Поддержка после продажи',
+                            'Послепродажная поддержка',
                             'Оформление оплаты при получении и учет транзакций',
                         ],
                     },
@@ -266,7 +266,7 @@ export const legalPages = {
                     },
                     {
                         type: 'list',
-                        items: ['Курьерские службы для доставки продукции', 'Технические партнеры для поддержки сайта'],
+                        items: ['Курьерские службы для доставки продукции', 'Технические партнеры по поддержке сайта'],
                     },
                     { type: 'strong', text: '6. Ваши права' },
                     {
@@ -306,7 +306,7 @@ export const legalPages = {
                     { type: 'strong', text: '2. Odustanak od porudžbine pre slanja' },
                     {
                         type: 'paragraph',
-                        text: 'Ako porudžbina još nije poslata, kupac može da je otkaže slanjem zahteva na email adresu podrške.',
+                        text: 'Ako porudžbina još nije poslata, kupac može da je otkaže slanjem zahteva na email adresu za podršku.',
                     },
                     { type: 'strong', text: '3. Reklamacije i povrat' },
                     {
@@ -364,7 +364,7 @@ export const legalPages = {
                         type: 'list',
                         items: [
                             'If packaging is damaged during transport and starter liquid leaks, the buyer is entitled to a replacement shipment at no extra cost.',
-                            'Because of the nature of the products, we do not accept returns of correct and undamaged food products.',
+                            'Because of the nature of the products, we do not accept returns of food products that are sound and undamaged.',
                             'In specific situations, returns are arranged directly with customer support.',
                         ],
                     },
@@ -425,7 +425,7 @@ export const legalPages = {
                         items: [
                             'Проверьте посылку сразу при получении.',
                             'Если повреждения заметны, сфотографируйте упаковку до вскрытия.',
-                            'Сообщите о проблеме как можно быстрее по email или телефону.',
+                            'Сообщите о проблеме как можно быстрее по электронной почте или по телефону.',
                         ],
                     },
                     { type: 'strong', text: '5. Ограничения на возврат' },
@@ -517,7 +517,7 @@ export const legalPages = {
                         type: 'list',
                         items: [
                             'Shipping is available within Serbia through a courier service.',
-                            'Shipping costs are charged according to the active courier price list.',
+                            'Shipping costs are charged according to the current courier price list.',
                             'Orders above RSD 10,000 qualify for free delivery.',
                             'Standard delivery time is 2 to 7 business days.',
                             'Deliveries are made on business days.',
@@ -537,7 +537,7 @@ export const legalPages = {
                         type: 'list',
                         items: [
                             'If you cannot receive the package in the expected time slot, please notify us in advance.',
-                            'Products are delivered with basic usage guidance.',
+                            'Products are delivered with basic instructions for use.',
                             'If starter liquid leaks because of transport damage, a replacement shipment is sent at no extra charge.',
                         ],
                     },
@@ -553,11 +553,11 @@ export const legalPages = {
                     { type: 'strong', text: 'Проверка товара при получении' },
                     {
                         type: 'paragraph',
-                        text: 'Перед подписанием документов осмотрите посылку и зафиксируйте все видимые повреждения вместе с курьером. Видимо поврежденную посылку можно не принимать.',
+                        text: 'Перед подписанием документов осмотрите посылку и зафиксируйте все видимые повреждения вместе с курьером. Посылку с видимыми повреждениями можно не принимать.',
                     },
                     {
                         type: 'paragraph',
-                        text: 'О любых проблемах сообщите в течение 24 часов по телефону +381 63 427 280 или по email на адрес tamarailic11@gmail.com.',
+                        text: 'О любых проблемах сообщите в течение 24 часов по телефону +381 63 427 280 или по электронной почте по адресу tamarailic11@gmail.com.',
                     },
                     { type: 'strong', text: 'Доставка по Сербии' },
                     {

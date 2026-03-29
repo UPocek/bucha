@@ -10,6 +10,6 @@ export async function getStaticProps({ locale }) {
     };
 }
 
-export default function ZdravstveneKoristiKombuhaBlog() {
+export default function KoristiKombuheBlog() {
     return <LocalizedBlogPage page={blogPages.kombuchaHealthBenefits} />;
 }

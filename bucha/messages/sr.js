@@ -39,7 +39,7 @@ export default {
             secondFermentation: 'Druga fermentacija i ukusi',
             recipe: 'Jednostavan recept za pripremu kombuhe',
             whatIsKombucha: 'Šta je kombuha?',
-            benefits: '10 zdravstvenih benefita kombuhe',
+            benefits: 'Koristi kombuhe - za šta je kombuha dobra?',
             alcohol: 'Da li kombuha sadrži alkohol?',
             goodKombucha: 'Kako da prepoznate da li je vaša kombuha dobra?',
             storage: 'Kako se čuva kombuha?',
@@ -53,7 +53,7 @@ export default {
     },
     teamSection: {
         headingPrefix: 'Hejj, ovo je tim iza',
-        body: 'Tri studenta na misiji da ljudima u Srbiji donesu flašu zabave i zdravlja. Ukoliko se još nismo upoznali, dobar dan, mi smo Tamara, Ivana i Uroš. Upoznaćete nas preko naših društvenih mreža gde svakog dana delimo neku novu anegdotu o kombuhi, ali voleli bismo i mi da upoznamo vas. Ako ste probali neki od naših proizvoda, pišite nam utiske, šaljite slike i budite deo te pozitivne energije.',
+        body: 'Tri studenta na misiji da ljudima u Srbiji donesu domaću kombuhu. Ukoliko se još nismo upoznali, dobar dan, mi smo Tamara, Ivana i Uroš. Upoznaćete nas preko naših društvenih mreža gde svakog dana delimo neku novu anegdotu o kombuhi, ali voleli bismo i mi da upoznamo vas. Ako ste probali neki od naših proizvoda, pišite nam utiske, šaljite slike i budite deo te pozitivne energije.',
         imageAlt: 'Tim bucha.rs',
         logoAlt: 'bucha.rs logo',
     },
@@ -140,7 +140,7 @@ export default {
         flavors: {
             title: 'Prodaja Kombuhe u Raznim Zabavnim Ukusima',
             description:
-                'Kombuha prodaja u raznim ukusima po najboljim cenama u Srbiji. Poručite online vaš zdravi kombucha čaj, napitak sa bucha.rs',
+                'Kombuha prodaja u raznim ukusima po najboljim cenama u Srbiji. Poručite online vaš kombucha čaj sa bucha.rs',
             heading: 'Domaća pića',
         },
         sets: {
@@ -152,7 +152,7 @@ export default {
     },
     checkout: {
         title: 'Poručivanje | bucha.rs',
-        description: 'Još samo korak te deli od zdravlja. Kompletiraj svoju porudžbinu.',
+        description: 'Još samo korak. Kompletiraj svoju porudžbinu.',
         contact: 'Kontakt',
         details: 'Podaci',
         note: 'Napomena (opciono)',

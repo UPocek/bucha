@@ -9,16 +9,16 @@ export const kombuchaQuality = {
             title: 'Kako prepoznati dobru kombuhu? Vodič za početnike',
             seoTitle: 'Kako prepoznati dobru kombuhu?',
             description:
-                'Naučite kako da prepoznate zdravu kombuhu kroz izgled, miris, ukus i tipične znake pravilne fermentacije, kao i kada piće treba baciti.',
+                'Naučite kako da prepoznate dobru kombuhu kroz izgled, miris, ukus i tipične znake pravilne fermentacije, kao i kada piće treba baciti.',
             keywords:
-                'zdrava kombuha, kako prepoznati dobru kombuhu, fermentacija kombuhe, znakovi dobre kombuhe, kombuha savet',
-            imageAlt: 'Zdrava kombuha fermentacija',
+                'ispravna kombuha, kako prepoznati dobru kombuhu, fermentacija kombuhe, znakovi dobre kombuhe, kombuha savet',
+            imageAlt: 'Kombuha u procesu fermentacije',
             meta: {
                 date: '25. NOVEMBAR 2024.',
                 readTime: '3 minuta čitanja',
                 category: 'Praktični kombuha saveti',
             },
-            lead: 'Ako niste sigurni da li je vaša kombuha ispala kako treba, najvažnije je da gledate nekoliko jasnih signala: izgled, miris, ukus i opšti tok fermentacije. Dobra vest je da zdrava kombuha ne mora da izgleda savršeno da bi bila ispravna. 🕵️‍♀️🍵',
+            lead: 'Ako niste sigurni da li je vaša kombuha ispala kako treba, najvažnije je da gledate nekoliko jasnih signala: izgled, miris, ukus i opšti tok fermentacije. Dobra vest je da ispravna kombuha ne mora da izgleda savršeno da bi bila dobra. 🕵️‍♀️🍵',
             sections: [
                 'Vizuelni znakovi dobre kombuhe',
                 'Miris i ukus kao indikatori',

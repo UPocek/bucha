@@ -10,21 +10,15 @@ export const kombuchaSideEffects = {
             seoTitle: 'Rizici i nuspojave kombuhe',
             description:
                 'Saznajte koje nuspojave i rizici kombuhe postoje, ko treba da bude oprezniji i kako da kombuhu uvodite bezbednije i pametnije.',
-            keywords:
-                'kombuha nuspojave, rizici kombuhe, bezbednost kombuhe, zdravstveni efekti kombuhe, kombuha zdravlje',
-            imageAlt: 'Kombuha i zdravstveni rizici',
+            keywords: 'kombuha nuspojave, rizici kombuhe, bezbednost kombuhe',
+            imageAlt: 'Kombuha čaj ilustracija',
             meta: {
                 date: '25. NOVEMBAR 2024.',
                 readTime: '3 minuta čitanja',
                 category: 'Kombuha',
             },
             lead: 'Kombuha je za većinu ljudi bezbedna kada se pije umerenno i kada je pravilno pripremljena, ali to ne znači da je bez rizika za baš svakoga. Najvažnije je da znate ko treba da bude oprezniji, koje nuspojave su moguće i kako da smanjite verovatnoću problema. 🍵',
-            sections: [
-                'Najčešći zdravstveni rizici',
-                'Ko treba da bude oprezan',
-                'Moguće nuspojave',
-                'Kako smanjiti rizike',
-            ],
+            sections: ['Najčešći rizici', 'Ko treba da bude oprezan', 'Moguće nuspojave', 'Kako smanjiti rizike'],
             floatingNavTitle: 'Pređi na:',
             structuredData: {
                 '@context': 'https://schema.org',
@@ -51,7 +45,7 @@ export const kombuchaSideEffects = {
             blocks: [
                 {
                     type: 'subtitle',
-                    text: 'Najčešći zdravstveni rizici',
+                    text: 'Najčešći rizici',
                 },
                 {
                     type: 'paragraph',
@@ -75,7 +69,7 @@ export const kombuchaSideEffects = {
                         },
                         {
                             title: 'Interakcije sa određenim terapijama',
-                            text: 'Ako koristite lekove ili imate posebno zdravstveno stanje, konsultacija sa lekarom je razuman korak.',
+                            text: 'Ako koristite lekove, konsultacija sa lekarom je razuman korak.',
                         },
                         {
                             title: 'Preterivanje u količini',

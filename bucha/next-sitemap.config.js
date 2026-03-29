@@ -11,16 +11,9 @@ const localizedExcludes = locales
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
     siteUrl,
-    generateRobotsTxt: true,
+    generateRobotsTxt: false,
     generateIndexSitemap: false,
     outDir: 'public',
     alternateRefs: [...alternateRefs, { href: siteUrl, hreflang: 'x-default' }],
-    robotsTxtOptions: {
-        policies: [
-            { userAgent: 'googlebot', disallow: '' },
-            { userAgent: 'bingbot', disallow: '' },
-            { userAgent: '*', allow: '/' },
-        ],
-    },
     exclude: ['/hvala/*', '/porucivanje', ...localizedExcludes],
 };

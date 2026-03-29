@@ -3,15 +3,15 @@ const scobyProductPath = '/proizvodi/kombuha-scoby-cajna-gljiva';
 export const tutorialPages = {
     preparation: {
         pathname: '/uputstva/priprema-kombuhe',
-        image: '/images/priprema-kombuhe-korak1.png',
+        image: '/images/priprema-kombuhe-korak6.png',
         totalTime: 'PT7D',
         estimatedCost: {
             '@type': 'MonetaryAmount',
             currency: 'RSD',
             value: '1000',
         },
-        supplies: ['Staklena tegla', 'SCOBY kultura', 'Crni ili zeleni čaj', 'Šećer', 'Voda'],
-        tools: ['Šerpa ili džezva', 'Prozračna krpa'],
+        supplies: ['SCOBY kultura', 'Crni ili zeleni čaj', 'Šećer', 'Voda'],
+        tools: ['Staklena tegla', 'Šerpa ili džezva', 'Pamučna prekrivka'],
         showRelated: true,
         showTeamSection: true,
         locales: {
@@ -19,7 +19,7 @@ export const tutorialPages = {
                 title: 'Kako se pravi kombuha - uputstvo pripreme kombuhe kod kuće',
                 seoTitle: 'Kako se pravi kombuha - uputstvo pripreme kombuhe kod kuće',
                 description:
-                    'Saznajte kako se pravi kombuha čaj kod kuće. Uputstvo i recept za pripremu zdravog kombucha čajna gljiva napitka. bucha.rs Srbija',
+                    'Saznajte kako se pravi kombuha čaj kod kuće. Uputstvo i recept za pripremu kombucha čajna gljiva napitka. bucha.rs Srbija',
                 keywords: 'kako se pravi kombuha, priprema kombuhe, kombuha recept, kombuha kod kuće, scoby uputstvo',
                 intro: {
                     title: 'Kombuha uputstvo za pripremu',
@@ -84,12 +84,12 @@ export const tutorialPages = {
                         order: '1',
                         links: [
                             '/uputstva/koliko-kombuhe-treba-piti',
-                            '/uputstva/zdravstveni-benefiti-kombuhe',
+                            '/uputstva/kako-se-cuva-kombuha',
                             '/uputstva/da-li-kombuha-sadrzi-alkohol',
                         ],
                         linkTexts: [
                             'Koliko kombuhe treba piti?',
-                            '10 zdravstvenih benefita kombuhe',
+                            'Kako se čuva kombuha?',
                             'Da li kombuha sadrži alkohol?',
                         ],
                         textAfter: ' i još mnoge druge teme koje možete pronaći na dnu stranice.',
@@ -164,12 +164,12 @@ export const tutorialPages = {
                         order: '1',
                         links: [
                             '/uputstva/koliko-kombuhe-treba-piti',
-                            '/uputstva/zdravstveni-benefiti-kombuhe',
+                            '/uputstva/kako-se-cuva-kombuha',
                             '/uputstva/da-li-kombuha-sadrzi-alkohol',
                         ],
                         linkTexts: [
                             'How much kombucha should you drink?',
-                            '10 health benefits of kombucha',
+                            'How to store kombucha?',
                             'Does kombucha contain alcohol?',
                         ],
                     },
@@ -243,12 +243,12 @@ export const tutorialPages = {
                         order: '1',
                         links: [
                             '/uputstva/koliko-kombuhe-treba-piti',
-                            '/uputstva/zdravstveni-benefiti-kombuhe',
+                            '/uputstva/kako-se-cuva-kombuha',
                             '/uputstva/da-li-kombuha-sadrzi-alkohol',
                         ],
                         linkTexts: [
                             'Сколько комбучи можно пить?',
-                            '10 полезных свойств комбучи',
+                            'Как хранить комбучу?',
                             'Содержит ли комбуча алкоголь?',
                         ],
                     },
@@ -282,13 +282,13 @@ export const tutorialPages = {
                     text1: 'Ukoliko ste završili sa pripremom baze i spremni ste da kombuhu obogatite sjajnim ukusima, onda ste na pravom mestu. Ukoliko ne znate o čemu pričam, onda prvo pogledajte',
                     link: '/uputstva/priprema-kombuhe',
                     linkText: ' uputstvo za pripremu kombuhe',
-                    text2: '. Druga fermentacija je “where magic happens”. Ovde od relativno nezanimljive baze, kreiramo sjajne ukuse i domaće gazirane sokove koji su veoma zdravi i osvežavajući za piće. Tako da, ukoliko želite da učinite vašu kombuhu zabavnom, skoknite na korak 1.',
+                    text2: '. Druga fermentacija je “where magic happens”. Ovde od relativno nezanimljive baze, kreiramo sjajne ukuse i domaće gazirane sokove koji su veoma osvežavajući za piće. Tako da, ukoliko želite da učinite vašu kombuhu zabavnom, skoknite na korak 1.',
                 },
                 steps: [
                     {
                         number: '1',
                         title: 'Pripremite sastojke',
-                        text: 'Došao je trenutak koji ste čekali. Prva fermentacija, kako je zovemo, se završila. Vaša mala fabrika u tegli je naporno radila i sada možete da pređete na drugu fermentaciju i obogatite kombuhu različitim ukusima. Ovaj korak nije obavezan i, ukoliko vam je osnovna kombuha ukusna i odgovarajuća, onda ste na konju, ali ako ste kao mi i želite malo šareniju, voćniju, zanimljiviju kombuhu, flaširanjem i dodavanjem voća možete da u svojoj kući pripremite prelep zdrav sok. Izvadite teglu sa kombuhom i stavite je na radnu površinu. Zatim odlučite koji ukus želite da pravite i nabavite to voće ili čajeve. Ukoliko ste novi u ovome, pređite na korak 2 da čujete neke naše ideje.',
+                        text: 'Došao je trenutak koji ste čekali. Prva fermentacija, kako je zovemo, se završila. Vaša mala fabrika u tegli je naporno radila i sada možete da pređete na drugu fermentaciju i obogatite kombuhu različitim ukusima. Ovaj korak nije obavezan i, ukoliko vam je osnovna kombuha ukusna i odgovarajuća, onda ste na konju, ali ako ste kao mi i želite malo šareniju, voćniju, zanimljiviju kombuhu, flaširanjem i dodavanjem voća možete da u svojoj kući pripremite prelep sok. Izvadite teglu sa kombuhom i stavite je na radnu površinu. Zatim odlučite koji ukus želite da pravite i nabavite to voće ili čajeve. Ukoliko ste novi u ovome, pređite na korak 2 da čujete neke naše ideje.',
                         image: '/images/kombuha_druga_fermentacija_korak1.png',
                         order: '1',
                     },

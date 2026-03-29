@@ -1,18 +1,18 @@
 export const kombuchaHealthBenefits = {
-    id: 'zdravstvene-koristi-kombuhe',
+    id: 'koristi-kombuhe',
     pathname: '/uputstva/zdravstveni-benefiti-kombuhe',
-    image: '/images/post5/zdravstveni-benefiti-kombuhe.webp',
+    image: '/images/post5/benefiti-kombuhe.webp',
     datePublished: '2024-11-24',
     dateModified: '2024-11-24',
     locales: {
         sr: {
-            title: 'Zdravstvene koristi kombuhe',
-            seoTitle: 'Zdravstvene koristi kombuhe',
+            title: 'Koristi kombuhe - za šta je kombuha dobra?',
+            seoTitle: 'Koristi kombuhe - za šta je kombuha dobra?',
             description:
-                'Saznajte koje se zdravstvene koristi najčešće vezuju za kombuhu, zbog čega se često povezuje sa varenjem, antioksidansima i podrškom organizmu, kao i kako je konzumirati umerenije.',
+                'Saznajte koje se koristi najčešće vezuju za kombuhu, zbog čega se često povezuje sa varenjem, antioksidansima i podrškom organizmu, kao i kako je konzumirati umerenije.',
             keywords:
-                'zdravstvene koristi kombuhe, kombuha benefiti, kombuha za zdravlje, probiotici kombuha, kombuha imunitet, kombuha varenje, antioksidansi kombuha',
-            imageAlt: 'Sveže pripremljena kombuha puna zdravih sastojaka',
+                'koristi kombuhe, kombuha benefiti, probiotici kombuha, kombuha imunitet, kombuha varenje, antioksidansi kombuha',
+            imageAlt: 'Sveže pripremljena kombuha',
             meta: {
                 date: '25. NOVEMBAR 2024.',
                 readTime: '4 minuta čitanja',
@@ -24,7 +24,7 @@ export const kombuchaHealthBenefits = {
                 'Najčešće pomenute koristi kombuhe',
                 'Probiotici i imuni sistem',
                 'Antioksidativna svojstva',
-                'Digestivno zdravlje',
+                'Digestivno stanje',
                 'Preporuke za konzumiranje',
             ],
             floatingNavTitle: 'Pređi na:',
@@ -150,7 +150,7 @@ export const kombuchaHealthBenefits = {
                 },
                 {
                     type: 'subtitle',
-                    text: 'Digestivno zdravlje',
+                    text: 'Digestivno stanje',
                 },
                 {
                     type: 'paragraph',
