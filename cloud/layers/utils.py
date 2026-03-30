@@ -195,8 +195,50 @@ def map_country_code_to_name(country_code, locale=DEFAULT_LOCALE):
     return localized_countries.get(country_code, '')
 
 
-def get_product_details(product):
+def coerce_int(value, default):
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def resolve_product_id(product):
     product_id = product.get('productId')
+
+    if product_id in PRODUCTS:
+        return product_id
+
+    fallback_name = product.get('fallbackName') or product.get('name')
+
+    for candidate_id, product_details in PRODUCTS.items():
+        if fallback_name == product_details['fallback_name']:
+            return candidate_id
+
+    return product_id or None
+
+
+def normalize_order_product(product):
+    if not isinstance(product, dict):
+        return None
+
+    product_id = resolve_product_id(product)
+    product_details = PRODUCTS.get(product_id)
+    fallback_name = product.get('fallbackName') or product.get('name')
+
+    if not fallback_name and product_details:
+        fallback_name = product_details['fallback_name']
+
+    return {
+        'productId': product_id,
+        'fallbackName': fallback_name or '',
+        'name': product.get('name') or fallback_name or '',
+        'quantity': max(1, coerce_int(product.get('quantity'), 1)),
+        'price': max(0, coerce_int(product.get('price'), 0)),
+    }
+
+
+def get_product_details(product):
+    product_id = resolve_product_id(product)
     product_details = PRODUCTS.get(product_id)
 
     if product_details:

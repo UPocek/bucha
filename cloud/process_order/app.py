@@ -13,6 +13,7 @@ from utils import (
     get_product_image_slug,
     get_product_name,
     map_country_code_to_name,
+    normalize_order_product,
     normalize_locale,
 )
 
@@ -32,6 +33,15 @@ def lambda_handler(event, context):
     if missing_fields:
         return create_response(400, {'error': 'Missing required fields'})
 
+    if not isinstance(body['products'], list) or not body['products']:
+        return create_response(400, {'error': 'Invalid products'})
+
+    normalized_products = [normalize_order_product(product) for product in body['products']]
+    normalized_products = [product for product in normalized_products if product]
+
+    if not normalized_products:
+        return create_response(400, {'error': 'Invalid products'})
+
     order_id = generate_order_number(prefix="SHOP")
 
     send_email(
@@ -44,7 +54,7 @@ def lambda_handler(event, context):
         body['postalCode'],
         body['country'],
         body['note'],
-        body['products'],
+        normalized_products,
         locale,
     )
     send_template_email(
@@ -57,7 +67,7 @@ def lambda_handler(event, context):
         body['postalCode'],
         body['country'],
         body['note'],
-        body['products'],
+        normalized_products,
         locale,
     )
     
@@ -72,7 +82,7 @@ def lambda_handler(event, context):
         'country': body['country'],
         'locale': locale,
         'note': body['note'],
-        'products': body['products'],
+        'products': normalized_products,
         'createdAt': datetime.now(pytz.timezone('Europe/Belgrade')).isoformat(),
         'status': STATUS_PROCESSING,
     })
