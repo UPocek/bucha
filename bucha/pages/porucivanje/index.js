@@ -52,6 +52,13 @@ export default function Checkout() {
                 : normalizedItem.fallbackName || item.name || '',
         };
     });
+    const orderProducts = localizedCartItems.map((item) => ({
+        productId: item.productId || null,
+        fallbackName: item.fallbackName || item.displayName,
+        name: item.fallbackName || item.displayName,
+        quantity: item.quantity,
+        price: item.price,
+    }));
 
     const subtotal = localizedCartItems.reduce((total, item) => total + item.price * item.quantity, 0);
     const shippingLabel =
@@ -82,7 +89,7 @@ export default function Checkout() {
                 country: country,
                 locale: locale,
                 note: note,
-                products: cartItems,
+                products: orderProducts,
             }),
         })
             .then(async (response) => {
