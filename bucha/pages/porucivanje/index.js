@@ -98,8 +98,8 @@ export default function Checkout() {
                 }
                 const data = await response.json();
                 toast.success(t('messages.success'));
+                await router.replace(`/hvala/${data.id}`);
                 emptyCart();
-                router.replace(`/hvala/${data.id}`);
             })
             .catch((error) => {
                 toast.error(t('messages.failure'));
